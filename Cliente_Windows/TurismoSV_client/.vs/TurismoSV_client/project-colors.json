@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d49015e9-e8c9-4f85-ae1e-9a7ee0a191e2": {
+      "ProjectGuid": "d49015e9-e8c9-4f85-ae1e-9a7ee0a191e2",
+      "DisplayName": "TurismoSV_client",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

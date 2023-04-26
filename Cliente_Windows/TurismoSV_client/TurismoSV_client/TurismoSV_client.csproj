@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="tourism-icon-7.jpg" />
+    <None Remove="turismo-02-1280x857.png" />
+    <None Remove="views\close.png" />
+    <None Remove="views\default_profile.png" />
+    <None Remove="views\home.png" />
+    <None Remove="views\list.png" />
+    <None Remove="views\shopping-cart.png" />
+    <None Remove="views\signup-vectore.png" />
+    <None Remove="views\tourism-icon-7.jpg" />
+    <None Remove="views\travel.png" />
+    <None Remove="views\turismo-1024x637.png" />
+    <None Remove="views\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src_user\" />
+    <Folder Include="views\administrador\" />
+    <Folder Include="views\general\" />
+    <Folder Include="views\usuarios\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Material.Icons" Version="1.1.35" />
+    <PackageReference Include="Material.Icons.Avalonia" Version="1.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="tourism-icon-7.jpg" />
+    <Resource Include="turismo-02-1280x857.png" />
+    <Resource Include="views\close.png" />
+    <Resource Include="views\default_profile.png" />
+    <Resource Include="views\home.png" />
+    <Resource Include="views\list.png" />
+    <Resource Include="views\shopping-cart.png" />
+    <Resource Include="views\signup-vectore.png" />
+    <Resource Include="views\tourism-icon-7.jpg" />
+    <Resource Include="views\travel.png" />
+    <Resource Include="views\turismo-1024x637.png" />
+    <Resource Include="views\user.png" />
+  </ItemGroup>
+
+</Project>
