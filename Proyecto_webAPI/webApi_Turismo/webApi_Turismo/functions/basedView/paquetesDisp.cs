@@ -19,7 +19,7 @@ namespace webApi_Turismo.functions.basedView.paquetesDisp
                 SqlConnection conection = cn.GetConnection();
                 try
                 {
-                    String SQlCommand = "SELECT * FROM vpdisponiblesinfo";
+                    String SQlCommand = "SELECT TOP (5) * FROM vpdisponiblesinfo v WHERE v.estado = 0 ORDER BY registro DESC;";
 
 
 
@@ -42,9 +42,9 @@ namespace webApi_Turismo.functions.basedView.paquetesDisp
                                     Precio = (decimal)reader["precio"],
                                     Cupos_disp = (String)reader["cupos_disp"].ToString(),
                                     Cuposllenos = (String)reader["cuposllenos"].ToString(),
-
                                     Fechainicial = (DateTime)reader["fechainicial"],
                                     Fechafinal = (DateTime)reader["fechafinal"],
+                                    Fechreg = (DateTime)reader["registro"],
                                     Estado = (bool)reader["estado"],
                                 });
                             }
@@ -70,6 +70,7 @@ namespace webApi_Turismo.functions.basedView.paquetesDisp
                             Cuposllenos="0",
                             Fechafinal = DateTime.Now,
                             Fechainicial= DateTime.Now,
+                            Fechreg= DateTime.Now,
                             Estado= false
                         });
 
@@ -99,6 +100,10 @@ namespace webApi_Turismo.functions.basedView.paquetesDisp
             }
 
         }//end 
+
+       
         //final class
+
+
     }
 }

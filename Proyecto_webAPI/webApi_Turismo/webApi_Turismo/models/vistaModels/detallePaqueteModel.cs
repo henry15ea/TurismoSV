@@ -12,6 +12,7 @@
         String cuposllenos;
         DateTime fechainicial;
         DateTime fechafinal;
+        DateTime fechreg;
         bool   estado;
 
         public string Idpaqueted { get => idpaqueted; set => idpaqueted = value; }
@@ -25,5 +26,6 @@
         public DateTime Fechainicial { get => fechainicial; set => fechainicial = value; }
         public DateTime Fechafinal { get => fechafinal; set => fechafinal = value; }
         public bool Estado { get => estado; set => estado = value; }
+        public DateTime Fechreg { get => fechreg; set => fechreg = value; }
     }
 }

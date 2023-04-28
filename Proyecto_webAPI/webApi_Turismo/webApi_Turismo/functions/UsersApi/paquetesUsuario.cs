@@ -32,8 +32,8 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
                     //ejecuto las peticiones o querys
 
                     String SQlCommand = "insert into encabezado(idencabezado,idcuenta,idformapago,descuento," +
-                        "monto) values (" +
-                        "@id,@idcuenta,@fpago,@desc,@monto)" +
+                        "monto,state_emited) values (" +
+                        "@id,@idcuenta,@fpago,@desc,@monto,@state)" +
                         ");";
 
                     SqlCommand command = new SqlCommand(SQlCommand, conection);
@@ -51,6 +51,7 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
                     command.Parameters.AddWithValue("@fpago", encabezadoData.Idformapago);
                     command.Parameters.AddWithValue("@desc", encabezadoData.Descuento);
                     command.Parameters.AddWithValue("@monto", encabezadoData.Monto);
+                    command.Parameters.AddWithValue("@state", encabezadoData.State_emited);
 
                     command.ExecuteNonQuery();
 

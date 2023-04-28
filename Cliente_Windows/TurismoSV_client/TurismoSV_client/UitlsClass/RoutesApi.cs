@@ -14,8 +14,12 @@ namespace TurismoSV_client.UitlsClass.RoutesApi;
        public RoutesApi() {
             Routes = new Dictionary<string, string>();
             Routes.Add("login",HostApi+ "/public/longin");        
-            Routes.Add("registro",HostApi+ "/public/newuser");        
-            Routes.Add("departamentos",HostApi+ "/public/Departamentos");        
+            Routes.Add("registro",HostApi+ "/public/newuser");       
+            Routes.Add("categorias",HostApi+ "/public/categorias");
+            Routes.Add("paquetesDisp",HostApi+ "/public/paquetesDisponibles");
+
+            //en pruebas
+            Routes.Add("departamentos", HostApi + "/public/Departamentos");
         }
 
         static public string GetRoute(string key)

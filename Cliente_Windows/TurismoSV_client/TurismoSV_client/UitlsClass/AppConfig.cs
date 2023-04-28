@@ -16,15 +16,37 @@ public class Settings
 
     public static class AppConfig
     {
-        private static Settings _settings = new Settings();
+        private static Settings _settings;
 
+        /*
         static AppConfig()
         {
             var settingsFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "settings.json");
             if (File.Exists(settingsFile))
             {
                 var json = File.ReadAllText(settingsFile);
+                _settings = new Settings();
                 _settings = JsonConvert.DeserializeObject<Settings>(json);
+                System.Diagnostics.Debug.WriteLine("Path Config : "+ Environment.SpecialFolder.ApplicationData);
+            }
+            else {
+                System.Diagnostics.Debug.WriteLine("No se inicio el sharedpreferences");
+            }
+        }
+        */
+
+        public static void initSharedPreferences() {
+            var settingsFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "settings.json");
+            if (File.Exists(settingsFile))
+            {
+                var json = File.ReadAllText(settingsFile);
+                _settings = new Settings();
+                _settings = JsonConvert.DeserializeObject<Settings>(json);
+                System.Diagnostics.Debug.WriteLine("Path Config : " + settingsFile);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("No se inicio el sharedpreferences");
             }
         }
 
@@ -48,7 +70,10 @@ public class Settings
             {
                 return _settings.UserSettings[key];
             }
-            return null;
+            else {
+                return null;
+            }
+            
         }
 
         private static void SaveSettings()

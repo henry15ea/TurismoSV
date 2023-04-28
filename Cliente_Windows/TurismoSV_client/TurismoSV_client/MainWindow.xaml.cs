@@ -32,6 +32,7 @@ namespace TurismoSV_client
         {
             InitializeComponent();
             RoutesApi rt = new RoutesApi();
+            AppConfig.initSharedPreferences();
             
 
         }

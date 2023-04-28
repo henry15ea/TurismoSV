@@ -16,6 +16,7 @@
     <None Remove="views\list.png" />
     <None Remove="views\shopping-cart.png" />
     <None Remove="views\signup-vectore.png" />
+    <None Remove="views\template\tourism-icon-7.jpg" />
     <None Remove="views\tourism-icon-7.jpg" />
     <None Remove="views\travel.png" />
     <None Remove="views\turismo-1024x637.png" />
@@ -26,7 +27,6 @@
     <Folder Include="src_user\" />
     <Folder Include="views\administrador\" />
     <Folder Include="views\general\" />
-    <Folder Include="views\usuarios\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +44,7 @@
     <Resource Include="views\list.png" />
     <Resource Include="views\shopping-cart.png" />
     <Resource Include="views\signup-vectore.png" />
+    <Resource Include="views\template\tourism-icon-7.jpg" />
     <Resource Include="views\tourism-icon-7.jpg" />
     <Resource Include="views\travel.png" />
     <Resource Include="views\turismo-1024x637.png" />

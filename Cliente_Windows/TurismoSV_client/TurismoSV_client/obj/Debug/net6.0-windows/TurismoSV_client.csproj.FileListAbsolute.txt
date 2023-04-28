@@ -39,3 +39,7 @@ C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\ne
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\TurismoSV_client.csproj.AssemblyReference.cache
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\Registro.g.cs
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\Registro.baml
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\template\templateview.g.cs
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\usuarios\InfoPackage.g.cs
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\template\templateview.baml
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\usuarios\InfoPackage.baml

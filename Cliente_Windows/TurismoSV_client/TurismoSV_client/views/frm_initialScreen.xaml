@@ -19,67 +19,195 @@
                 </ColumnDefinition.Style>
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Background="#FF09757D" RenderTransformOrigin="0.481,0.604" Height="683" VerticalAlignment="Center">
-            <Image Height="48" Width="49" Source="/views/turismo-1024x637.png" OpacityMask="#FF9FE8C8"/>
-            <Grid Height="634" Background="#FF34B5F9" Width="117">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="358*"/>
-                    <RowDefinition Height="25*"/>
-                </Grid.RowDefinitions>
+        <StackPanel Background="#FF1261AD" RenderTransformOrigin="0.481,0.604" Height="703" VerticalAlignment="Bottom">
+            <WrapPanel HorizontalAlignment="Center" Margin="0,25,5,5">
+                <Image Height="48" Width="49" Source="/views/turismo-1024x637.png" OpacityMask="#FF45E49E"/>
+            </WrapPanel>
+            <Border Padding="5" Background="#001d3d" VerticalAlignment="Bottom">
+                <Grid Height="634" Background="Transparent" Width="250">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="458*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
 
-                <Button x:Name="btn_close" Content="Salir" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="21" Width="97" Background="{x:Null}" Foreground="#FF121111" BorderBrush="{x:Null}" Click="btn_close_Click" FontSize="16"/>
-                <Image HorizontalAlignment="Left" Height="23" Margin="10,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="20" Source="/views/close.png"/>
-                <StackPanel Background="#FF1D7EA7" Margin="0,0,0,20">
-                    <StackPanel Height="49" Background="#FF34B5F9" Orientation="Horizontal">
-                        <Image Height="41" Width="56" Source="/views/home.png"/>
-                        <Button Content="Inicio" Width="52" BorderBrush="{x:Null}" Background="{x:Null}"/>
-                    </StackPanel>
-                    <StackPanel Height="51" Background="#FF34B5F9" Orientation="Horizontal">
-                        <Image Height="46" Width="54" Source="/views/shopping-cart.png"/>
-                        <Button Content="Comprar" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                    </StackPanel>
-                    <StackPanel Height="53" Background="#FF34B5F9" Orientation="Horizontal">
-                        <Image Height="45" Width="56" Source="/views/user.png"/>
-                        <Button Content="Cuenta" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                    </StackPanel>
-                    <StackPanel Height="46" Background="#FF34B5F9" Orientation="Horizontal">
-                        <Image Height="35" Width="54" Source="/views/list.png"/>
-                        <Button Content="Historial" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                    </StackPanel>
-                </StackPanel>
-                <StackPanel/>
-            </Grid>
+                    <Border >
+                        <StackPanel Background="Transparent" Margin="-2,0,0,20">
+                            <StackPanel Height="49" Background="#457b9d" Orientation="Horizontal">
+                                <Image Height="41" Width="56" Source="/views/home.png"/>
+                                <Button Content="Inicio" Width="52" Background="Transparent" BorderBrush="Transparent" Foreground="#fff">
+
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="51" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
+                                <Image Height="46" Width="54" Source="/views/shopping-cart.png"/>
+                                <Button Content="Comprar" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                            </StackPanel>
+                            <StackPanel Height="53" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
+                                <Image Height="45" Width="56" Source="/views/user.png"/>
+                                <Button Content="Cuenta" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                            </StackPanel>
+                            <StackPanel Height="46" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
+                                <Image Height="35" Width="54" Source="/views/list.png"/>
+                                <Button Content="Historial" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <StackPanel/>
+                </Grid>
+            </Border>
         </StackPanel>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="59*"/>
-                <RowDefinition Height="644*"/>
+                <RowDefinition Height="647*"/>
             </Grid.RowDefinitions>
-            <StackPanel Background="#FF09757D" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,0,0,1">
+            <StackPanel Background="#FF1261AD" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,0,0,1">
 
-                <Image Height="49" Width="77" Source="/views/default_profile.png"/>
-                <Button x:Name="btn_username" Content="UserNAme" Click="Button_Click" Width="192" Margin="0,5,0,5" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" FontSize="18" FontWeight="Bold" FontFamily="Carlito"/>
+
+
+                <Button x:Name="btn_profileMenu" Content="Menú" Click="popupButton_Click" Background="{x:Null}">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Popup Name="MenuPopup" PlacementTarget="{Binding ElementName=MyButton}" 
+                        IsOpen="{Binding IsChecked, ElementName=MenuToggleButton, Mode=TwoWay}" VerticalOffset="25" Width="300">
+                                    <Border BorderThickness="5" CornerRadius="5" BorderBrush="#023047" Background="AliceBlue">
+                                        <Border Padding="5" CornerRadius="15" Background="AliceBlue">
+                                            <StackPanel Orientation="Vertical">
+                                                <Button x:Name="btn_account" Content="Cuenta" Click="btn_account_Click"/>
+
+                                                <Button x:Name="btn_closeSesion" Content="Cerrar sesion" Margin="0,5,0,0" Click="btn_closeSesion_Click"/>
+
+                                            </StackPanel>
+                                        </Border>
+                                    </Border>
+                                </Popup>
+
+                                <ToggleButton Name="MenuToggleButton" HorizontalAlignment="Left"  Style="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}" Width="76" Height="50">
+                                    <Image Height="49" Width="77" Source="/views/default_profile.png"/>
+
+                                </ToggleButton>
+
+                            </Grid>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button x:Name="btn_username" Content="Menú" Click="Button_Click" Width="192" Margin="0,5,0,5" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" FontSize="18" FontWeight="Bold" FontFamily="Carlito">
+
+                </Button>
             </StackPanel>
-            <StackPanel Background="#FFD3FCFF" Margin="10,10,10,10" Grid.Row="1" MinWidth="2">
-                <StackPanel Height="272" Background="#FFC5E0E2">
-                    <ListBox ItemsSource="{Binding ListaDeObjetos}" Background="#FF542424">
+            <StackPanel Background="#FFADEDF1" Margin="3,1,3,1" Grid.Row="1" MinWidth="2">
+
+                <StackPanel Height="220" Background="#edede9"  >
+
+                    <ListBox x:Name="myListBox" HorizontalContentAlignment="Center" Height="220"  VerticalContentAlignment="Center" MinWidth="60" VerticalAlignment="Stretch"  Background="{x:Null}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                            </Style>
+
+                        </ListBox.ItemContainerStyle>
+
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Border BorderBrush="Gray" BorderThickness="1" Padding="10" CornerRadius="5" Margin="5">
-                                    <Grid>
-                                        <TextBlock Text="{Binding Propiedad1}" FontWeight="Bold" FontSize="16"></TextBlock>
-                                        <TextBlock Text="{Binding Propiedad2}" Grid.Row="1" FontSize="14"></TextBlock>
-                                    </Grid>
+                                <Border BorderThickness="1" Margin="5" Padding="10" CornerRadius="5">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#edede9" Offset="0.226"/>
+                                            <GradientStop Color="#FFB8EFA9" Offset="0.979"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#1d3557"/>
+                                            <GradientStop Color="#FF4DA72D" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+
+                                    <StackPanel MinWidth="80" MinHeight="60" MaxHeight="100" MaxWidth="160" Margin="0,0,0,0">
+
+                                        <TextBlock Text="{Binding Idcategoria}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="{x:Null}" />
+                                        <TextBlock Text="{Binding Nombre}" FontWeight="Bold" Margin="0, 1, 0, 0" HorizontalAlignment="Center" FontSize="14" >
+                                            <TextBlock.Foreground>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="Black" Offset="0.486"/>
+                                                    <GradientStop Color="White" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </TextBlock.Foreground>
+                                        </TextBlock>
+                                        <Border Background="#322D5B" CornerRadius="15" Margin="0,24,0,0" MaxHeight="40" Padding="10" VerticalAlignment="Center">
+                                            <Button Content="Ver Categoria" Click="btn_selectedItem_Click" Tag="{Binding Idcategoria}" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
+                                        </Border>
+                                    </StackPanel>
                                 </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
+
                     </ListBox>
 
+
                 </StackPanel>
-                <Rectangle Height="28" Stroke="Black" Width="100"/>
-                <StackPanel Height="100" Background="#FFC34040">
-                    
-                    
+                <Rectangle Height="1" Width="100"/>
+                <StackPanel  Margin="10,0,10,0" MinHeight="310" Background="White" MaxHeight="800" Height="470">
+                    <ListBox x:Name="LastPackages" Height="370" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinWidth="320" VerticalAlignment="Stretch" FlowDirection="RightToLeft" Width="1062" Background="{x:Null}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1" Margin="5" Padding="10" CornerRadius="5">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#f3f6f4" Offset="0.226"/>
+                                            <GradientStop Color="#d4eadc" Offset="0.979"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#35305f" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+
+                                    <StackPanel MinWidth="240" MinHeight="80" MaxWidth="300" MaxHeight="480" >
+                                        <StackPanel.Style>
+                                            <Style/>
+                                        </StackPanel.Style>
+                                        <WrapPanel Margin="0,5,1,0" HorizontalAlignment="Center">
+                                            <Image Source="{Binding Img}" Width="220" Height="110" Stretch="Fill"/>
+                                        </WrapPanel>
+                                        <TextBlock Text="{Binding Idpaqueted}" FontWeight="Bold" Margin="0, 10, 0, 0" Foreground="{x:Null}" />
+                                        <TextBlock Text="{Binding Nombre}" FontWeight="Bold" Margin="0, 10, 0, 0" HorizontalAlignment="Center" FontSize="20" >
+                                            <TextBlock.Foreground>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="Black" Offset="0.486"/>
+                                                    <GradientStop Color="White" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </TextBlock.Foreground>
+                                        </TextBlock>
+                                        <TextBlock Text="{Binding Descripcion}" TextWrapping="Wrap" Margin="0,5,0,1" LineHeight="15" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Precio}" TextWrapping="Wrap" Margin="1,5,120,10" TextAlignment="Left"/>
+
+                                            <TextBlock Text="{Binding Precio}" TextWrapping="Wrap" Margin="0,5,0,10" />
+
+                                        </StackPanel>
+                                        <Button x:Name="btn_detallePaquete" Content="Ver detalle" Click="btn_detallePaquete_Click" Tag="{Binding Idpaqueted}" />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+
                 </StackPanel>
             </StackPanel>
         </Grid>
