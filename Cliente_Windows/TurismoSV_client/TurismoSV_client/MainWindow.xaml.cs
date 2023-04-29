@@ -20,6 +20,10 @@ using TurismoSV_client.models.UserModel;
 using TurismoSV_client.models.ApiModels.LoginResponseModel;
 using TurismoSV_client.views;
 using TurismoSV_client.UitlsClass.AppConfig;
+using System.Data.SqlClient;
+using TurismoSV_client.views.administrador;
+using System.Data.Common;
+using System.Data;
 
 namespace TurismoSV_client
 {
@@ -75,7 +79,34 @@ namespace TurismoSV_client
                         AppConfig.SetUserSetting("MailApp", md.mail);
                        
                         frm_initialScreen fm = new frm_initialScreen();
-                        fm.Show();
+                        Admin admin = new Admin();
+
+                        ///
+                        SqlConnection sc1 = Conexion.sc();
+                        sc1.Open();
+                        Md5 md5 = new Md5();
+                        
+                        String consulta = "select * from cuenta as c inner join usuarios as u on c.id_usuario = u.idusuario where c.u_name ='"+user+"' and c.u_pass ='"+md5.fn_MD5Builder(password.Trim()) + "'";
+                        
+                        SqlCommand comando=new SqlCommand(consulta, sc1);
+                        SqlDataAdapter da = new SqlDataAdapter(comando);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        //MessageBox.Show(dt.Rows[0][0].ToString(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        ///
+                        if (dt.Rows[0][0].ToString() != null)
+                        {
+                            if (dt.Rows[0][0].ToString().Equals("1")){
+
+                                admin.Show();
+                            }
+                            else
+                            {
+                                fm.Show();
+                            }
+                        }
+
+                        sc1.Close();
                         this.Close();
 
                     } else {

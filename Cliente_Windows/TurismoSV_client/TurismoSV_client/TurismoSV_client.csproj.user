@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="views\administrador\Admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\CategoriasAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\CuentaAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\DepartamentosAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\MunicipiosAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\PaquetesAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\PaquetesDisponiblesAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\RolUsuarioAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\UsuariosAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="views\administrador\Admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\CategoriasAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\CuentaAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\DepartamentosAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\MunicipiosAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\PaquetesAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\PaquetesDisponiblesAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\RolUsuarioAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\UsuariosAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

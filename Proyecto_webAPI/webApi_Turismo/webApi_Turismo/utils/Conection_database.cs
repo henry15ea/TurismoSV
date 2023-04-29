@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 public class Conection_database
 {
-    private string connectionString = @"Server=LAPTOP-8S0156K3\SQLEXPRESS;Database=BD_TURISMO;User Id=henry15ea;Password=demolition;";
+    private string connectionString = @"Server=DESKTOP-OFBBKK3\RONALD;Database=BD_TURISMO;Integrated Security=True";
 
     public Conection_database()
     {

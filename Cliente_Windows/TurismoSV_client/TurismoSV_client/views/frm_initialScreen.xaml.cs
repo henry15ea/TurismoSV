@@ -142,5 +142,10 @@ namespace TurismoSV_client.views
             //acciones para cerrar sesion
             this.Close();
         }
+
+        private void myListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

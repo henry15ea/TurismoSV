@@ -1,0 +1,45 @@
+﻿<Window x:Class="TurismoSV_client.views.administrador.vadmin.CategoriasAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TurismoSV_client.views.administrador.vadmin"
+        mc:Ignorable="d"
+        Title="CategoriasAdmin" Height="450" Width="800">
+    <Grid>
+        <Label Content="Categorias" HorizontalAlignment="Left" Margin="34,22,0,0" VerticalAlignment="Top" FontWeight="Bold">
+        </Label>
+        <DataGrid Name="DG" Margin="57,205,321,29" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Desciprcion" Binding="{Binding descripcion}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button CommandParameter="{Binding idcategoria}" Click="Button_Click_1">Eliminar</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button CommandParameter="{Binding idcategoria}" Click="Button_Click_2">Seleccionar</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="57,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Descripcion" HorizontalAlignment="Left" Margin="57,128,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="137,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Name="txtnombre"/>
+        <TextBox HorizontalAlignment="Left" Margin="137,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Height="51" Name="txtdescripcion"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="366,141,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Actualizar" Name="Acl" HorizontalAlignment="Left" Margin="439,141,0,0" VerticalAlignment="Top" IsEnabled="False" Click="Acl_Click"/>
+        
+    </Grid>
+</Window>
