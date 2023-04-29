@@ -117,7 +117,8 @@ namespace TurismoSV_client.views.administrador.vadmin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;component/views/administrador/vadmin/personasextraadmin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;V1.0.0.0;component/views/administrador/vadmin/personasextraadmi" +
+                    "n.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\views\administrador\vadmin\PersonasExtraAdmin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

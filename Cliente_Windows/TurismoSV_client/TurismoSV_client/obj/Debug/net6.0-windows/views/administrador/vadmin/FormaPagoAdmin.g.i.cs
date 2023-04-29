@@ -93,7 +93,8 @@ namespace TurismoSV_client.views.administrador.vadmin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;component/views/administrador/vadmin/formapagoadmin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;V1.0.0.0;component/views/administrador/vadmin/formapagoadmin.xa" +
+                    "ml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\views\administrador\vadmin\FormaPagoAdmin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

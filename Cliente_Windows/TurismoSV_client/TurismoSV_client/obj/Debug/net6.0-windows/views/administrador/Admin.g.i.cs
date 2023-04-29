@@ -53,7 +53,7 @@ namespace TurismoSV_client.views.administrador {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;component/views/administrador/admin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;V1.0.0.0;component/views/administrador/admin.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\views\administrador\Admin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
