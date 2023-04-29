@@ -1,0 +1,57 @@
+﻿<Window x:Class="TurismoSV_client.views.administrador.vadmin.PersonasExtraAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TurismoSV_client.views.administrador.vadmin"
+        mc:Ignorable="d"
+        Title="PersonasExtraAdmin" Height="450" Width="800">
+    <Grid>
+        <Label Content="Personas Extras" HorizontalAlignment="Left" Margin="34,22,0,0" VerticalAlignment="Top" FontWeight="Bold">
+        </Label>
+        <DataGrid Name="DG" Margin="17,209,38,46" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nom}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Apellido" Binding="{Binding apelli}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Documento" Binding="{Binding docu}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Edad" Binding="{Binding edad}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Detalle" Binding="{Binding detalle}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Usuario" Binding="{Binding usu}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button CommandParameter="{Binding idagregado}" Click="Button_Click_1">Eliminar</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button CommandParameter="{Binding idagregado}" Click="Button_Click_2">Seleccionar</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="17,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="261,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="Documento" HorizontalAlignment="Left" Margin="526,57,0,0" VerticalAlignment="Top"/>
+        <Label Content="Edad" HorizontalAlignment="Left" Margin="17,91,0,0" VerticalAlignment="Top" Height="22" Width="36"/>
+        <Label Content="Detalle" HorizontalAlignment="Left" Margin="17,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.584,-0.037"/>
+        <Label Content="Cuenta" HorizontalAlignment="Left" Margin="17,167,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="76,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Name="txtnombre"/>
+        <TextBox HorizontalAlignment="Left" Margin="321,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Name="txtapellido"/>
+        <TextBox HorizontalAlignment="Left" Margin="603,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Name="txtdui"/>
+        <TextBox HorizontalAlignment="Left" Margin="76,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Name="txtedad"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="366,141,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Actualizar" Name="Acl" HorizontalAlignment="Left" Margin="439,141,0,0" VerticalAlignment="Top" IsEnabled="False" Click="Acl_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="76,127,0,0" VerticalAlignment="Top" Width="174" Name="cboxdetalle"/>
+        <ComboBox HorizontalAlignment="Left" Margin="76,169,0,0" VerticalAlignment="Top" Width="174" Name="cboxcuenta"/>
+
+    </Grid>
+</Window>
