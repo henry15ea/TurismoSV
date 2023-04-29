@@ -21,10 +21,12 @@
     <None Remove="views\travel.png" />
     <None Remove="views\turismo-1024x637.png" />
     <None Remove="views\user.png" />
+    <None Remove="views\usuarios\tourism-icon-7.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="src_user\" />
+    <Folder Include="views\administrador\" />
     <Folder Include="views\general\" />
   </ItemGroup>
 
@@ -32,7 +34,6 @@
     <PackageReference Include="Material.Icons" Version="1.1.35" />
     <PackageReference Include="Material.Icons.Avalonia" Version="1.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +50,7 @@
     <Resource Include="views\travel.png" />
     <Resource Include="views\turismo-1024x637.png" />
     <Resource Include="views\user.png" />
+    <Resource Include="views\usuarios\tourism-icon-7.jpg" />
   </ItemGroup>
 
 </Project>

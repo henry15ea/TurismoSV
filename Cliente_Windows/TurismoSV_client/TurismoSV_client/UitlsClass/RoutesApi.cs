@@ -17,6 +17,16 @@ namespace TurismoSV_client.UitlsClass.RoutesApi;
             Routes.Add("registro",HostApi+ "/public/newuser");       
             Routes.Add("categorias",HostApi+ "/public/categorias");
             Routes.Add("paquetesDisp",HostApi+ "/public/paquetesDisponibles");
+            Routes.Add("paquetesInfo",HostApi+ "/public/detallepckById");
+            Routes.Add("adicionalesByIdpkg",HostApi+ "/public/adicionalesbyid");
+            Routes.Add("formaPago",HostApi+ "/public/fpago");
+
+            //rutas para hacer ingreso de datos 
+            Routes.Add("InCompra",HostApi+ "/user/asignarPaquete");
+            Routes.Add("InDetalle",HostApi+ "/user/detalleFactura");
+            Routes.Add("InPersonsExtras",HostApi+ "/api/user/integrantesExtras");
+
+
 
             //en pruebas
             Routes.Add("departamentos", HostApi + "/public/Departamentos");

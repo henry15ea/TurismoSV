@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using webApi_Turismo.utils.cls_md5Generator;
 using webApi_Turismo.utils.Conection_database;
-using webApi_Turismo.utils.cls_md5Generator;
 
 namespace webApi_Turismo.functions.LoginVerify
 {
@@ -22,7 +21,7 @@ namespace webApi_Turismo.functions.LoginVerify
                 try
                 {
 
-                    String SQlCommand = "select * from cuenta  where u_name = @user AND u_pass = @pass;";
+                    String SQlCommand = "select count(*) from cuenta c  where c.u_name = @user AND c.u_pass = @pass";
 
                     Console.WriteLine(conection.ConnectionString);
 
@@ -37,23 +36,36 @@ namespace webApi_Turismo.functions.LoginVerify
                     command.Parameters.Add("@user", System.Data.SqlDbType.VarChar);
                     command.Parameters.Add("@pass", System.Data.SqlDbType.VarChar);
 
-                    command.Parameters["@user"].Value = username;
-                    command.Parameters["@pass"].Value = pass;
+                    command.Parameters["@user"].Value = username.ToString();
+                    command.Parameters["@pass"].Value = pass.ToString();
                  
                    // command.Parameters.AddWithValue("@user", username);
                     //command.Parameters.AddWithValue("@pass", pass);
 
-                    Console.WriteLine("usaurio " + user.Trim());
-                    Console.WriteLine("pass : " + password.Trim());
-                    Console.WriteLine("md5 : " + md5.fn_MD5Builder(password.Trim()));
+                    
 
                     conection.Open();
                     object o = command.ExecuteScalar();
                     int count = -1;
                     //  int count = o == null ? 0 : (int)o;
-                    if (o != null){
-                        count = int.Parse(o.ToString());
-                       // Console.WriteLine("Founds : " + o.ToString());
+                    if (o != null )
+                    {
+                        bool parsedSuccessfully = int.TryParse(o.ToString(), out count);
+                        Console.WriteLine("encontrado usuario  " + count);
+                        Console.WriteLine("usaurio " + user.Trim());
+                        Console.WriteLine("pass : " + password.Trim());
+                        Console.WriteLine("md5 : " + pass);
+
+                        if (!parsedSuccessfully)
+                        {
+                            // handle the situation where the value of 'o' cannot be parsed as an integer
+                            count = -1;
+                        }
+                        else {
+                            count = 1;
+                        }
+
+                        // Console.WriteLine("Founds : " + o.ToString());
                     }
                     else {
                         count = 0;

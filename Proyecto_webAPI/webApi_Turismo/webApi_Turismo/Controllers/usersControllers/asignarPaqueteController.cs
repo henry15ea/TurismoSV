@@ -56,6 +56,8 @@ namespace webApi_Turismo.Controllers.usersControllers
 
                 paquetesUsuario lv = new paquetesUsuario();
 
+
+
                 if (lv.NuevoEncabezado(modelo) == true)
                 {
                     

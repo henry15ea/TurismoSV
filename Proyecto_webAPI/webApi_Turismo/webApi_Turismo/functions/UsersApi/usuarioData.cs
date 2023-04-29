@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using webApi_Turismo.utils.cls_md5Generator;
 using webApi_Turismo.utils.Conection_database;
-using webApi_Turismo.utils.cls_md5Generator;
 using webApi_Turismo.models.mododelsdb;
 using webApi_Turismo.models.mododelsdb.UsuarioModel;
 using webApi_Turismo.models.vistaModels.cuentaDetalle;
@@ -42,12 +41,12 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
 
                                 usuarios.Add(new UsuarioModel
                                 {
-                                    Idusuario = (String)reader["idusuario"],
-                                    Nombre = (String)reader["nombre"],
-                                    Apellido = (String)reader["apellido"],
+                                    Idusuario = (String)reader["idusuario"].ToString(),
+                                    Nombre = (String)reader["nombre"].ToString(),
+                                    Apellido = (String)reader["apellido"].ToString(),
                                     Edad = (int)reader["edad"],
-                                    Telefono = (String)reader["telefono"],
-                                    Direccion = (String)reader["direccion"],
+                                    Telefono = (String)reader["telefono"].ToString(),
+                                    Direccion = (String)reader["direccion"].ToString(),
                                     Correo = (String)reader["correo"],
                                     Id_rol = (int)reader["id_rol"],
                                     Estado = (int)reader["estado"],
@@ -117,7 +116,8 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
                 SqlConnection conection = cn.GetConnection();
                 try
                 {
-                    String SQlCommand = "SELECT * FROM vusuarios where idusuario = \'@id_usuario\'";
+                    Console.WriteLine("entro para obtener informacion del usuario");
+                    String SQlCommand = "SELECT * FROM vusuarios where idusuario = @id_usuario";
 
 
 
@@ -130,15 +130,16 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
 
                         using (var reader = command.ExecuteReader())
                         {
+                            Console.WriteLine("leyendo datos de usuario");
                             while (reader.Read())
                             {
-                                dataUsuario.Idusuario = (String)reader["idusuario"];
-                                dataUsuario.Nombre = (String)reader["nombre"];
-                                dataUsuario.Apellido = (String)reader["apellido"];
+                                dataUsuario.Idusuario = (String)reader["idusuario"].ToString();
+                                dataUsuario.Nombre = (String)reader["nombre"].ToString();
+                                dataUsuario.Apellido = (String)reader["apellido"].ToString();
                                 dataUsuario.Edad = (int)reader["edad"];
-                                dataUsuario.Telefono = (String)reader["telefono"];
-                                dataUsuario.Direccion = (String)reader["direccion"];
-                                dataUsuario.Correo = (String)reader["correo"];
+                                dataUsuario.Telefono = (String)reader["telefono"].ToString();
+                                dataUsuario.Direccion = (String)reader["direccion"].ToString(); 
+                                dataUsuario.Correo = (String)reader["correo"].ToString();
                                 dataUsuario.Id_rol = (int)reader["id_rol"];
                                 dataUsuario.Estado = (int)reader["estado"];  
                             }
@@ -148,6 +149,7 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
 
                     if (dataUsuario != null)
                     {
+                        Console.WriteLine("No se obtuvo datos de usuario fallo en el formato");
                         return dataUsuario;
                     }
                     else
@@ -204,28 +206,31 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
                 SqlConnection conection = cn.GetConnection();
                 try
                 {
-                    String SQlCommand = "SELECT * FROM vuserdetailAll where u_name = @user";
+                    Console.WriteLine("entro para obtener informacion del usuario");
+                    String SQlCommand = "SELECT * FROM vuserdetailAll WHERE u_name = @user";
 
 
 
                     conection.Open();
                     using (var command = new SqlCommand(SQlCommand, conection))
                     {
-                        String name_user = user_name.Trim();
+                       
+                        //command.Parameters.AddWithValue("@user", "henry15ea");
+
                         command.Parameters.Add("@user", System.Data.SqlDbType.VarChar);
-                        command.Parameters["@user"].Value = user_name.Trim();
+                        command.Parameters["@user"].Value = user_name.ToString().Trim();
 
                         using (var reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                dataUsuario.Id_cuenta = (String)reader["id_cuenta"];
-                                dataUsuario.U_name = (String)reader["u_name"];
-                                dataUsuario.Id_usuario = (String)reader["id_usuario"];
-                                dataUsuario.Nombre = (String)reader["nombre"];
-                                dataUsuario.Correo = (String)reader["correo"];
-                                dataUsuario.Id_rol = (int)reader["id_rol"];
-                                dataUsuario.U_state = (int)reader["u_state"];
+                                dataUsuario.Id_cuenta = (String)reader["id_cuenta"].ToString();
+                                dataUsuario.U_name = (String)reader["u_name"].ToString();
+                                dataUsuario.Id_usuario = (String)reader["id_usuario"].ToString();
+                                dataUsuario.Nombre = (String)reader["nombre"].ToString();
+                                dataUsuario.Correo = (String)reader["correo"].ToString();
+                                dataUsuario.Id_rol = int.Parse(reader["id_rol"].ToString());
+                                dataUsuario.U_state = (Boolean)reader["u_state"];
 
                             }
                         }
@@ -245,7 +250,7 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
                         dataUsuario.Nombre = "null";
                         dataUsuario.Correo = "null";
                         dataUsuario.Id_rol = -1;
-                        dataUsuario.U_state =  -1;
+                        dataUsuario.U_state = false;
 
                         return dataUsuario;
                     };

@@ -38,7 +38,20 @@ namespace TurismoSV_client.models.AppModel.vpaquetesDisp
 
         }
 
-        public decimal Precio { get => precio; set => precio = value; }
+        public string PrecioFormateado {
+                get { return Precio.ToString("C2"); }
+            }
+
+        public String FechaInicioFormateada {
+            get { return fechainicial.ToString("dd/MM/yyyy"); }
+        }
+
+        public String FechaFinalFormateada
+        {
+            get { return fechafinal.ToString("dd/MM/yyyy"); }
+        }
+
+        public decimal Precio { get => precio; set => precio = decimal.Parse(string.Format("{0:C2}", value.ToString())); }
         public String Cupos_disp { get => cupos_disp; set => cupos_disp = value; }
         public String Cuposllenos { get => cuposllenos; set => cuposllenos = value; }
         public DateTime Fechainicial { get => fechainicial; set => fechainicial = value; }

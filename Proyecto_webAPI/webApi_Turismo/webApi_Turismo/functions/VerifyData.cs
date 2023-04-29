@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using webApi_Turismo.utils.cls_md5Generator;
 using webApi_Turismo.utils.Conection_database;
-using webApi_Turismo.utils.cls_md5Generator;
 
 namespace webApi_Turismo.functions
 {

@@ -16,6 +16,8 @@ using TurismoSV_client.controllers.categoriasController;
 using TurismoSV_client.controllers.getPaquetesController;
 using TurismoSV_client.models.AppModel.categoriasModel;
 using TurismoSV_client.UitlsClass.AppConfig;
+using TurismoSV_client.views.template;
+using TurismoSV_client.views.usuarios;
 
 namespace TurismoSV_client.views
 {
@@ -130,6 +132,9 @@ namespace TurismoSV_client.views
             textvalue = button.Tag as string;
             AppConfig.SetUserSetting("SelectPackage", textvalue);
             //MessageBox.Show(textvalue);
+            InfoPackage pkg = new InfoPackage();
+            pkg.Show();
+            this.Close();
         }
 
         private void btn_account_Click(object sender, RoutedEventArgs e)
@@ -143,9 +148,24 @@ namespace TurismoSV_client.views
             this.Close();
         }
 
-        private void myListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btn_inicio_click(object sender, RoutedEventArgs e)
         {
+            //btn que lleva al usuario a la pantalla principal frm_initialScreen
+        }
 
+        private void btn_comprar_Click(object sender, RoutedEventArgs e)
+        {
+            //btn que lleva al formulario de listas de paquetes para que el usuario
+            //elija y compre el paquete
+        }
+
+        private void btn_cuenta_Click(object sender, RoutedEventArgs e)
+        {
+            //btn que lleva al usario a administrar datos de su cuenta de usuario
+        }
+        private void btn_historial_Click(object sender, RoutedEventArgs e)
+        {
+            //btn que lleva al usuario al historial de compras realizadas
         }
     }
 }

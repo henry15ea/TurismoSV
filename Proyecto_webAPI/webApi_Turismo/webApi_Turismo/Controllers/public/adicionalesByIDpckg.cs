@@ -7,10 +7,9 @@ using webApi_Turismo.functions.publicDataApi.dapartamentList;
 using webApi_Turismo.models;
 using webApi_Turismo.models.mododelsdb;
 using webApi_Turismo.models.vistaModels.vadicionalesModel;
+using webApi_Turismo.models.vistaModels.vidAdicionalModel;
 using webApi_Turismo.utils.cls_tokenGenerator;
 
-using Microsoft.AspNetCore.Mvc;
-using webApi_Turismo.models.vistaModels.vidAdicionalModel;
 
 namespace webApi_Turismo.Controllers
 {

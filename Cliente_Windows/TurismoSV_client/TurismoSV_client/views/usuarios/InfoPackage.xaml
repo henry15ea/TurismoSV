@@ -33,22 +33,22 @@
                     <Border >
                         <StackPanel Background="Transparent" Margin="-2,0,0,20">
                             <StackPanel Height="49" Background="#457b9d" Orientation="Horizontal">
-                                <Image Height="41" Width="56" Source="/views/template/tourism-icon-7.jpg"/>
-                                <Button Content="Inicio" Width="52" Background="Transparent" BorderBrush="Transparent" Foreground="#fff">
+                                <Image Height="41" Width="56" Source="/views/home.png"/>
+                                <Button x:Name="btn_inicio" Content="Inicio" Width="52" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_inicio_click">
 
                                 </Button>
                             </StackPanel>
                             <StackPanel Height="51" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
                                 <Image Height="46" Width="54" Source="/views/shopping-cart.png"/>
-                                <Button Content="Comprar" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                                <Button x:Name="btn_comprar" Content="Comprar" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_comprar_Click"/>
                             </StackPanel>
                             <StackPanel Height="53" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
                                 <Image Height="45" Width="56" Source="/views/user.png"/>
-                                <Button Content="Cuenta" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                                <Button x:Name="btn_cuenta" Content="Cuenta" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_cuenta_Click"/>
                             </StackPanel>
                             <StackPanel Height="46" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
                                 <Image Height="35" Width="54" Source="/views/list.png"/>
-                                <Button Content="Historial" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                                <Button x:Name="btn_historial" Content="Historial" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_historial_Click"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -58,8 +58,8 @@
         </StackPanel>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
-                <RowDefinition Height="33*"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="633*"/>
             </Grid.RowDefinitions>
             <StackPanel Background="#FF1261AD" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,0,0,1">
 
@@ -97,19 +97,161 @@
 
                 </Button>
             </StackPanel>
-            <StackPanel Background="#FFADEDF1" Margin="3,1,3,1" Grid.Row="4" MinWidth="2">
-                <Grid Background="#FFD04141" MinHeight="607">
+            <StackPanel Background="#FFADEDF1" Margin="5,5,5,1" Grid.Row="1" MinWidth="2">
+                <Grid Background="#eaf4f4" MinHeight="607">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="18*"/>
                         <ColumnDefinition Width="7*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                                Orientation="Vertical" Background="#FF096DB9">
+                                Orientation="Vertical" Background="Transparent">
+                        <Grid x:Name="grd_infopaquete" Margin="6" DataContext="{Binding vpaquetesDisp}" Background="#FFF">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Background="#ccd5ae" CornerRadius="9" Padding="1">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Label  Height="50" FontSize="28" VerticalAlignment="Center" FontWeight="Bold" Margin="15" Content="{Binding Nombre}" Background="Transparent" Foreground="#073b4c" />
 
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Row="1" CornerRadius="25" Background="#073b4c" Padding="10" Margin="15" Height="200" HorizontalAlignment="Center">
+                                <Image Source="{Binding Img}" Stretch="UniformToFill" >
+
+                                </Image>
+                            </Border>
+                            <ScrollViewer Grid.Row="2" MaxHeight="280">
+                                <StackPanel>
+
+                                    <Border  Margin="10" MinHeight="155" Background="AliceBlue" Padding="5" CornerRadius="10">
+                                        <StackPanel>
+                                            <StackPanel>
+                                                <Image></Image>
+                                                <Label Content="Descripcion :" FontWeight="Bold" FontSize="15" Foreground="Black"></Label>
+                                            </StackPanel>
+                                            <TextBlock Text="{Binding Descripcion}" FontSize="14" Margin="5" TextWrapping="Wrap"></TextBlock>
+                                        </StackPanel>
+
+                                    </Border>
+                                    <Border  Margin="10" MinHeight="100" Background="#ecf39e" Padding="5" CornerRadius="10">
+                                        <StackPanel>
+                                            <StackPanel>
+                                                <Image></Image>
+                                                <Label Content="Ubicacion :" FontWeight="Bold" FontSize="15" Foreground="Black"></Label>
+                                            </StackPanel>
+                                            <TextBlock Text="{Binding Direccion}" FontSize="14" Margin="5" TextWrapping="Wrap"></TextBlock>
+                                        </StackPanel>
+
+                                    </Border>
+                                    <Border Padding="10">
+
+                                        <ListBox x:Name="lst_adicionalesList" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" MinWidth="60"  Background="Transparent" BorderBrush="Transparent">
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ListBox.ItemsPanel>
+                                            <ListBox.ItemContainerStyle>
+                                                <Style TargetType="{x:Type ListBoxItem}">
+                                                    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                                                </Style>
+
+                                            </ListBox.ItemContainerStyle>
+
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Background="#FAAA" CornerRadius="12" Padding="4" MinWidth="100" Width="300" MaxWidth="300">
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Border Background="#FDEF" CornerRadius="12">
+                                                                <StackPanel>
+                                                                    <Label Content="{Binding Nmb_adicional}" Foreground="Black" HorizontalAlignment="Center" FontSize="32" FontWeight="Bold"></Label>
+                                                                    <Border Padding="5" Background="WhiteSmoke" CornerRadius="15" MinWidth="120" MinHeight="100">
+                                                                        <StackPanel Margin="4,0,0,4">
+                                                                            <TextBlock Text="{Binding Dsc_adicional}" TextWrapping="Wrap" Foreground="Black" FontSize="18"></TextBlock>
+                                                                            <Label Content="{Binding PrecioFormateado}" Foreground="Black" FontWeight="Bold" FontSize="22"></Label>
+                                                                        </StackPanel>
+                                                                    </Border>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </StackPanel>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+
+                                    </Border>
+                                </StackPanel>
+                            </ScrollViewer>
+
+                        </Grid>
                     </StackPanel>
-                    <DockPanel Grid.Column="1" LastChildFill="False" Background="Black"/>
+                    <Border Grid.Column="1" Background="#edede9" BorderBrush="#1b4332" CornerRadius="15" BorderThickness="2">
+                        <Grid x:Name="grd_dataResumeInfo">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+
+                            </Grid.RowDefinitions>
+                            <Border Padding="15"  Grid.Row="0" MinHeight="25" MaxHeight="100">
+                                <Border Background="#457b9d" BorderBrush="Azure" Padding="5" CornerRadius="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="Precio " FontSize="14" FontWeight="Bold" Foreground="white"></Label>
+                                        <Label Content="{Binding PrecioFormateado }" FontWeight="Bold" FontSize="20" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"></Label>
+                                    </StackPanel>
+                                </Border>
+                            </Border>
+                            <ScrollViewer Grid.Row="1" Height="300">
+                                <StackPanel Orientation="Vertical">
+                                    <Border Padding="15"    MinHeight="25" MaxHeight="100">
+                                        <Border Background="#264653" BorderBrush="Azure" Padding="5" CornerRadius="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <StackPanel Orientation="Vertical">
+                                                <Label Content="Cupos Disponibles " FontSize="14" FontWeight="Bold" Foreground="white"></Label>
+                                                <Label Content="{Binding Cupos_disp }" FontWeight="Bold" FontSize="20" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"></Label>
+                                            </StackPanel>
+                                        </Border>
+                                    </Border>
+                                    <Border Padding="15"    MinHeight="25" MaxHeight="100">
+                                        <Border Background="#264653" BorderBrush="Azure" Padding="5" CornerRadius="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <StackPanel Orientation="Vertical">
+                                                <Label Content="Fecha de inicio " FontSize="14" FontWeight="Bold" Foreground="white"></Label>
+                                                <Label Content="{Binding FechaInicioFormateada }" FontWeight="Bold" FontSize="20" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"></Label>
+                                            </StackPanel>
+                                        </Border>
+                                    </Border>
+                                    <Border Padding="15" MinHeight="25" MaxHeight="100">
+                                        <Border Background="#264653" BorderBrush="Azure" Padding="5" CornerRadius="15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                            <StackPanel Orientation="Vertical">
+                                                <Label Content="Fecha de finalizacion" FontSize="14" FontWeight="Bold" Foreground="white"></Label>
+                                                <Label Content="{Binding FechaFinalFormateada }" FontWeight="Bold" FontSize="20" 
+                                           VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"></Label>
+                                            </StackPanel>
+                                        </Border>
+                                    </Border>
+
+                                </StackPanel>
+
+                            </ScrollViewer>
+                            <Border Grid.Row="3" Padding="5" MaxHeight="55" BorderBrush="Transparent">
+                                <StackPanel>
+                                    <Border CornerRadius="10" Background="#2a9d8f" BorderBrush="Transparent">
+                                        <Button x:Name="btn_asignarPaquete" Tag="{Binding Idpaqueted}" Content="Reservar" BorderBrush="Transparent" Foreground="White" FontSize="18" Background="Transparent" Height="42" Click="btn_asignarPaquete_Click"></Button>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
                 </Grid>
-                
+
             </StackPanel>
         </Grid>
     </Grid>

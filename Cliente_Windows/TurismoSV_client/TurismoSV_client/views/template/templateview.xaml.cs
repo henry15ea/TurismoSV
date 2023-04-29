@@ -69,6 +69,7 @@ namespace TurismoSV_client.views.template
             Button button = sender as Button;
             textvalue = button.Tag as string;
             AppConfig.SetUserSetting("SelectPackage", textvalue);
+            
             //MessageBox.Show(textvalue);
         }
 

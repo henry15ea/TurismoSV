@@ -2,6 +2,7 @@
 {
     public class detallePaqueteModel
     {
+
         String idpaqueted;
         String nombre;
         String descripcion;

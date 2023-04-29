@@ -20,10 +20,6 @@ using TurismoSV_client.models.UserModel;
 using TurismoSV_client.models.ApiModels.LoginResponseModel;
 using TurismoSV_client.views;
 using TurismoSV_client.UitlsClass.AppConfig;
-using System.Data.SqlClient;
-using TurismoSV_client.views.administrador;
-using System.Data.Common;
-using System.Data;
 
 namespace TurismoSV_client
 {
@@ -60,66 +56,47 @@ namespace TurismoSV_client
             {
 
                 // //obtengo el estado que trae la api
-                isloggedIn = await loginController.fn_loginUser(user, password);
-
-                if (isloggedIn == true)
+                try
                 {
-                    LoginResponseModel md = new LoginResponseModel();
-                    md = loginController.GetDataAPI();
+                    isloggedIn = await loginController.fn_loginUser(user, password);
 
-                    
+                    if (isloggedIn == true)
+                    {
+                        LoginResponseModel md = new LoginResponseModel();
+                        md = loginController.GetDataAPI();
 
-                    if (md.token_id != "null" ) {
-                        //System.Diagnostics.Debug.WriteLine(_id.Length);
 
-                        //MessageBox.Show(md.infoMsg, "Bienvenido", MessageBoxButton.OK, MessageBoxImage.Information);
-                        AppConfig.SetUserSetting("TokenApp", md.token_id);
-                        AppConfig.SetUserSetting("UserApp", md.user);
-                        AppConfig.SetUserSetting("RoleApp", md.role_user);
-                        AppConfig.SetUserSetting("MailApp", md.mail);
-                       
-                        frm_initialScreen fm = new frm_initialScreen();
-                        Admin admin = new Admin();
 
-                        ///
-                        SqlConnection sc1 = Conexion.sc();
-                        sc1.Open();
-                        Md5 md5 = new Md5();
-                        
-                        String consulta = "select * from cuenta as c inner join usuarios as u on c.id_usuario = u.idusuario where c.u_name ='"+user+"' and c.u_pass ='"+md5.fn_MD5Builder(password.Trim()) + "'";
-                        
-                        SqlCommand comando=new SqlCommand(consulta, sc1);
-                        SqlDataAdapter da = new SqlDataAdapter(comando);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        //MessageBox.Show(dt.Rows[0][0].ToString(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        ///
-                        if (dt.Rows[0][0].ToString() != null)
+                        if (md.token_id != "null")
                         {
-                            if (dt.Rows[0][0].ToString().Equals("1")){
+                            //System.Diagnostics.Debug.WriteLine(_id.Length);
 
-                                admin.Show();
-                            }
-                            else
-                            {
-                                fm.Show();
-                            }
+                            //MessageBox.Show(md.infoMsg, "Bienvenido", MessageBoxButton.OK, MessageBoxImage.Information);
+                            AppConfig.SetUserSetting("TokenApp", md.token_id);
+                            AppConfig.SetUserSetting("UserApp", md.user);
+                            AppConfig.SetUserSetting("RoleApp", md.role_user);
+                            AppConfig.SetUserSetting("MailApp", md.mail);
+
+                            frm_initialScreen fm = new frm_initialScreen();
+                            fm.Show();
+                            this.Close();
+
                         }
+                        else
+                        {
+                            MessageBox.Show(md.infoMsg, "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-                        sc1.Close();
-                        this.Close();
-
-                    } else {
-                        MessageBox.Show(md.infoMsg, "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
-                        
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o clave invalidas", "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Usuario y/o clave invalidas", "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
+                catch (Exception ex) {
+                    MessageBox.Show("No se pudo conectar al servicio");   
                 }
-
-            }
+             }
         }
 
         private void txt_username_TextChanged(object sender, TextChangedEventArgs e)

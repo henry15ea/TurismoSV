@@ -20,8 +20,8 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Background="#FF1261AD" RenderTransformOrigin="0.481,0.604" Height="703" VerticalAlignment="Bottom">
-            <WrapPanel HorizontalAlignment="Center" Margin="0,25,5,5">
-                <Image Height="48" Width="49" Source="/views/turismo-1024x637.png" OpacityMask="#FF45E49E"/>
+            <WrapPanel HorizontalAlignment="Center" Margin="0,25,5,5" VerticalAlignment="Center">
+                <Image Height="48" HorizontalAlignment="Center" Width="49" Source="/views/tourism-icon-7.jpg" OpacityMask="#FF45E49E"/>
             </WrapPanel>
             <Border Padding="5" Background="#001d3d" VerticalAlignment="Bottom">
                 <Grid Height="634" Background="Transparent" Width="250">
@@ -34,21 +34,21 @@
                         <StackPanel Background="Transparent" Margin="-2,0,0,20">
                             <StackPanel Height="49" Background="#457b9d" Orientation="Horizontal">
                                 <Image Height="41" Width="56" Source="/views/home.png"/>
-                                <Button Content="Inicio" Width="52" Background="Transparent" BorderBrush="Transparent" Foreground="#fff">
+                                <Button x:Name="btn_inicio" Content="Inicio" Width="52" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_inicio_click">
 
                                 </Button>
                             </StackPanel>
                             <StackPanel Height="51" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
                                 <Image Height="46" Width="54" Source="/views/shopping-cart.png"/>
-                                <Button Content="Comprar" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                                <Button x:Name="btn_comprar" Content="Comprar" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_comprar_Click"/>
                             </StackPanel>
                             <StackPanel Height="53" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
                                 <Image Height="45" Width="56" Source="/views/user.png"/>
-                                <Button Content="Cuenta" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                                <Button x:Name="btn_cuenta" Content="Cuenta" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_cuenta_Click"/>
                             </StackPanel>
                             <StackPanel Height="46" Background="#457b9d" Orientation="Horizontal" Margin="0,5,0,1">
                                 <Image Height="35" Width="54" Source="/views/list.png"/>
-                                <Button Content="Historial" Background="Transparent" BorderBrush="Transparent" Foreground="#fff"/>
+                                <Button x:Name="btn_historial" Content="Historial" Background="Transparent" BorderBrush="Transparent" Foreground="#fff" Click="btn_historial_Click"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -100,13 +100,12 @@
             <StackPanel Background="#FFADEDF1" Margin="3,1,3,1" Grid.Row="1" MinWidth="2">
 
                 <StackPanel Height="220" Background="#edede9"  >
-
-                    <ListBox x:Name="myListBox" HorizontalContentAlignment="Center" Height="220"  VerticalContentAlignment="Center" MinWidth="60" VerticalAlignment="Stretch"  Background="{x:Null}">
-                        <ItemsControl.ItemsPanel>
+                    <ListBox x:Name="myListBox" HorizontalContentAlignment="Center" Height="220"  VerticalContentAlignment="Center" MinWidth="60"  Background="{x:Null}">
+                        <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" />
                             </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
+                        </ListBox.ItemsPanel>
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="{x:Type ListBoxItem}">
                                 <Setter Property="VerticalContentAlignment" Value="Stretch" />
