@@ -20,6 +20,7 @@ using TurismoSV_client.models.UserModel;
 using TurismoSV_client.models.ApiModels.LoginResponseModel;
 using TurismoSV_client.views;
 using TurismoSV_client.UitlsClass.AppConfig;
+using TurismoSV_client.views.administrador;
 
 namespace TurismoSV_client
 {
@@ -77,9 +78,16 @@ namespace TurismoSV_client
                             AppConfig.SetUserSetting("RoleApp", md.role_user);
                             AppConfig.SetUserSetting("MailApp", md.mail);
 
-                            frm_initialScreen fm = new frm_initialScreen();
-                            fm.Show();
-                            this.Close();
+                            if (md.role_user == "2") {
+                                frm_initialScreen fm = new frm_initialScreen();
+                                fm.Show();
+                                this.Close();
+                            } else if (md.role_user == "1"){
+                                frm_initialScreen fm = new frm_initialScreen();
+                                Admin admin = new Admin();
+                                admin.Show();
+                                this.Close();
+                            }
 
                         }
                         else

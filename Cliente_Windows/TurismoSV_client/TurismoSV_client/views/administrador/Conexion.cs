@@ -11,7 +11,8 @@ namespace TurismoSV_client.views.administrador
     {
         public static SqlConnection sc()
         {
-            SqlConnection sc1 = new SqlConnection("Server=LAPTOP-8S0156K3\\SQLEXPRESS;Database=BD_TURISMO;User Id=henry15ea;Password=demolition;");
+
+            var sc1 = new SqlConnection("Server=LAPTOP-8S0156K3\\SQLEXPRESS;Database=BD_TURISMO;User Id=henry15ea;Password=demolition;");
 
             return sc1;
         }

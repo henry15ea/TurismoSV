@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FastReport.OpenSource" Version="2023.2.10" />
+    <PackageReference Include="FastReport.OpenSource.Data.MsSql" Version="2021.4.0" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2023.2.10" />
+    <PackageReference Include="FastReport.OpenSource.Web" Version="2023.2.10" />
+    <PackageReference Include="Grpc.Core" Version="2.46.6" />
+    <PackageReference Include="JasperServer.Client" Version="1.0.7" />
     <PackageReference Include="JWT" Version="10.0.2" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
@@ -16,8 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\admControllers\" />
-    <Folder Include="functions\AdminApi\" />
+    <Folder Include="reports\" />
     <Folder Include="src\" />
   </ItemGroup>
 
