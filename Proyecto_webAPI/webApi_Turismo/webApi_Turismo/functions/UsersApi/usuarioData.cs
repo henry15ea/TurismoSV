@@ -278,7 +278,6 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
             }
 
         }//end 
-
         //
 
     }//fin clase

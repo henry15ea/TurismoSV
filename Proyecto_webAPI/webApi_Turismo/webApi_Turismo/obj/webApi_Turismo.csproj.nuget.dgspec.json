@@ -44,9 +44,33 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FastReport.OpenSource": {
+              "target": "Package",
+              "version": "[2023.2.10, )"
+            },
+            "FastReport.OpenSource.Data.MsSql": {
+              "target": "Package",
+              "version": "[2021.4.0, )"
+            },
+            "FastReport.OpenSource.Export.PdfSimple": {
+              "target": "Package",
+              "version": "[2023.2.10, )"
+            },
+            "FastReport.OpenSource.Web": {
+              "target": "Package",
+              "version": "[2023.2.10, )"
+            },
+            "Grpc.Core": {
+              "target": "Package",
+              "version": "[2.46.6, )"
+            },
             "JWT": {
               "target": "Package",
               "version": "[10.0.2, )"
+            },
+            "JasperServer.Client": {
+              "target": "Package",
+              "version": "[1.0.7, )"
             },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
