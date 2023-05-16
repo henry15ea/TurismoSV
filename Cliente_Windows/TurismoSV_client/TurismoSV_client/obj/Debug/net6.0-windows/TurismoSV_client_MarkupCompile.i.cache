@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\henryGuzman\Documents\mis_repos_git\last_proyectoTurismo\Cliente_Windows\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\
 TurismoSV_client
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\henryGuzman\Documents\mis_repos_git\last_proyectoTurismo\Cliente_Windows\TurismoSV_client\TurismoSV_client\App.xaml
-21-1717181365
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\App.xaml
+6-833916728
 
-57-329387397
-210691646096
-MainWindow.xaml;views\administrador\Admin.xaml;views\administrador\vadmin\AdicionalesAdmin.xaml;views\administrador\vadmin\AdicionalesDisponiblesAdmin.xaml;views\administrador\vadmin\CategoriasAdmin.xaml;views\administrador\vadmin\CuentaAdmin.xaml;views\administrador\vadmin\DepartamentosAdmin.xaml;views\administrador\vadmin\FormaPagoAdmin.xaml;views\administrador\vadmin\MunicipiosAdmin.xaml;views\administrador\vadmin\PaqueteCalificacionAdmin.xaml;views\administrador\vadmin\PaquetesAdmin.xaml;views\administrador\vadmin\PaquetesDisponiblesAdmin.xaml;views\administrador\vadmin\PersonasExtraAdmin.xaml;views\administrador\vadmin\RolUsuarioAdmin.xaml;views\administrador\vadmin\TelefonosAdmin.xaml;views\administrador\vadmin\UsuariosAdmin.xaml;views\frm_initialScreen.xaml;views\Registro.xaml;views\template\templateview.xaml;views\usuarios\frm_shopProduct.xaml;views\usuarios\InfoPackage.xaml;
+40345799261
+2091910066467
+MainWindow.xaml;views\frm_initialScreen.xaml;views\Registro.xaml;views\template\templateview.xaml;views\usuarios\frm_shopProduct.xaml;views\usuarios\InfoPackage.xaml;
 
 False
 
