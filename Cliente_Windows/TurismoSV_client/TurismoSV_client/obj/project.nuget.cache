@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zqyWrP1Z1D7lLO3PXQPqleZS9VIqeceIaMaywCRLnJbSxYo7l6PDBcPdsWm9XN8lMVipoY+FO5S4/M4LTovajw==",
+  "dgSpecHash": "RzIH5IYz33/Cvxe4Bj5O70r9Atn22jiUWwuGTu/WcR+834zgWTq3V3ARL5nHtSz4vR2bMQMXfhVGMcwJLsH7nw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\henryGuzman\\source\\repos\\TurismoSV_client\\TurismoSV_client\\TurismoSV_client.csproj",
+  "projectFilePath": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Cliente_Windows\\TurismoSV_client\\TurismoSV_client\\TurismoSV_client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\henryGuzman\\.nuget\\packages\\avalonia\\11.0.0-preview1\\avalonia.11.0.0-preview1.nupkg.sha512",
     "C:\\Users\\henryGuzman\\.nuget\\packages\\avalonia.remote.protocol\\11.0.0-preview1\\avalonia.remote.protocol.11.0.0-preview1.nupkg.sha512",

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="05/11/2023 21:30:38" ReportInfo.Modified="05/15/2023 18:55:37" ReportInfo.CreatorVersion="2020.1.17.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/11/2023 21:30:38" ReportInfo.Modified="05/16/2023 16:42:47" ReportInfo.CreatorVersion="2020.1.17.0">
   <ScriptText>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -110,7 +110,7 @@ namespace FastReport
       <SubreportObject Name="Subreport3" Left="9.45" Top="9.45" Width="94.5" Height="18.9" ReportPage="Page2"/>
       <DataHeaderBand Name="DataHeader1" Top="271.15" Width="718.2" Height="37.8">
         <TextObject Name="Text10" Left="9.45" Top="18.9" Width="226.8" Height="18.9" Border.Lines="Bottom" Text="ADICIONAL" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
-        <TextObject Name="Text29" Left="245.7" Top="18.9" Width="340.2" Height="18.9" Border.Lines="Bottom" Text="ADICIONAL" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="Text29" Left="245.7" Top="18.9" Width="340.2" Height="18.9" Border.Lines="Bottom" Text="DETALLE" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
         <TextObject Name="Text30" Left="585.9" Top="18.9" Width="122.85" Height="18.9" Border.Lines="Bottom" Text="COSTO" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
       </DataHeaderBand>
     </DataBand>

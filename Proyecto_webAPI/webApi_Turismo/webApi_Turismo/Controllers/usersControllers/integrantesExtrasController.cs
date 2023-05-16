@@ -5,6 +5,7 @@ using webApi_Turismo.functions.LoginVerify;
 using webApi_Turismo.functions.publicDataApi.dapartamentList;
 using webApi_Turismo.functions.UsersApi.paquetesUsuario;
 using webApi_Turismo.models;
+using webApi_Turismo.models.customModels;
 using webApi_Turismo.models.mododelsdb;
 using webApi_Turismo.models.mododelsdb.detalleFacturaModel;
 using webApi_Turismo.models.mododelsdb.personasExtrasModel;
@@ -28,7 +29,7 @@ namespace webApi_Turismo.Controllers.usersControllers
         //funciones que retornan un valor 
 
         [HttpPost]
-        public IActionResult asignar([FromBody] personasExtrasModel modelo)
+        public IActionResult asignar([FromBody] cInPersonasExtras modelo)
         {
             var dataResp = new
             {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {}
+    "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {
+    "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
+        "projectUniqueName": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
         "projectName": "webApi_Turismo",
-        "projectPath": "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
+        "projectPath": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
         "packagesPath": "C:\\Users\\henryGuzman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\obj\\",
+        "outputPath": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

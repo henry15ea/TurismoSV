@@ -700,11 +700,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\henryGuzman\\source\\repos\\TurismoSV_client\\TurismoSV_client\\TurismoSV_client.csproj",
+      "projectUniqueName": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Cliente_Windows\\TurismoSV_client\\TurismoSV_client\\TurismoSV_client.csproj",
       "projectName": "TurismoSV_client",
-      "projectPath": "C:\\Users\\henryGuzman\\source\\repos\\TurismoSV_client\\TurismoSV_client\\TurismoSV_client.csproj",
+      "projectPath": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Cliente_Windows\\TurismoSV_client\\TurismoSV_client\\TurismoSV_client.csproj",
       "packagesPath": "C:\\Users\\henryGuzman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\henryGuzman\\source\\repos\\TurismoSV_client\\TurismoSV_client\\obj\\",
+      "outputPath": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Cliente_Windows\\TurismoSV_client\\TurismoSV_client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

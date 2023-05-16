@@ -173,7 +173,7 @@ namespace TurismoSV_client.views.usuarios {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;component/views/usuarios/frm_shopproduct.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;V1.0.0.0;component/views/usuarios/frm_shopproduct.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\views\usuarios\frm_shopProduct.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

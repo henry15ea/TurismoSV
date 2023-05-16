@@ -9,6 +9,7 @@ using webApi_Turismo.models.mododelsdb.encabezadoModel;
 using webApi_Turismo.models.vistaModels.cuentaDetalle;
 using webApi_Turismo.models.mododelsdb.detalleFacturaModel;
 using webApi_Turismo.models.mododelsdb.personasExtrasModel;
+using webApi_Turismo.models.customModels;
 
 namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
 {
@@ -178,7 +179,7 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
 
         }//end 
 
-        public Boolean PersonasExtras(personasExtrasModel detalleData)
+        public Boolean PersonasExtras(cInPersonasExtras detalleData)
         {
             Boolean state = false;
 
