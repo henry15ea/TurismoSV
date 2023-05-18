@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\App.xaml
-6-833916728
+21-1935951458
 
-381836663490
-2091910066467
-MainWindow.xaml;views\frm_initialScreen.xaml;views\Registro.xaml;views\template\templateview.xaml;views\usuarios\frm_shopProduct.xaml;views\usuarios\InfoPackage.xaml;
+62-398742384
+2181093815709
+MainWindow.xaml;views\administrador\vadmin\AdminOptionsTemplate.xaml;views\administrador\vadmin\controlesVentana\adicionalesControl.xaml;views\administrador\vadmin\controlesVentana\adicionalesDisponiblesControl.xaml;views\administrador\vadmin\controlesVentana\categoriaControl.xaml;views\administrador\vadmin\controlesVentana\cuentasControl.xaml;views\administrador\vadmin\controlesVentana\departamentosControl.xaml;views\administrador\vadmin\controlesVentana\fpagoControl.xaml;views\administrador\vadmin\controlesVentana\MunicipiosAdminControl.xaml;views\administrador\vadmin\controlesVentana\paquetesControl.xaml;views\administrador\vadmin\controlesVentana\personasExtrasControl.xaml;views\administrador\vadmin\controlesVentana\pkgCalificacionControl.xaml;views\administrador\vadmin\controlesVentana\pkgDisponiblesControl.xaml;views\administrador\vadmin\controlesVentana\rolesControl.xaml;views\administrador\vadmin\controlesVentana\telefonosUsuarioControl.xaml;views\administrador\vadmin\controlesVentana\usuariosControl.xaml;views\frm_initialScreen.xaml;views\Registro.xaml;views\template\templateview.xaml;views\usuarios\frm_shopProduct.xaml;views\usuarios\InfoPackage.xaml;
 
 False
 

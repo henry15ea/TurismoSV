@@ -1,6 +1,21 @@
 ﻿
 
 FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\MainWindow.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\AdminOptionsTemplate.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\adicionalesControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\adicionalesDisponiblesControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\categoriaControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\cuentasControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\departamentosControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\fpagoControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\MunicipiosAdminControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\paquetesControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\personasExtrasControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\pkgCalificacionControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\pkgDisponiblesControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\rolesControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\telefonosUsuarioControl.xaml;;
+FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\administrador\vadmin\controlesVentana\usuariosControl.xaml;;
 FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\frm_initialScreen.xaml;;
 FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\Registro.xaml;;
 FC:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\views\template\templateview.xaml;;

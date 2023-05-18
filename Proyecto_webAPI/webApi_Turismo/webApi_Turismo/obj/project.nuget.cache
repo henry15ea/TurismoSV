@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "75EWL2n9JWqvwF89nIVRQqiU1qOx5fzsn8JdjT1VYZucx5+22PYtP3ShNUJTWo/MS93b4SgiGo2dvkfckjzw8Q==",
+  "dgSpecHash": "nijrnQ9ZL0xZZDtvKnMEgVxy442B1H/SP1hneHUpBjYSzEBGy6dmiG3+GKYXaRhhAPtnVKmHIzmePVt2qDRbQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\henryGuzman\\Documents\\mis_repos_git\\last_proyectoTurismo\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
+  "projectFilePath": "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\henryGuzman\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\henryGuzman\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

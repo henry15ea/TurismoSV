@@ -69,7 +69,7 @@ namespace TurismoSV_client.views.template {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;V1.0.0.0;component/views/template/templateview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;component/views/template/templateview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\views\template\templateview.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

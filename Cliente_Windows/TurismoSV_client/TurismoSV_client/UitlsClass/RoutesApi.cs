@@ -24,7 +24,10 @@ namespace TurismoSV_client.UitlsClass.RoutesApi;
             //rutas para hacer ingreso de datos 
             Routes.Add("InCompra",HostApi+ "/user/asignarPaquete");
             Routes.Add("InDetalle",HostApi+ "/user/detalleFactura");
-            Routes.Add("InPersonsExtras",HostApi+ "/api/user/integrantesExtras");
+            Routes.Add("InPersonsExtras",HostApi+ "/user/integrantesExtras");
+
+            //verificacion de targeta de credito para cuando se compran paquetes
+            Routes.Add("payment", HostApi + "/payment/payment");
 
 
 

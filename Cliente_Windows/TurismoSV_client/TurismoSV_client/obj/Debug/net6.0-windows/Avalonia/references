@@ -32,6 +32,14 @@ C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.2\ref\net6.0\
 C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.2\ref\net6.0\PresentationFramework.Royale.dll
 C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.2\ref\net6.0\PresentationUI.dll
 C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.2\ref\net6.0\ReachFramework.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors.wpf\1.8.1\lib\net6.0-windows7.0\SharpVectors.Converters.Wpf.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors.wpf\1.8.1\lib\net6.0-windows7.0\SharpVectors.Core.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors.wpf\1.8.1\lib\net6.0-windows7.0\SharpVectors.Css.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors.wpf\1.8.1\lib\net6.0-windows7.0\SharpVectors.Dom.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors.wpf\1.8.1\lib\net6.0-windows7.0\SharpVectors.Model.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors\1.8.1\lib\net6.0-windows7.0\SharpVectors.Rendering.Gdi.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors.wpf\1.8.1\lib\net6.0-windows7.0\SharpVectors.Rendering.Wpf.dll
+C:\Users\henryGuzman\.nuget\packages\sharpvectors.wpf\1.8.1\lib\net6.0-windows7.0\SharpVectors.Runtime.Wpf.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.AppContext.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.Buffers.dll
 C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.2\ref\net6.0\System.CodeDom.dll
@@ -53,6 +61,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.Data.Common.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.Data.DataSetExtensions.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.Data.dll
+C:\Users\henryGuzman\.nuget\packages\system.data.sqlclient\4.8.5\ref\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.Diagnostics.Contracts.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.Diagnostics.Debug.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.2\ref\net6.0\System.Diagnostics.DiagnosticSource.dll

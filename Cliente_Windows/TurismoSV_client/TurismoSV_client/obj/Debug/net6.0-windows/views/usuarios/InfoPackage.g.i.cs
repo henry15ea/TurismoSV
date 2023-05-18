@@ -133,7 +133,7 @@ namespace TurismoSV_client.views.usuarios {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;V1.0.0.0;component/views/usuarios/infopackage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TurismoSV_client;component/views/usuarios/infopackage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\views\usuarios\InfoPackage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

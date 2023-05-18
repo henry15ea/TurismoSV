@@ -7,6 +7,51 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="views\administrador\vadmin\AdminOptionsTemplate.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\adicionalesControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\adicionalesDisponiblesControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\categoriaControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\cuentasControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\departamentosControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\fpagoControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\MunicipiosAdminControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\paquetesControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\personasExtrasControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\pkgCalificacionControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\pkgDisponiblesControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\rolesControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\telefonosUsuarioControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\vadmin\controlesVentana\usuariosControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\frm_initialScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +70,51 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\AdminOptionsTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\adicionalesControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\adicionalesDisponiblesControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\categoriaControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\cuentasControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\departamentosControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\fpagoControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\MunicipiosAdminControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\paquetesControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\personasExtrasControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\pkgCalificacionControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\pkgDisponiblesControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\rolesControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\telefonosUsuarioControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\vadmin\controlesVentana\usuariosControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\frm_initialScreen.xaml">
