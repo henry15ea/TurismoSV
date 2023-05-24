@@ -69,6 +69,7 @@ namespace webApi_Turismo.Controllers.reports
 
                         return (File(ms.ToArray(), "application/pdf", reporteFileName));
                     }
+                    
                     //fin crear reporte 
                 }
                 else

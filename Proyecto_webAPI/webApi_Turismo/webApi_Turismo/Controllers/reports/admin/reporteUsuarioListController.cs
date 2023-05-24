@@ -61,7 +61,7 @@ namespace webApi_Turismo.Controllers.reports.admin
                     using (MemoryStream ms = new MemoryStream())
                     {
                         String reporteFileName = "null";
-                        reporteFileName = DateTime.Now + "_Factura.pdf";
+                        reporteFileName = DateTime.Now + "_ListadoUsuarios.pdf";
                         reporteFileName.Replace(" ", "_");
                         export.Export(report, ms);
 

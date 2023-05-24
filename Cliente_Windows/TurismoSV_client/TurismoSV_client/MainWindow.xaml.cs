@@ -22,6 +22,7 @@ using TurismoSV_client.views;
 using TurismoSV_client.UitlsClass.AppConfig;
 using TurismoSV_client.views.administrador;
 using TurismoSV_client.views.administrador.vadmin;
+using TurismoSV_client.UitlsClass;
 
 namespace TurismoSV_client
 {
@@ -88,6 +89,14 @@ namespace TurismoSV_client
                                 AdminOptionsTemplate admin = new AdminOptionsTemplate();
                                 admin.Show();
                                 this.Close();
+
+                                /*
+                                uniqueInstance ventanaLoginInstance = Application.Current.Windows.OfType<uniqueInstance>().FirstOrDefault();
+                                if (ventanaLoginInstance != null)
+                                {
+                                    // Usa la variable ventanaLoginInstance para hacer algo con la ventana de inicio de sesión.
+                                }
+                                */
                             }
 
                         }

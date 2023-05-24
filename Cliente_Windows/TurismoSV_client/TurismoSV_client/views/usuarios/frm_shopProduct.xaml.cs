@@ -37,6 +37,7 @@ namespace TurismoSV_client.views.usuarios
         protected int CantPersonas = 0;
         protected String TerminateShopMessage = "";
         protected String id_detalle = null;
+        protected String id_encabezado = null;
         //funciones para llamada de api
         private async Task geetInfoPaqueteAsync()
         {
@@ -144,16 +145,6 @@ namespace TurismoSV_client.views.usuarios
             int cont = 0;
             foreach (var item in personasExtras) {
                 item.iddetalle = this.id_detalle;
-                /*
-                System.Diagnostics.Debug.WriteLine("\n- Asignando id_detalle-["+"iter > "+cont+"/lista >"+personasExtras.Count+"]");
-                System.Diagnostics.Debug.WriteLine("nombre :"+item.nombre);
-                System.Diagnostics.Debug.WriteLine("apellido :" + item.apellido);
-                System.Diagnostics.Debug.WriteLine("n_doc :" + item.n_doc);
-                System.Diagnostics.Debug.WriteLine("edad :" + item.edad.ToString());
-                System.Diagnostics.Debug.WriteLine("id_paquete :" + item.id_paquete);
-                System.Diagnostics.Debug.WriteLine("username :" + item.username);
-                System.Diagnostics.Debug.WriteLine("iddetalle :" + item.iddetalle);
-                */
                 if (cont == personasExtras.Count-1) {
                     return true;
                 } else { 
@@ -191,10 +182,11 @@ namespace TurismoSV_client.views.usuarios
                 String tokenpaquete = hcontrol.Result.Token_paquete.ToString();
                // System.Diagnostics.Debug.WriteLine(tokenpaquete);
                 //modelo detalle
-               
+               id_encabezado = tokenpaquete.Trim();
+
                 detalleFacturaModel dta = new detalleFacturaModel();
                 dta.Iddetalle = "simple"; //este puede ser cualquier valor
-                dta.Idencabezado = tokenpaquete.Trim();
+                dta.Idencabezado = id_encabezado;
                 dta.Idpaqueted = AppConfig.GetUserSetting("SelectPackage").ToString();
                 dta.Precio =  detallePaquete[0].Precio;
                 dta.Descuento = 15;

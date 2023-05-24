@@ -36,7 +36,9 @@
     <None Remove="views\close.png" />
     <None Remove="views\default_profile.png" />
     <None Remove="views\home.png" />
+    <None Remove="views\icono-rutas.png" />
     <None Remove="views\list.png" />
+    <None Remove="views\money.png" />
     <None Remove="views\shopping-cart.png" />
     <None Remove="views\signup-vectore.png" />
     <None Remove="views\template\tourism-icon-7.jpg" />
@@ -48,16 +50,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="controllers\adm\" />
     <Folder Include="models\AppModel\admin\" />
-    <Folder Include="views\general\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Material.Icons" Version="1.1.35" />
     <PackageReference Include="Material.Icons.Avalonia" Version="1.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="PDF.js" Version="1.3.91" />
+    <PackageReference Include="PDFium.Viewer.WPF" Version="1.1.1" />
+    <PackageReference Include="PdfiumViewer.Core" Version="1.0.4" />
+    <PackageReference Include="PdfiumViewer.WPF" Version="1.0.6" />
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <PackageReference Include="PDFsharp-wpf" Version="1.50.5147" />
     <PackageReference Include="SharpVectors" Version="1.8.1" />
     <PackageReference Include="SharpVectors.Wpf" Version="1.8.1" />
+    <PackageReference Include="Syncfusion.JavaScript.PdfViewer" Version="20.4.0.44" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
@@ -90,7 +99,9 @@
     <Resource Include="views\close.png" />
     <Resource Include="views\default_profile.png" />
     <Resource Include="views\home.png" />
+    <Resource Include="views\icono-rutas.png" />
     <Resource Include="views\list.png" />
+    <Resource Include="views\money.png" />
     <Resource Include="views\shopping-cart.png" />
     <Resource Include="views\signup-vectore.png" />
     <Resource Include="views\template\tourism-icon-7.jpg" />

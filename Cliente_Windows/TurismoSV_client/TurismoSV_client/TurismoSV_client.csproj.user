@@ -55,10 +55,16 @@
     <Compile Update="views\frm_initialScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="views\general\frm_pdfView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\Registro.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="views\template\templateview.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\usuarios\frm_historialCompras.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="views\usuarios\frm_shopProduct.xaml.cs">
@@ -120,10 +126,16 @@
     <Page Update="views\frm_initialScreen.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="views\general\frm_pdfView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="views\Registro.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\template\templateview.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\usuarios\frm_historialCompras.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\usuarios\frm_shopProduct.xaml">

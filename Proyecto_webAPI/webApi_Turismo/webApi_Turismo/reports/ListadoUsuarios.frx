@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/23/2023 20:50:06" ReportInfo.Modified="05/24/2023 10:14:18" ReportInfo.CreatorVersion="2020.1.17.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="usuarios" DataType="System.Int32" Enabled="true" SelectCommand="select * from vdetalleUsuario v where v.rol = @rol and correo like '%' + @correo + '%'">
+        <Column Name="id" DataType="System.String"/>
+        <Column Name="nombre" DataType="System.String"/>
+        <Column Name="apellido" DataType="System.String"/>
+        <Column Name="edad" DataType="System.Byte"/>
+        <Column Name="telefono" DataType="System.String"/>
+        <Column Name="direccion" DataType="System.String"/>
+        <Column Name="correo" DataType="System.String"/>
+        <Column Name="rol" DataType="System.String"/>
+        <Column Name="estado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="registro" DataType="System.DateTime"/>
+        <CommandParameter Name="rol" DataType="22" Expression="[roluser]" DefaultValue="USER"/>
+        <CommandParameter Name="correo" DataType="22" Expression="[correouser]" DefaultValue="a"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="usuarioSolicitante" DataType="System.String"/>
+    <Parameter Name="roluser" DataType="System.String"/>
+    <Parameter Name="correouser" DataType="System.String"/>
+    <Total Name="usuariosInactivos" TotalType="Count" Evaluator="Data1" PrintOn="PageFooter1" EvaluateCondition="[usuarios.estado]==true"/>
+    <Total Name="uactivos" TotalType="Count" Evaluator="Data1" PrintOn="PageFooter1" EvaluateCondition="[usuarios.estado]== false"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" RawPaperSize="9" FirstPageSource="15" OtherPagesSource="15" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="75.6" Fill="LinearGradient" Fill.StartColor="Green" Fill.EndColor="MintCream" Fill.Angle="45" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text1" Left="9.45" Top="9.45" Width="255.15" Height="56.7" Text="TURISMOSV" VertAlign="Center" Font="Brush Script MT, 28pt" TextFill.Color="White"/>
+      <TextObject Name="Text2" Left="718.2" Top="9.45" Width="321.3" Height="18.9" Text="Reporte emitido : [Date]" HorzAlign="Right" VertAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text3" Left="548.1" Top="37.8" Width="491.4" Height="18.9" Text="Solicitante Reporte : [usuarioSolicitante]" HorzAlign="Right" VertAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text17" Left="264.6" Top="9.45" Width="425.25" Height="37.8" Text="Reporte Listado [roluser]" HorzAlign="Center" Font="Arial, 18pt" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="1047.06" Height="47.25">
+      <TextObject Name="Text6" Left="9.45" Top="9.45" Width="217.35" Height="28.35" Border.Lines="Bottom" Text="nombre" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text8" Left="245.7" Top="9.45" Width="189" Height="28.35" Border.Lines="Bottom" Text="apellido" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text10" Left="444.15" Width="94.5" Height="37.8" Border.Lines="Bottom" Text="edad" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text12" Left="548.1" Width="141.75" Height="37.8" Border.Lines="Bottom" Text="telefono" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text14" Left="699.3" Width="141.75" Height="37.8" Border.Lines="Bottom" Text="direccion" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text16" Left="850.5" Width="189" Height="37.8" Border.Lines="Bottom" Text="correo" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="130.85" Width="1047.06" Height="94.5" DataSource="Table">
+      <TextObject Name="Text5" Left="9.45" Top="9.45" Width="217.35" Height="47.25" Border.Lines="Bottom" Text="[usuarios.nombre]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[usuarios.estado] == true" Font="Arial, 10pt"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text7" Left="236.25" Top="9.45" Width="198.45" Height="47.25" Border.Lines="Bottom" Text="[usuarios.apellido]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[usuarios.estado] == true" Font="Arial, 10pt"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text9" Left="444.15" Top="9.45" Width="94.5" Height="47.25" Border.Lines="Bottom" Text="[usuarios.edad]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[usuarios.estado] == true" Font="Arial, 10pt"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text11" Left="548.1" Top="9.45" Width="141.75" Height="47.25" Border.Lines="Bottom" Text="[usuarios.telefono]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[usuarios.estado] == true" Font="Arial, 10pt"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text13" Left="699.3" Top="9.45" Width="141.75" Height="47.25" Border.Lines="Bottom" Text="[usuarios.direccion]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[usuarios.estado] == true" Font="Arial, 10pt"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text15" Left="850.5" Top="9.45" Width="189" Height="47.25" Border.Lines="Bottom" Text="[usuarios.correo]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[usuarios.estado] == true" Font="Arial, 10pt"/>
+        </Highlight>
+      </TextObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="229.35" Width="1047.06" Height="18.9">
+      <TextObject Name="Text4" Left="9.45" Width="236.25" Height="18.9" Text="Pagina [[Page]] de [[TotalPages]]" VertAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text18" Left="633.15" Width="406.35" Height="18.9" Text="Inactivos : [usuariosInactivos] / Activos : [uactivos]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

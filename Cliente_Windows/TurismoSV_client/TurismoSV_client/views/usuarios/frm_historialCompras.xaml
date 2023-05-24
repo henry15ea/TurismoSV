@@ -1,0 +1,165 @@
+﻿<Window x:Class="TurismoSV_client.views.usuarios.frm_historialCompras"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TurismoSV_client.views.usuarios"
+        mc:Ignorable="d"
+       Title="Historial_Compras" Height="450" Width="800" Icon="/views/tourism-icon-7.jpg" SizeToContent="Manual" WindowStartupLocation="CenterScreen" MinWidth="1200" MinHeight="719.4" Background="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="119*">
+                <ColumnDefinition.Style>
+                    <Style/>
+                </ColumnDefinition.Style>
+            </ColumnDefinition>
+            <ColumnDefinition Width="1081*">
+                <ColumnDefinition.Style>
+                    <Style/>
+                </ColumnDefinition.Style>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="#2D2D2D" RenderTransformOrigin="0.481,0.604" Height="703" VerticalAlignment="Bottom">
+            <WrapPanel HorizontalAlignment="Stretch" Width="110"  Margin="0,25,5,5" VerticalAlignment="Stretch">
+                <Image Height="78" HorizontalAlignment="Right" Width="96" Source="/views/tourism-icon-7.jpg" VerticalAlignment="Bottom"/>
+            </WrapPanel>
+            <Border Padding="5" Background="#2D2D2D" VerticalAlignment="Bottom">
+                <Grid Height="634" Background="Transparent" Width="250">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="458*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border >
+                        <StackPanel Background="Transparent" Margin="-2,0,0,20">
+                            <StackPanel Height="49" Background="#A7A7A7" Orientation="Horizontal">
+                                <Image Height="41" Width="56" Source="/views/home.png"/>
+                                <Button x:Name="btn_inicio" Content="Inicio" Width="52" Background="Transparent" BorderBrush="Transparent" Foreground="Black" Click="btn_inicio_click">
+
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="51" Background="#A7A7A7" Orientation="Horizontal" Margin="0,5,0,1">
+                                <Image Height="46" Width="54" Source="/views/shopping-cart.png"/>
+                                <Button x:Name="btn_comprar" Content="Comprar" Background="Transparent" BorderBrush="Transparent" Foreground="Black" Click="btn_comprar_Click">
+
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="53" Background="#A7A7A7" Orientation="Horizontal" Margin="0,5,0,1">
+                                <Image Height="45" Width="56" Source="/views/user.png"/>
+                                <Button x:Name="btn_cuenta" Content="Cuenta" Background="Transparent" BorderBrush="Transparent" Foreground="Black" Click="btn_cuenta_Click"/>
+                            </StackPanel>
+                            <StackPanel Height="46" Background="#A7A7A7" Orientation="Horizontal" Margin="0,5,0,1">
+                                <Image Height="35" Width="54" Source="/views/list.png"/>
+                                <Button x:Name="btn_historial" Content="Historial" Background="Transparent" BorderBrush="Transparent" Foreground="Black" Click="btn_historial_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <StackPanel/>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="647*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,0,0,1">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4DD9E4"/>
+                        <GradientStop Color="#FF7CA97A" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+
+
+
+                <Button x:Name="btn_profileMenu" Content="Menú" Click="popupButton_Click" Background="{x:Null}">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Popup Name="MenuPopup" PlacementTarget="{Binding ElementName=MyButton}" 
+                        IsOpen="{Binding IsChecked, ElementName=MenuToggleButton, Mode=TwoWay}" VerticalOffset="25" Width="300">
+                                    <Border BorderThickness="5" CornerRadius="5" BorderBrush="#023047" Background="AliceBlue">
+                                        <Border Padding="5" CornerRadius="15" Background="AliceBlue">
+                                            <StackPanel Orientation="Vertical">
+                                                <Button x:Name="btn_account" Content="Cuenta" Click="btn_account_Click"/>
+
+                                                <Button x:Name="btn_closeSesion" Content="Cerrar sesion" Margin="0,5,0,0" Click="btn_closeSesion_Click"/>
+
+                                            </StackPanel>
+                                        </Border>
+                                    </Border>
+                                </Popup>
+
+                                <ToggleButton Name="MenuToggleButton" HorizontalAlignment="Left"  Style="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}" Width="76" Height="50">
+                                    <Image Height="49" Width="77" Source="/views/default_profile.png"/>
+
+                                </ToggleButton>
+
+                            </Grid>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+                <Button x:Name="btn_username" Content="Menú" Click="Button_Click" Width="192" Margin="0,5,0,5" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FlowDirection="LeftToRight" FontSize="18" FontWeight="Bold" FontFamily="Carlito">
+
+                </Button>
+            </StackPanel>
+            <Border Grid.Row="1" Padding="5" Background="Transparent" Margin="1" CornerRadius="5">
+                <StackPanel Background="Transparent" Margin="1,1,1,1" Grid.Row="1" MinWidth="2">
+
+                    <Border Padding="8" Background="#F0F0F0" Margin="0,0,0,5" CornerRadius="15">
+                        <StackPanel Height="220" Background="#edede9"  Margin="0,0,0,2">
+                            <ListBox x:Name="listadoFacturas" HorizontalContentAlignment="Center" Height="210"  VerticalContentAlignment="Center" MinWidth="60"  Background="Transparent" BorderBrush="Transparent">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical" />
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                                    </Style>
+
+                                </ListBox.ItemContainerStyle>
+
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderThickness="2" Margin="10,0,0,0" Padding="4" CornerRadius="8">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#edede9" Offset="0.226"/>
+                                                    <GradientStop Color="#D0F5F5" Offset="0.979"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <Border.BorderBrush>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#1d3557"/>
+                                                    <GradientStop Color="#FF4DA72D" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.BorderBrush>
+
+                                            <StackPanel MinWidth="80" MinHeight="60" MaxHeight="150" MaxWidth="160" Margin="0,0,0,0">
+
+                                                <TextBlock Text="{Binding Id_factura}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="{x:Null}" Height="0"/>
+                                                
+                                                <TextBlock Text="{Binding Pasarela}" FontWeight="Bold" Margin="0, 1, 0, 0" HorizontalAlignment="Center" Height="50" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" TextWrapping="WrapWithOverflow" >
+
+                                                </TextBlock>
+                                                <Border Background="#17515B" CornerRadius="8" Margin="0,2,0,0" MaxHeight="40" Padding="10" VerticalAlignment="Center">
+                                                    <Button Content="Ver Categoria" Click="btn_selectedItem_Click" Tag="{Binding Id_factura}" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
+                                                </Border>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+
+                            </ListBox>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>

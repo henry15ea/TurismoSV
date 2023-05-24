@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/23/2023 20:11:38" ReportInfo.Modified="05/24/2023 10:15:14" ReportInfo.CreatorVersion="2020.1.17.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+   
+    public ReportScript(){
+       
+      
+    }
+    
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="paquetes" DataType="System.Int32" Enabled="true" SelectCommand="select top (@num) * from vpaquetex v2 where categoria = @categoria ;">
+        <Column Name="id_paquete" DataType="System.String"/>
+        <Column Name="nombre" DataType="System.String"/>
+        <Column Name="descripcion" DataType="System.String"/>
+        <Column Name="direccion" DataType="System.String"/>
+        <Column Name="img" DataType="System.String"/>
+        <Column Name="categoria" DataType="System.String"/>
+        <Column Name="departamento" DataType="System.String"/>
+        <Column Name="municipio" DataType="System.String"/>
+        <CommandParameter Name="categoria" DataType="22" Expression="[nombreCategoria]" DefaultValue="PLAYAS"/>
+        <CommandParameter Name="num" DataType="8" Expression="[numElementos]" DefaultValue="5"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="nombreCategoria" DataType="System.String"/>
+    <Parameter Name="numElementos" DataType="System.Int32"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5" Fill="LinearGradient" Fill.StartColor="RoyalBlue" Fill.EndColor="CornflowerBlue" Fill.Angle="90" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text9" Left="9.45" Top="18.9" Width="217.35" Height="56.7" Text="TURISMOSV" HorzAlign="Center" VertAlign="Center" Font="Brush Script MT, 26pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text11" Left="378" Top="9.45" Width="330.75" Height="18.9" Text="Reporte Emitido : [Date]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt" TextFill.Color="White"/>
+      <TextObject Name="Text12" Left="264.6" Top="37.8" Width="444.15" Height="37.8" Text="Reporte Listado Paquetes registrados" HorzAlign="Center" Font="Arial, 18pt" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="98.5" Width="718.2" Height="47.25">
+      <TextObject Name="Text2" Top="9.45" Width="170.1" Height="28.35" Border.Lines="Bottom" Text="nombre" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="179.55" Top="9.45" Width="236.25" Height="28.35" Border.Lines="Bottom" Text="descripcion" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text6" Left="415.8" Top="9.45" Width="141.75" Height="28.35" Border.Lines="Bottom" Text="departamento" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text8" Left="567" Top="9.45" Width="141.75" Height="28.35" Border.Lines="Bottom" Text="municipio" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="149.75" Width="718.2" Height="75.6" DataSource="Table">
+      <TextObject Name="Text1" Width="170.1" Height="75.6" Border.Lines="Bottom" Text="[paquetes.nombre]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="179.55" Width="236.25" Height="75.6" Border.Lines="Bottom" Text="[paquetes.descripcion]" Font="Arial, 10pt" Wysiwyg="true"/>
+      <TextObject Name="Text5" Left="415.8" Width="141.75" Height="75.6" Border.Lines="Bottom" Text="[paquetes.departamento]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="567" Width="141.75" Height="75.6" Border.Lines="Bottom" Text="[paquetes.municipio]" VertAlign="Center" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="229.35" Width="718.2" Height="18.9">
+      <TextObject Name="Text10" Width="311.85" Height="18.9" Text="Pagina [Page] de [TotalPages#]" VertAlign="Center" Font="Arial, 11pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

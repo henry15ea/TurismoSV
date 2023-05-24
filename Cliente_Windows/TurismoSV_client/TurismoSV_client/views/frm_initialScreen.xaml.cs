@@ -167,6 +167,9 @@ namespace TurismoSV_client.views
         private void btn_historial_Click(object sender, RoutedEventArgs e)
         {
             //btn que lleva al usuario al historial de compras realizadas
+            frm_historialCompras hcompras = new frm_historialCompras();
+            hcompras.Show();
+            this.Close();
         }
     }
 }
