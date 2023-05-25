@@ -5,27 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TurismoSV_client.views.usuarios"
         mc:Ignorable="d"
-        Title="Compra Paquete Turistico" Height="490" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/views/usuarios/tourism-icon-7.jpg">
+        Title="Compra Paquete Turistico" Height="557" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/views/usuarios/tourism-icon-7.jpg">
     <Grid>
         <Border Padding="5">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="42*"/>
-                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="68*"/>
+                    <RowDefinition Height="403*"/>
+                    <RowDefinition Height="60*"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Background="Pink" Orientation="Horizontal">
+                <Border Grid.Row="0">
+                    <StackPanel  Background="#FFC976" Orientation="Horizontal" Margin="1">
 
-                    <Label x:Name="txt_nombrePaquete" Content="Nombre Paquete" FontSize="25" Width="236" ></Label>
-                    <StackPanel HorizontalAlignment="Stretch" Margin="100,0,0,0" VerticalAlignment="Center" Orientation="Horizontal">
-                        <Label Content="Personas " Margin="100,0,0,0" FontSize="18" FontWeight="Bold"></Label>
-                        <Label x:Name="txt_numPersons" Margin="50,0,0,0" Content="#" HorizontalAlignment="Center" FontSize="18" Width="136" VerticalAlignment="Center" HorizontalContentAlignment="Center" ></Label>
+                        <Border>
+                            <StackPanel Orientation="Vertical" MinWidth="220" Width="500">
+                                <Label x:Name="txt_nombrePaquete" HorizontalAlignment="Left" Content="Nombre Paquete" FontSize="15" Width="136" ></Label>
+                                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Orientation="Horizontal">
+                                    <Label Content="Personas invitadas :" Width="150"  FontSize="15" FontWeight="Bold"></Label>
+                                    <Label x:Name="txt_numPersons"  Content="#" HorizontalAlignment="Left" FontSize="18" Width="136" VerticalAlignment="Center" HorizontalContentAlignment="Center" ></Label>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <Border HorizontalAlignment="Stretch" MinWidth="290" Margin="1,0,0,0" Background="#FFF2E0" Padding="1">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Precio Paquete : " FontSize="12" FontWeight="Bold"></Label>
+                                    <Label x:Name="txt_pkgCost" Content="$" FontSize="15" Foreground="#247F0C"></Label>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Total : " FontSize="15" FontWeight="Bold"></Label>
+                                    <Label x:Name="txt_pkgTotalCost" Content="$" FontSize="15" Foreground="#247F0C"></Label>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
                     </StackPanel>
-                </StackPanel>
-                <StackPanel Background="Transparent" Margin="0,40,0,0" Grid.RowSpan="2">
+                </Border>
+                <StackPanel Background="Transparent" Margin="0,1,0,0" Grid.Row="1">
                     <Border Background="Transparent" MinHeight="340">
-                        <ScrollViewer MinHeight="340" Height="100" Background="Transparent">
-                            <Border Margin="5" MaxWidth="750" Background="#FFDADADA">
+                        <ScrollViewer MinHeight="380" Height="100" Background="Transparent">
+                            <Border Margin="5" MaxWidth="750" Background="#F5F5F5">
                                 <Border Padding="5">
                                     <Grid>
                                         <Grid.RowDefinitions>
@@ -38,30 +57,30 @@
                                             <WrapPanel>
                                                 <CheckBox x:Name="chk_addpersons" Content="Agregar mas personas" FontSize="18" Checked="chk_addpersons_Checked"></CheckBox>
                                             </WrapPanel>
-                                            <Border x:Name="pnl_detallePersona" Padding="10" IsEnabled="{Binding ElementName=chk_addpersons, Path=IsChecked}">
+                                            <Border x:Name="pnl_detallePersona" Padding="10" IsEnabled="{Binding ElementName=chk_addpersons, Path=IsChecked}" Background="#F0F0F0">
                                                 <WrapPanel Orientation="Vertical">
                                                     <StackPanel   Orientation="Horizontal" MaxHeight="32" Margin="5,10,5,5">
                                                         <WrapPanel>
                                                             <Label Content="Nombre :" FontSize="14" FontWeight="Bold"></Label>
-                                                            <TextBox x:Name="txt_pname" MinWidth="300" MaxLines="120"/>
+                                                            <TextBox x:Name="txt_pname" MinWidth="300" MaxLines="100" MaxLength="100" TextChanged="txt_pname_TextChanged"/>
                                                         </WrapPanel>
                                                         <WrapPanel Margin="15,0,0,0" >
                                                             <Label Content="Apellido :" FontSize="14" FontWeight="Bold"></Label>
-                                                            <TextBox x:Name="txt_plname" MinWidth="300" MaxLines="118"></TextBox>
+                                                            <TextBox x:Name="txt_plname" MinWidth="300" MaxLines="100" MaxLength="100"></TextBox>
                                                         </WrapPanel>
                                                     </StackPanel>
                                                     <StackPanel  Orientation="Horizontal" Margin="5,10,5,40">
                                                         <WrapPanel HorizontalAlignment="Stretch">
                                                             <Label Content="N Documento :" FontSize="14" FontWeight="Bold"></Label>
-                                                            <TextBox x:Name="txt_ndoc" MinWidth="300" MaxLines="13"></TextBox>
+                                                            <TextBox x:Name="txt_ndoc" MinWidth="300" PreviewTextInput="txtNumero_PreviewTextInput"  MaxLines="15" MaxLength="9"></TextBox>
                                                         </WrapPanel>
                                                         <WrapPanel Margin="15,0,0,0" >
-                                                            <Label Content="Edad :" FontSize="14" FontWeight="Bold"></Label>
-                                                            <TextBox x:Name="txt_pedad" MinWidth="300" MaxLines="2"></TextBox>
+                                                            <Label Content="Edad :" FontSize="14"  FontWeight="Bold"></Label>
+                                                            <TextBox x:Name="txt_pedad" MinWidth="300" MaxLines="2" PreviewTextInput="txtNumero_PreviewTextInput"  MaxLength="2"></TextBox>
                                                         </WrapPanel>
                                                     </StackPanel>
                                                     <StackPanel  Orientation="Horizontal" MaxHeight="32" HorizontalAlignment="Left" VerticalAlignment="Center" Height="60" Width="495">
-                                                        <Border Background="#FF3077D6" MinHeight="32" CornerRadius="10" BorderThickness="2" BorderBrush="#FF152F61" MinWidth="320">
+                                                        <Border Background="#FF3077D6" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF152F61" MinWidth="320">
                                                             <Button x:Name="btn_addPersons" Content="Añadir persona" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="btn_addPersons_Click"></Button>
                                                         </Border>
                                                     </StackPanel>
@@ -80,35 +99,45 @@
                                                         </DataTemplate>
                                                     </ComboBox.ItemTemplate>
 
-                                                </ComboBox> 
+                                                </ComboBox>
 
                                             </WrapPanel>
-                                                
-                                            
+
+
                                         </StackPanel>
-                                        <StackPanel Grid.Row="2" Margin="0,10,0,0">
-                                            <Border Padding="15">
-                                                <StackPanel Orientation="Vertical">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <WrapPanel MinHeight="32" MinWidth="320">
-                                                            <Label>Número de la tarjeta de crédito:</Label>
-                                                            <TextBox x:Name="txt_numcard" Text="{Binding CreditCardNumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, StringFormat='#### #### #### ####'}" MinWidth="200" MaxLines="1" MaxLength="45">
+                                        <Border Grid.Row="2">
+                                            <Border  Margin="40,10,40,0" BorderBrush="#141A4A" BorderThickness="3" CornerRadius="15">
+                                                <Border Padding="15" Background="#006170" CornerRadius="15">
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Border Background="#EBE5B5" BorderBrush="#002025" BorderThickness="2" CornerRadius="8" Padding="4">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <WrapPanel Orientation="Vertical" MinWidth="360" HorizontalAlignment="Stretch">
+                                                                    <Label Foreground="Black" FontWeight="Bold" FontSize="14">Código de seguridad:</Label>
+                                                                    <TextBox x:Name="txt_codeSec" MinWidth="245" PreviewTextInput="txtNumero_PreviewTextInput"  MaxLines="1" MaxLength="3" />
+                                                                </WrapPanel>
 
-                                                            </TextBox>
-                                                        </WrapPanel>
+                                                                <WrapPanel Orientation="Vertical" MinWidth="220">
+                                                                    <Label Foreground="Black" FontWeight="Bold" FontSize="14">Fecha de vencimiento</Label>
+                                                                    <DatePicker x:Name="dtpck_vencimientoCard" Text="{Binding ExpirationDate}" MinWidth="200"/>
+                                                                </WrapPanel>
+                                                            </StackPanel>
+                                                        </Border>
 
-                                                        <WrapPanel Orientation="Horizontal" MinWidth="200" MaxWidth="500">
-                                                            <Label>Fecha de vencimiento:</Label>
-                                                            <DatePicker x:Name="dtpck_vencimientoCard" Text="{Binding ExpirationDate}" MinWidth="200"/>
-                                                        </WrapPanel>
+                                                        <Border Margin="0,8,0,0" >
+                                                            <WrapPanel MinHeight="32" MinWidth="420" Orientation="Vertical">
+                                                                <Label Foreground="White" FontWeight="Bold" FontSize="14">Número de la tarjeta de crédito:</Label>
+                                                                <TextBox x:Name="txt_numcard" Width="610"  PreviewTextInput="txtNumero_PreviewTextInput" MinWidth="200" MaxLines="1" MaxLength="19">
+
+                                                                </TextBox>
+                                                            </WrapPanel>
+                                                        </Border>
+
+
                                                     </StackPanel>
+                                                </Border>
 
-                                                    <Label>Código de seguridad:</Label>
-                                                    <TextBox x:Name="txt_codeSec" Text="{Binding SecurityCode, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" MaxLines="1" MaxLength="8" />
-                                                </StackPanel>
                                             </Border>
-
-                                        </StackPanel>
+                                        </Border>
                                     </Grid>
 
                                 </Border>
@@ -121,13 +150,13 @@
                     <Border Padding="5" Height="45">
                         <StackPanel Orientation="Horizontal">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" MinWidth="300">
-                                <Border Background="#FF2DAD58" MinHeight="32" CornerRadius="10" BorderThickness="2" BorderBrush="#FF166744">
+                                <Border Background="#0F8375" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF166744">
                                     <Button x:Name="btn_asignPackage" Content="Comprar Paquete Turistico" FontSize="14" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="btn_asignPackage_Click"></Button>
                                 </Border>
                             </StackPanel>
                             <StackPanel Margin="150,0,0,5" VerticalAlignment="Center" HorizontalAlignment="Stretch" MinWidth="300">
-                                <Border Background="#FF861000" MinHeight="32" CornerRadius="10" BorderThickness="2" BorderBrush="#FF61153F">
-                                    <Button x:Name="btn_closed" FontSize="14" Content="Cancelar" Background="#FFAB3636" BorderBrush="Transparent" Foreground="White" Click="btn_closed_Click"></Button>
+                                <Border Background="#640208" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF61153F">
+                                    <Button x:Name="btn_closed" FontSize="14" Content="Cancelar" Background="#7A1242" BorderBrush="Transparent" Foreground="White" Click="btn_closed_Click"></Button>
                                 </Border>
                             </StackPanel>
                         </StackPanel>

@@ -17,6 +17,7 @@
     <Import Project="$(NuGetPackageRoot)avalonia\11.0.0-preview1\buildTransitive\Avalonia.props" Condition="Exists('$(NuGetPackageRoot)avalonia\11.0.0-preview1\buildTransitive\Avalonia.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\henryGuzman\.nuget\packages\jquery\1.7.1</PkgjQuery>
     <PkgAvalonia Condition=" '$(PkgAvalonia)' == '' ">C:\Users\henryGuzman\.nuget\packages\avalonia\11.0.0-preview1</PkgAvalonia>
   </PropertyGroup>
 </Project>

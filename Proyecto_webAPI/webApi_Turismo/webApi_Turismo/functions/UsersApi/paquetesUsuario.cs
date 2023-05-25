@@ -9,6 +9,7 @@ using webApi_Turismo.models.mododelsdb.encabezadoModel;
 using webApi_Turismo.models.vistaModels.cuentaDetalle;
 using webApi_Turismo.models.mododelsdb.detalleFacturaModel;
 using webApi_Turismo.models.mododelsdb.personasExtrasModel;
+using webApi_Turismo.models.customModels;
 
 namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
 {
@@ -178,7 +179,7 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
 
         }//end 
 
-        public Boolean PersonasExtras(personasExtrasModel detalleData)
+        public Boolean PersonasExtras(cInPersonasExtrasUser detalleData)
         {
             Boolean state = false;
 
@@ -197,41 +198,37 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
                     cuentaDetalle ct = new cuentaDetalle();
                     udata = new usuarioData.usuarioData();
                     ct = udata.GetUserAccountDetailsByUserName(detalleData.Username.Trim());
-                    //ejecuto las peticiones o query
-                    String SQlCommand = "insert into personasextras(idagregado,nombre,apellido,n_doc," +
-                        "edad,iddetalle,idcuenta) values(@idAgregado,@nmb,@apel,@ndoc,@edad,@idet,@idcuenta)";
-
-                    SqlCommand command = new SqlCommand(SQlCommand, conection);
-                    //abro conexion
-                    conection.Open();
-                   
-
-                    //definiendo los datos
-                    cls_md5Generator md5 = new cls_md5Generator();
-
-                    string idGenMd5 = md5.fn_GenerateMd5Hash();
-                    Console.WriteLine("Persona Agregada ID : " + idGenMd5);
-                    id_paqueteGenerado = idGenMd5;
-
-                    command.Parameters.AddWithValue("@idAgregado", idGenMd5);
-                    command.Parameters.AddWithValue("@nmb", detalleData.Nombre);
-                    command.Parameters.AddWithValue("@apel", detalleData.Apellido);
-                    command.Parameters.AddWithValue("@ndoc", detalleData.N_doc);
-                    command.Parameters.AddWithValue("@edad", detalleData.Edad);
-                    command.Parameters.AddWithValue("@idet", detalleData.Iddetalle);
-                    command.Parameters.AddWithValue("@idcuenta", ct.Id_cuenta);
-
-                    command.ExecuteNonQuery();
-
-                    //verificamos si el encabezadoData existe en la db
-
-
-
-
-
+                    
                     //retornamos el dato
                     if (ct != null)
                     {
+                        //ejecuto las peticiones o query
+                        String SQlCommand = "insert into personasextras(idagregado,nombre,apellido,n_doc," +
+                            "edad,iddetalle,idcuenta) values(@idgen,@nmb,@apel,@ndoc,@edad,@idet,@idcuenta)";
+
+                        SqlCommand command = new SqlCommand(SQlCommand, conection);
+                        //abro conexion
+                        conection.Open();
+
+
+                        //definiendo los datos
+                        cls_md5Generator md5 = new cls_md5Generator();
+
+                        string idGenMd5 = md5.fn_GenerateMd5Hash();
+                        Console.WriteLine("Persona Agregada ID : " + idGenMd5);
+                        Console.WriteLine("Cuenta titular  : " + ct.Id_cuenta);
+                        id_paqueteGenerado = idGenMd5;
+
+                        command.Parameters.AddWithValue("@idgen", idGenMd5);
+                        command.Parameters.AddWithValue("@nmb", detalleData.Nombre.ToUpper().Trim());
+                        command.Parameters.AddWithValue("@apel", detalleData.Apellido.ToUpper().Trim());
+                        command.Parameters.AddWithValue("@ndoc", detalleData.N_doc);
+                        command.Parameters.AddWithValue("@edad", detalleData.Edad);
+                        command.Parameters.AddWithValue("@idet", detalleData.Iddetalle);
+                        command.Parameters.AddWithValue("@idcuenta", ct.Id_usuario.Trim());
+
+                        command.ExecuteNonQuery();
+
                         state = true;
                     }
                     else

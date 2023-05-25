@@ -131,6 +131,7 @@ namespace TurismoSV_client.views
             Button button = sender as Button;
             textvalue = button.Tag as string;
             AppConfig.SetUserSetting("SelectPackage", textvalue);
+            
             //MessageBox.Show(textvalue);
             InfoPackage pkg = new InfoPackage();
             pkg.Show();
@@ -166,6 +167,9 @@ namespace TurismoSV_client.views
         private void btn_historial_Click(object sender, RoutedEventArgs e)
         {
             //btn que lleva al usuario al historial de compras realizadas
+            frm_historialCompras hcompras = new frm_historialCompras();
+            hcompras.Show();
+            this.Close();
         }
     }
 }

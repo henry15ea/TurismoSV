@@ -1,0 +1,149 @@
+﻿<Window x:Class="TurismoSV_client.views.administrador.vadmin.AdminOptionsTemplate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TurismoSV_client.views.administrador.vadmin"
+        mc:Ignorable="d"
+        
+        Title="TurismoSV_ADM-Departamentos" Height="730" Width="1315" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="350*"/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Grid.Column="0" Orientation="Vertical" Background="#394867" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel  HorizontalAlignment="Center" Background="Transparent">
+                <Button x:Name="btn_reHome" Margin="0,20,0,20" Height="100" Width="120" BorderBrush="Transparent" Background="Transparent" Click="btn_reHome_Click" >
+                    <Image  Source="/views/administrador/vadmin/tourism-icon-7.jpg"  HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                </Button>
+                
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="10" Width="140">
+                    <Border BorderBrush="Transparent" CornerRadius="4" Background="#016FA8" OpacityMask="#FF1A7C96">
+                        <ToggleButton x:Name="TogglePopupButton"  Content="General" Foreground="white" FontSize="20" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="100" Height="40">
+
+                        </ToggleButton>
+                    </Border>
+                    <Popup IsOpen="{Binding ElementName=TogglePopupButton, Path=IsChecked}" PlacementTarget="{Binding ElementName=TogglePopupButton}" StaysOpen="False" OpacityMask="#FF2A83B1">
+                        <!-- Inserta aquí los botones que deseas mostrar en la lista desplegable -->
+                        <Border Background="#394867" BorderThickness="2" CornerRadius="2" BorderBrush="AliceBlue"  Width="320" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0.5" Padding="5">
+                            <StackPanel HorizontalAlignment="Center" Margin="2">
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4">
+                                    <Button x:Name="btn_reDep" Content="Departamentos" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reDep_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_reMun" Content="Municipios" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reMun_Click"></Button>
+                                </Border>
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_reFpago" Content="Formas Pago" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reFpago_Click"></Button>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="10" Width="140">
+                    <Border BorderBrush="Transparent" CornerRadius="4" Background="#016FA8" OpacityMask="#FF1A7C96">
+                        <ToggleButton x:Name="TogglePopupButton1"  Content="Usuarios" Foreground="white" FontSize="20" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="100" Height="40">
+
+                        </ToggleButton>
+                    </Border>
+                    <Popup IsOpen="{Binding ElementName=TogglePopupButton1, Path=IsChecked}" PlacementTarget="{Binding ElementName=TogglePopupButton}" StaysOpen="False" OpacityMask="#FF2A83B1">
+                        <!-- Inserta aquí los botones que deseas mostrar en la lista desplegable -->
+                        <Border Background="#394867" BorderThickness="2" CornerRadius="2" BorderBrush="AliceBlue"  Width="320" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0.5" Padding="5">
+                            <StackPanel HorizontalAlignment="Center" Margin="2">
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4">
+                                    <Button x:Name="btn_reRoles" Content="Roles" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reRoles_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_reUsers"  Content="Usuarios" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reUsers_Click"></Button>
+                                </Border>
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button  x:Name="btn_reCuentas" Content="Cuentas" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reCuentas_Click"></Button>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="10" Width="140">
+                    <Border BorderBrush="Transparent" CornerRadius="4" Background="#016FA8" OpacityMask="#FF1A7C96">
+                        <ToggleButton x:Name="TogglePopupButton2"  Content="Productos" Foreground="white" FontSize="20" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="100" Height="40">
+
+                        </ToggleButton>
+                    </Border>
+                    <Popup IsOpen="{Binding ElementName=TogglePopupButton2, Path=IsChecked}" PlacementTarget="{Binding ElementName=TogglePopupButton}" StaysOpen="False" OpacityMask="#FF2A83B1">
+                        <!-- Inserta aquí los botones que deseas mostrar en la lista desplegable -->
+                        <Border Background="#394867" BorderThickness="2" CornerRadius="2" BorderBrush="AliceBlue"  Width="320" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0.5" Padding="5">
+                            <StackPanel HorizontalAlignment="Center" Margin="2">
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4">
+                                    <Button x:Name="btn_reCategorias" Content="Categorias" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reCategorias_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_reAdicionales"  Content="Adicionales" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reAdicionales_Click"></Button>
+                                </Border>
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_rePkgCalif" Content="Paquetes Calificacion" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_rePkgCalif_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_reInvExtras" Content="Invitados Extras" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reInvExtras_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_reAdicionalDisp"  Content="Adicionales Disponibles" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reAdicionalDisp_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_rePaquetes" Content="Paquetes" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_rePaquetes_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_reContactos" Content="Contactos " Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_reContactos_Click"></Button>
+                                </Border>
+
+                                <Border Background="#7a6f9b" Height="32" CornerRadius="4" Margin="0,5,0,0">
+                                    <Button x:Name="btn_rePaquetesDisp"  Content="Paquetes Disponibles" Foreground="White" FontSize="14" FontWeight="SemiBold" Background="Transparent" BorderBrush="Transparent" Width="310" HorizontalAlignment="Stretch" Click="btn_rePaquetesDisp_Click"></Button>
+                                </Border>
+
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+
+            </StackPanel>
+
+        </WrapPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="5" Background="Transparent" HorizontalAlignment="Stretch">
+            <DockPanel MaxHeight="900" MinWidth="1052" Width="1126" Background="#ADCDC1">
+                <Border DockPanel.Dock="Top" Padding="0" CornerRadius="1" BorderThickness="5">
+                    <StackPanel  Orientation="Horizontal" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0.5">
+                        <StackPanel HorizontalAlignment="Left" Margin="0,0,850,0">
+                            <Label Content="ADMIN PANEL" Foreground="#0E1629" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                        </StackPanel>
+                        <Border Background="#F0EEF3" BorderThickness="2" BorderBrush="#1E2218" Padding="0" CornerRadius="15"  >
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Label x:Name="txt_user" FontWeight="SemiBold" FontSize="15" Content="Example User" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
+                                <Image Source="/views/administrador/vadmin/default_profile.png" Height="32" Margin="0,0,15,0" Stretch="Uniform"></Image>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                <ScrollViewer HorizontalScrollBarVisibility="Visible" >
+                    <StackPanel  x:Name="stkp_Body" Orientation="Vertical" Background="#FFF9F9F9">
+
+                    </StackPanel>
+                </ScrollViewer>
+            </DockPanel>
+
+
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>

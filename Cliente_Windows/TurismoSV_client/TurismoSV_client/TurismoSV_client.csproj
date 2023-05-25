@@ -10,10 +10,35 @@
   <ItemGroup>
     <None Remove="tourism-icon-7.jpg" />
     <None Remove="turismo-02-1280x857.png" />
+    <None Remove="views\administrador\bar-chart.png" />
+    <None Remove="views\administrador\bookmark.png" />
+    <None Remove="views\administrador\landscape.png" />
+    <None Remove="views\administrador\lightning.png" />
+    <None Remove="views\administrador\list-check.png" />
+    <None Remove="views\administrador\map.png" />
+    <None Remove="views\administrador\money.png" />
+    <None Remove="views\administrador\phone-talking.png" />
+    <None Remove="views\administrador\position.png" />
+    <None Remove="views\administrador\post-add.png" />
+    <None Remove="views\administrador\power.png" />
+    <None Remove="views\administrador\security-check.png" />
+    <None Remove="views\administrador\sing-out.png" />
+    <None Remove="views\administrador\thermometer.png" />
+    <None Remove="views\administrador\tool.png" />
+    <None Remove="views\administrador\user-list.png" />
+    <None Remove="views\administrador\users-add.png" />
+    <None Remove="views\administrador\users.png" />
+    <None Remove="views\administrador\vadmin\default_profile.png" />
+    <None Remove="views\administrador\vadmin\delete.png" />
+    <None Remove="views\administrador\vadmin\edit-1.png" />
+    <None Remove="views\administrador\vadmin\search.png" />
+    <None Remove="views\administrador\vadmin\tourism-icon-7.jpg" />
     <None Remove="views\close.png" />
     <None Remove="views\default_profile.png" />
     <None Remove="views\home.png" />
+    <None Remove="views\icono-rutas.png" />
     <None Remove="views\list.png" />
+    <None Remove="views\money.png" />
     <None Remove="views\shopping-cart.png" />
     <None Remove="views\signup-vectore.png" />
     <None Remove="views\template\tourism-icon-7.jpg" />
@@ -25,25 +50,58 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src_user\" />
-    <Folder Include="views\administrador\" />
-    <Folder Include="views\general\" />
+    <Folder Include="controllers\adm\" />
+    <Folder Include="models\AppModel\admin\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Material.Icons" Version="1.1.35" />
     <PackageReference Include="Material.Icons.Avalonia" Version="1.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="PDF.js" Version="1.3.91" />
+    <PackageReference Include="PDFium.Viewer.WPF" Version="1.1.1" />
+    <PackageReference Include="PdfiumViewer.Core" Version="1.0.4" />
+    <PackageReference Include="PdfiumViewer.WPF" Version="1.0.6" />
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <PackageReference Include="PDFsharp-wpf" Version="1.50.5147" />
+    <PackageReference Include="SharpVectors" Version="1.8.1" />
+    <PackageReference Include="SharpVectors.Wpf" Version="1.8.1" />
+    <PackageReference Include="Syncfusion.JavaScript.PdfViewer" Version="20.4.0.44" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="tourism-icon-7.jpg" />
     <Resource Include="turismo-02-1280x857.png" />
+    <Resource Include="views\administrador\bar-chart.png" />
+    <Resource Include="views\administrador\bookmark.png" />
+    <Resource Include="views\administrador\landscape.png" />
+    <Resource Include="views\administrador\lightning.png" />
+    <Resource Include="views\administrador\list-check.png" />
+    <Resource Include="views\administrador\map.png" />
+    <Resource Include="views\administrador\money.png" />
+    <Resource Include="views\administrador\phone-talking.png" />
+    <Resource Include="views\administrador\position.png" />
+    <Resource Include="views\administrador\post-add.png" />
+    <Resource Include="views\administrador\power.png" />
+    <Resource Include="views\administrador\security-check.png" />
+    <Resource Include="views\administrador\sing-out.png" />
+    <Resource Include="views\administrador\thermometer.png" />
+    <Resource Include="views\administrador\tool.png" />
+    <Resource Include="views\administrador\user-list.png" />
+    <Resource Include="views\administrador\users-add.png" />
+    <Resource Include="views\administrador\users.png" />
+    <Resource Include="views\administrador\vadmin\default_profile.png" />
+    <Resource Include="views\administrador\vadmin\delete.png" />
+    <Resource Include="views\administrador\vadmin\edit-1.png" />
+    <Resource Include="views\administrador\vadmin\search.png" />
+    <Resource Include="views\administrador\vadmin\tourism-icon-7.jpg" />
     <Resource Include="views\close.png" />
     <Resource Include="views\default_profile.png" />
     <Resource Include="views\home.png" />
+    <Resource Include="views\icono-rutas.png" />
     <Resource Include="views\list.png" />
+    <Resource Include="views\money.png" />
     <Resource Include="views\shopping-cart.png" />
     <Resource Include="views\signup-vectore.png" />
     <Resource Include="views\template\tourism-icon-7.jpg" />

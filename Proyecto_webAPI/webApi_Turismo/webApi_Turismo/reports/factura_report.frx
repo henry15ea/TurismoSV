@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/11/2023 21:30:38" ReportInfo.Modified="05/16/2023 16:42:47" ReportInfo.CreatorVersion="2020.1.17.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    
+    public ReportScript(){
+     
+      //Report.SetParameterValue(&quot;pid_factura&quot;, &quot;\'24BB721B911892725B6FA345DCAE7BD7\'&quot;);
+       //set_data();
+    }  
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="factura" DataType="System.Int32" Enabled="true" SelectCommand="SELECT * from vencabezadoext v where id_factura  = @id_fct;">
+        <Column Name="telefono" DataType="System.String"/>
+        <Column Name="direccion" DataType="System.String"/>
+        <Column Name="correo" DataType="System.String"/>
+        <Column Name="metodopago" DataType="System.String"/>
+        <Column Name="fecha" DataType="System.DateTime"/>
+        <Column Name="descuento" DataType="System.Decimal"/>
+        <Column Name="monto" DataType="System.Decimal"/>
+        <Column Name="edad" DataType="System.Byte"/>
+        <Column Name="id_factura" DataType="System.String"/>
+        <Column Name="nombre" DataType="System.String"/>
+        <Column Name="apellido" DataType="System.String"/>
+        <Column Name="emitido" DataType="System.String"/>
+        <CommandParameter Name="id_fct" DataType="22" Expression="[pid_factura]"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="detalle" DataType="System.Int32" Enabled="true" SelectCommand="SELECT * from vdetalleFacturaExt where id_factura = @id_det;">
+        <Column Name="id_registro" DataType="System.String"/>
+        <Column Name="id_factura" DataType="System.String"/>
+        <Column Name="paquete" DataType="System.String"/>
+        <Column Name="descripcion" DataType="System.String"/>
+        <Column Name="direccion" DataType="System.String"/>
+        <Column Name="img" DataType="System.String"/>
+        <Column Name="precio" DataType="System.Decimal"/>
+        <Column Name="descuento" DataType="System.Decimal"/>
+        <Column Name="monto" DataType="System.Decimal"/>
+        <Column Name="total" DataType="System.Decimal"/>
+        <Column Name="cupos_reservados" DataType="System.Int32"/>
+        <CommandParameter Name="id_det" DataType="22" Expression="[pid_factura]"/>
+      </TableDataSource>
+      <TableDataSource Name="Table3" Alias="invitadosList" DataType="System.Int32" Enabled="true" SelectCommand="select * from  vpersonasExtraFact where id_factura = @id_ext  order by invitado ASC;">
+        <Column Name="id_registro" DataType="System.String"/>
+        <Column Name="invitado" DataType="System.String"/>
+        <Column Name="n_documento" DataType="System.String"/>
+        <Column Name="edad" DataType="System.Byte"/>
+        <Column Name="cuenta_titular" DataType="System.String"/>
+        <Column Name="titular" DataType="System.String"/>
+        <Column Name="correo" DataType="System.String"/>
+        <Column Name="telefono" DataType="System.String"/>
+        <Column Name="id_factura" DataType="System.String"/>
+        <Column Name="paquete" DataType="System.String"/>
+        <Column Name="registro" DataType="System.DateTime"/>
+        <CommandParameter Name="id_ext" DataType="22" Expression="[pid_factura]"/>
+      </TableDataSource>
+      <TableDataSource Name="Table2" Alias="adicionales" DataType="System.Int32" Enabled="true" SelectCommand="select * from vdetalleAdicionalesFact v  where v.id_factura = @did_fct">
+        <Column Name="id_factura" DataType="System.String"/>
+        <Column Name="adicional" DataType="System.String"/>
+        <Column Name="descripcion" DataType="System.String"/>
+        <Column Name="costo" DataType="System.Decimal"/>
+        <CommandParameter Name="did_fct" DataType="22" Expression="[pid_factura]"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="pid_factura" DataType="System.String"/>
+    <Parameter Name="pid_detalle" DataType="System.String"/>
+    <Parameter Name="pid_extras" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="160.65" Fill="LinearGradient" Fill.StartColor="White" Fill.EndColor="234, 255, 239" Fill.Angle="90" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text2" Left="9.45" Width="387.45" Height="66.15" Text="TurismoSV" Font="Brush Script MT, 48pt, style=Bold" TextFill.Color="33, 165, 152"/>
+      <TextObject Name="Text3" Left="9.45" Top="75.6" Width="311.85" Height="18.9" Text="Nombre : [factura.nombre] [factura.apellido]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text1" Left="302.4" Top="132.3" Width="340.2" Height="18.9" Text="Telefono : [factura.telefono]" Format="Custom" Format.Format="(000) 000-0000" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="9.45" Top="132.3" Width="292.95" Height="18.9" Text="Correo : [factura.correo]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text5" Left="9.45" Top="103.95" Width="406.35" Height="18.9" Text="Direccion : [factura.direccion]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="406.35" Width="292.95" Height="18.9" Text="Emitida : [factura.fecha]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="415.8" Top="28.35" Width="283.5" Height="18.9" Text="Metodo de Pago : [factura.metodopago]" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text8" Left="444.15" Top="56.7" Width="255.15" Height="18.9" Text="Paquete : [detalle.paquete]" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="164.65" Width="718.2" Height="28.35">
+      <SubreportObject Name="Subreport1" Width="56.7" Height="18.9" ReportPage="Page3"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="197" Width="718.2" Height="37.8">
+      <TextObject Name="Text15" Top="9.45" Width="255.15" Height="28.35" Border.Lines="Top" Text="NOMBRE" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text25" Left="264.6" Top="9.45" Width="255.15" Height="28.35" Border.Lines="Top" Text="DOCUMENTO" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text26" Left="529.2" Top="9.45" Width="179.55" Height="28.35" Border.Lines="Top" Text="EDAD" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="238.8" Width="718.2" Height="28.35">
+      <SubreportObject Name="Subreport2" Left="18.9" Top="9.45" Width="94.5" Height="18.9" ReportPage="Page4"/>
+    </DataBand>
+    <DataBand Name="Data5" Top="312.95" Width="718.2" Height="28.35">
+      <SubreportObject Name="Subreport3" Left="9.45" Top="9.45" Width="94.5" Height="18.9" ReportPage="Page2"/>
+      <DataHeaderBand Name="DataHeader1" Top="271.15" Width="718.2" Height="37.8">
+        <TextObject Name="Text10" Left="9.45" Top="18.9" Width="226.8" Height="18.9" Border.Lines="Bottom" Text="ADICIONAL" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="Text29" Left="245.7" Top="18.9" Width="340.2" Height="18.9" Border.Lines="Bottom" Text="DETALLE" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="Text30" Left="585.9" Top="18.9" Width="122.85" Height="18.9" Border.Lines="Bottom" Text="COSTO" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+      </DataHeaderBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="345.3" Width="718.2" Height="66.15">
+      <TextObject Name="Text9" Left="9.45" Width="340.2" Height="28.35" Border.Lines="All" Text="COSTO PAQUETE ; [detalle.precio]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Justify" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text27" Left="9.45" Top="28.35" Width="340.2" Height="28.35" Border.Lines="All" Text="DESCUENTO : [detalle.descuento]" HorzAlign="Justify" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text28" Left="349.65" Width="368.55" Height="56.7" Border.Lines="All" Text="TOTAL : [detalle.total]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ColumnFooterBand>
+    <PageFooterBand Name="PageFooter1" Top="415.45" Width="718.2" Height="66.15" Fill="LinearGradient" Fill.StartColor="Transparent" Fill.EndColor="234, 255, 239" Fill.Angle="90" Fill.Focus="1" Fill.Contrast="1">
+      <BarcodeObject Name="Barcode1" Left="9.45" Top="9.45" Width="318.75" Height="37.8" Text="[factura.id_factura]" AllowExpressions="true" Barcode="Code128" Barcode.AutoEncode="true"/>
+    </PageFooterBand>
+  </ReportPage>
+  <ReportPage Name="Page3" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data3" Width="718.2" Height="85.05" Fill.Color="230, 255, 248" DataSource="Table1">
+      <TextObject Name="Text12" Top="28.35" Width="207.9" Height="18.9" Text="[detalle.paquete]" HorzAlign="Justify" Font="Arial, 10pt"/>
+      <TextObject Name="Text13" Left="207.9" Top="28.35" Width="378" Height="56.7" Text="[detalle.descripcion]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text14" Left="595.35" Top="28.35" Width="122.85" Height="18.9" Text="[detalle.cupos_reservados]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text16" Width="207.9" Height="18.9" Text="PAQUETE" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text17" Left="207.9" Width="378" Height="18.9" Text="DETALLE" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text18" Left="595.35" Width="122.85" Height="18.9" Text="CUPOS" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page4" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data4" Width="718.2" Height="37.8" Fill="Glass" Fill.Color="249, 255, 251" Fill.Blend="0.2" Fill.Hatch="true" DataSource="Table3">
+      <TextObject Name="Text22" Top="9.45" Width="264.6" Height="18.9" Border.Lines="Bottom" Text="[invitadosList.invitado]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text23" Left="274.05" Top="9.45" Width="245.7" Height="18.9" Border.Lines="Bottom" Text="[invitadosList.n_documento]" Format="Custom" Format.Format="000-00-0000" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text24" Left="529.2" Top="9.45" Width="179.55" Height="18.9" Border.Lines="Bottom" Text="[invitadosList.edad]" HorzAlign="Center" Font="Arial, 10pt"/>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page2" Guides="151.2" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data2" Width="718.2" Height="47.25" Fill="Glass" Fill.Color="249, 255, 251" Fill.Blend="0.2" Fill.Hatch="true" DataSource="Table2">
+      <TextObject Name="Text11" Width="226.8" Height="37.8" Border.Lines="Bottom" Text="[adicionales.adicional]" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text19" Left="236.25" Width="340.2" Height="37.8" Border.Lines="Bottom" Text="[adicionales.descripcion]" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 11pt"/>
+      <TextObject Name="Text20" Left="585.9" Width="122.85" Height="37.8" Border.Lines="Bottom" Text="[adicionales.costo]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Bottom" WordWrap="false" Font="Arial, 11pt, style=Bold" Trimming="EllipsisCharacter"/>
+    </DataBand>
+  </ReportPage>
+</Report>
