@@ -62,7 +62,7 @@ namespace TurismoSV_client.controllers.general
                     */
                 }
             }
-        }//fin fn_IsloggedIn
+        }//fin 
 
     }//end class
 }//end namespaces

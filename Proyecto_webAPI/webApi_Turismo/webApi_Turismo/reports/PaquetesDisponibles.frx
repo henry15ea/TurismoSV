@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/25/2023 11:20:09" ReportInfo.Modified="05/25/2023 11:56:47" ReportInfo.CreatorVersion="2020.1.17.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="paquetes disponibles" DataType="System.Int32" Enabled="true" SelectCommand="SELECT * FROM vpdisponiblesinfo WHERE CONVERT(date, fechainicial) = @finicial and CONVERT(date, fechafinal) = @ffinal;">
+        <Column Name="idpaqueted" DataType="System.String"/>
+        <Column Name="nombre" DataType="System.String"/>
+        <Column Name="descripcion" DataType="System.String"/>
+        <Column Name="direccion" DataType="System.String"/>
+        <Column Name="img" DataType="System.String"/>
+        <Column Name="precio" DataType="System.Decimal"/>
+        <Column Name="cupos_disp" DataType="System.Int32"/>
+        <Column Name="cuposllenos" DataType="System.Int32"/>
+        <Column Name="fechainicial" DataType="System.DateTime"/>
+        <Column Name="fechafinal" DataType="System.DateTime"/>
+        <Column Name="registro" DataType="System.DateTime"/>
+        <Column Name="estado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <CommandParameter Name="finicial" DataType="22" DefaultValue="2023-04-25"/>
+        <CommandParameter Name="ffinal" DataType="22" Expression="[fecha_final]" DefaultValue="2023-05-05"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="username" DataType="System.String"/>
+    <Parameter Name="fecha_inicial" DataType="System.String"/>
+    <Parameter Name="fecha_final" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" RawPaperSize="9" FirstPageSource="15" OtherPagesSource="15" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="75.6" Fill="LinearGradient" Fill.StartColor="CornflowerBlue" Fill.EndColor="SteelBlue" Fill.Angle="90" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text2" Left="37.8" Top="56.7" Width="245.7" Height="18.9" Text="Solicitante : [username]" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text3" Left="37.8" Top="9.45" Width="330.75" Height="37.8" Text="TURISMOSV" VertAlign="Center" Font="Brush Script MT, 28pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text4" Left="604.8" Top="9.45" Width="434.7" Height="18.9" Text="LISTADO DE PAQUETES DISPONIBLES" VertAlign="Center" Font="Arial, 14pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text5" Left="633.15" Top="37.8" Width="406.35" Height="18.9" Text="Generado : [Date]" HorzAlign="Right" VertAlign="Center" Font="Arial, 11pt" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="1047.06" Height="37.8" Fill.Color="SteelBlue">
+      <TextObject Name="Text7" Left="9.45" Top="9.45" Width="113.4" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="ID" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text9" Left="132.3" Top="9.45" Width="132.3" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="Nombre" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text13" Left="274.05" Top="9.45" Width="151.2" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="Direccion" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text15" Left="434.7" Top="9.45" Width="75.6" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="Precio" HorzAlign="Justify" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text17" Left="519.75" Top="9.45" Width="122.85" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="DISP" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text19" Left="652.05" Top="9.45" Width="103.95" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="COMP" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text11" Left="756" Top="9.45" Width="141.75" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="Inicio" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text21" Left="907.2" Top="9.45" Width="132.3" Height="18.9" Border.Lines="Right" Border.RightLine.Color="White" Text="Finaliza" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="White"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="121.4" Width="1047.06" Height="75.6" DataSource="Table">
+      <TextObject Name="Text6" Left="9.45" Top="9.45" Width="113.4" Height="56.7" Border.Lines="Right" Text="[paquetes disponibles.idpaqueted]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text8" Left="132.3" Top="9.45" Width="132.3" Height="56.7" Border.Lines="Right" Border.RightLine.Color="White" Text="[paquetes disponibles.nombre]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text12" Left="274.05" Top="9.45" Width="151.2" Height="56.7" Border.Lines="Right" Border.RightLine.Color="White" Text="[paquetes disponibles.direccion]" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text14" Left="434.7" Top="9.45" Width="75.6" Height="56.7" Border.Lines="Right" Border.RightLine.Color="White" Text="[paquetes disponibles.precio]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="Arial, 11pt" Trimming="EllipsisCharacter">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text16" Left="519.75" Top="9.45" Width="122.85" Height="56.7" Border.Lines="Right" Border.RightLine.Color="White" Text="[paquetes disponibles.cupos_disp]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text18" Left="652.05" Top="9.45" Width="103.95" Height="56.7" Border.Lines="Right" Border.RightLine.Color="White" Text="[paquetes disponibles.cuposllenos]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text10" Left="756" Top="9.45" Width="141.75" Height="56.7" Border.Lines="Right" Border.RightLine.Color="White" Text="[paquetes disponibles.fechainicial]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text20" Left="907.2" Top="9.45" Width="132.3" Height="56.7" Border.Lines="Right" Border.RightLine.Color="White" Text="[paquetes disponibles.fechafinal]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt">
+        <Highlight>
+          <Condition Expression="[paquetes disponibles.estado] == true" Fill.Color="MistyRose" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[paquetes disponibles.estado] == false" Fill.Color="OldLace" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="201" Width="1047.06" Height="18.9">
+      <TextObject Name="Text1" Left="9.45" Width="283.5" Height="18.9" Border.Lines="Right" Text="Pagina [Page] de [TotalPages#]" VertAlign="Center" Font="Arial, 11pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -8,8 +8,9 @@
         Title="Login" Height="709" Width="529" VerticalAlignment="Center" Icon="/tourism-icon-7.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FFDC9327" Offset="0.003"/>
-            <GradientStop Color="#FFCAF5C8" Offset="1"/>
+            <GradientStop Color="#FF387690" Offset="0.003"/>
+            <GradientStop Color="#FF7AD9F1" Offset="1"/>
+            <GradientStop Color="#FF8BD9E8" Offset="0.954"/>
         </LinearGradientBrush>
     </Window.Background>
 
@@ -22,10 +23,10 @@
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF9FC3A5"/>
-                <GradientStop Color="#FFBBFFAD" Offset="1"/>
-                <GradientStop Color="#FEEFAC49" Offset="0"/>
+                <GradientStop Color="#FFCEDEE6" Offset="0.928"/>
+                <GradientStop Color="#FFB7D4E0" Offset="0"/>
                 <GradientStop Color="#FEF2F3F1" Offset="0.426"/>
-                <GradientStop Color="#FE969696" Offset="0.83"/>
+                <GradientStop Color="#FE8FC0D2" Offset="0.83"/>
             </LinearGradientBrush>
         </Grid.Background>
 
@@ -42,10 +43,10 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button x:Name="btn_login" Content="Ingresar" HorizontalAlignment="Left" Height="49" Margin="47,506,0,0" VerticalAlignment="Top" Width="403" BorderThickness="4,4,4,4" FontSize="16" Foreground="White"  Padding="0.3,0.5,0.5,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Click="btn_login_Click_1" FontWeight="Bold" Background="#FF216503" BorderBrush="#FF3EA009" Grid.ColumnSpan="2">
+        <Button x:Name="btn_login" Content="Ingresar" HorizontalAlignment="Left" Height="49" Margin="47,506,0,0" VerticalAlignment="Top" Width="403" BorderThickness="4,4,4,4" FontSize="16" Foreground="White"  Padding="0.3,0.5,0.5,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Click="btn_login_Click_1" FontWeight="Bold" Background="#FF17AD5E" BorderBrush="#FF298C58" Grid.ColumnSpan="2">
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="15"/>
+                    <Setter Property="CornerRadius" Value="4"/>
                 </Style>
             </Button.Resources>
             <Button.Style>

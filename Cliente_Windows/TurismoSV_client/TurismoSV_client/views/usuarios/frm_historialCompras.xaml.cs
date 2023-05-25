@@ -118,7 +118,7 @@ namespace TurismoSV_client.views.usuarios
             //acciones de boton de lista seleccionado
             Button button = sender as Button;
             textvalue = button.Tag as string;
-            MessageBox.Show(textvalue);
+           // MessageBox.Show(textvalue);
 
             getFacturaController fc = new getFacturaController();
             cInFacturaModel dtm = new cInFacturaModel();

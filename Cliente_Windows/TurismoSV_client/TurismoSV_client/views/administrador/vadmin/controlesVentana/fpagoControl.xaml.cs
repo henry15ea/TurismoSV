@@ -47,7 +47,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
             sc1.Close();
             ///
 
-            DG.ItemsSource = dt.DefaultView;
+            dataTable.ItemsSource = dt.DefaultView;
             comrpobar();
         }
 
@@ -204,12 +204,19 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
         {
             if (id.Equals(""))
             {
+                btn_saveData.IsEnabled = true;
                 Acl.IsEnabled = false;
             }
             else
             {
+                btn_saveData.IsEnabled = false;
                 Acl.IsEnabled = true;
             }
+        }
+
+        private void btn_searchElement_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }//end class
 }//end namespaces

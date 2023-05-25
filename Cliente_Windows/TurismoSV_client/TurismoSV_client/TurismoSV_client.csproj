@@ -50,11 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="controllers\adm\" />
-    <Folder Include="models\AppModel\admin\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Material.Icons" Version="1.1.35" />
     <PackageReference Include="Material.Icons.Avalonia" Version="1.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

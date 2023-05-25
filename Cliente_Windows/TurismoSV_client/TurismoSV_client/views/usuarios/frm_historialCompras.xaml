@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TurismoSV_client.views.usuarios"
         mc:Ignorable="d"
-       Title="Historial_Compras" Height="450" Width="800" Icon="/views/tourism-icon-7.jpg" SizeToContent="Manual" WindowStartupLocation="CenterScreen" MinWidth="1200" MinHeight="719.4" Background="White">
+       Title="Historial_Compras" Height="450" Width="800" Icon="/views/tourism-icon-7.jpg" SizeToContent="Manual" WindowStartupLocation="CenterScreen" MinWidth="1200" MinHeight="719.4" Background="White" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="119*">
@@ -139,17 +139,38 @@
                                                 </LinearGradientBrush>
                                             </Border.BorderBrush>
 
-                                            <StackPanel MinWidth="80" MinHeight="60" MaxHeight="150" MaxWidth="160" Margin="0,0,0,0">
+                                            <Border>
 
-                                                <TextBlock Text="{Binding Id_factura}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="{x:Null}" Height="0"/>
-                                                
-                                                <TextBlock Text="{Binding Pasarela}" FontWeight="Bold" Margin="0, 1, 0, 0" HorizontalAlignment="Center" Height="50" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" TextWrapping="WrapWithOverflow" >
+                                                <Grid Width="800">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition Width="120"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                                </TextBlock>
-                                                <Border Background="#17515B" CornerRadius="8" Margin="0,2,0,0" MaxHeight="40" Padding="10" VerticalAlignment="Center">
-                                                    <Button Content="Ver Categoria" Click="btn_selectedItem_Click" Tag="{Binding Id_factura}" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
-                                                </Border>
-                                            </StackPanel>
+                                                    <StackPanel Grid.Column="0">
+                                                        <TextBlock Text="{Binding Id_factura}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="{x:Null}" Height="0"/>
+                                                        <TextBlock Text="{Binding Paquete}" FontSize="20" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="30"/>
+                                                        <Border Padding="5" Background="WhiteSmoke" CornerRadius="15">
+                                                            <StackPanel>
+                                                                <TextBlock Text="{Binding Total}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="15"/>
+                                                                <TextBlock Text="{Binding Descuento}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="15"/>
+                                                                <TextBlock Text="{Binding Cupos}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="15"/>
+
+                                                                <TextBlock Text="{Binding Pasarela}" FontWeight="Bold" Margin="0, 1, 0, 0" HorizontalAlignment="Left" Height="50" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" TextWrapping="WrapWithOverflow" ></TextBlock>
+
+                                                            </StackPanel>
+                                                        </Border>
+                                                        
+                                                    </StackPanel>
+                                                    <Border Grid.Column="1" Padding="5" VerticalAlignment="Center">
+                                                        <StackPanel>
+                                                            <Border Background="#17515B" CornerRadius="8" Margin="0,2,0,0" MaxHeight="40" Padding="10" VerticalAlignment="Center">
+                                                                <Button Content="Generar Factura" Click="btn_selectedItem_Click" Tag="{Binding Id_factura}" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
+                                                            </Border>
+                                                        </StackPanel>
+                                                    </Border>
+                                                </Grid>
+                                            </Border>
                                         </Border>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>

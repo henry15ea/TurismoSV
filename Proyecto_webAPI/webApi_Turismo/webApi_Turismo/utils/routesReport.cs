@@ -14,6 +14,11 @@ namespace webApi_Turismo.utils
             Routes.Add("\\reports\\factura_report.frx");
             Routes.Add("\\reports\\listado_usuarios.frx");
             Routes.Add("\\reports\\ListadoPaquetes.frx");
+            Routes.Add("\\reports\\listadoAdicionalesByNombre.frx");
+            Routes.Add("\\reports\\ListadoCategorias.frx");
+            Routes.Add("\\reports\\ListadoAdicionalesDispByPaquete.frx");
+            Routes.Add("\\reports\\PaquetesDisponibles.frx");
+
         }
 
         public List<String> GetRoutes() { 
