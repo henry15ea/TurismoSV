@@ -7,56 +7,211 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="Usuarios" HorizontalAlignment="Left" Margin="34,22,0,0" VerticalAlignment="Top" FontWeight="Bold">
-        </Label>
-        <DataGrid Name="DG" Margin="11,251,60,32" IsReadOnly="True" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Apellido" Binding="{Binding apellido}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Edad" Binding="{Binding edad}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Telefono" Binding="{Binding telefono}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Correo" Binding="{Binding correo}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Direccion" Binding="{Binding direccion}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Rol" Binding="{Binding r_name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Estado" Binding="{Binding estado}"></DataGridTextColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <Button CommandParameter="{Binding idusuario}" Click="Button_Click_1">Eliminar</Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <Button CommandParameter="{Binding idusuario}" Click="Button_Click_2">Seleccionar</Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
+        <WrapPanel>
+            <DockPanel HorizontalAlignment="Stretch">
+                <Border DockPanel.Dock="Top" Padding="5" Margin="1">
+                    <WrapPanel  Orientation="Vertical">
+                        <Label Content="Usuarios" HorizontalAlignment="Left" FontSize="24" VerticalAlignment="Top" FontWeight="Bold">
+                        </Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Buscar"></Label>
+                            <TextBox x:Name="txt_itemSearch" Margin="15,0,0,0" HorizontalAlignment="Stretch" MinWidth="520" MaxWidth="720"></TextBox>
+                            <Button x:Name="btn_searchElement" Margin="5,0,0,0" Width="90" Click="btn_searchElement_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/views/administrador/vadmin/search.png" Height="32" Width="32" Stretch="UniformToFill"/>
 
-        </DataGrid>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="57,48,0,0" VerticalAlignment="Top"/>
-        <Label Content="Rol" HorizontalAlignment="Left" Margin="313,48,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="134,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161" Name="txtnombre"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="191,224,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Actualizar" Name="Acl" HorizontalAlignment="Left" Margin="271,224,0,0" VerticalAlignment="Top" IsEnabled="False" Click="Acl_Click"/>
-        <ComboBox HorizontalAlignment="Left" Margin="380,52,0,0" VerticalAlignment="Top" Width="174" Name="cboxrol"/>
-        <Label Content="Apellido" HorizontalAlignment="Left" Margin="57,84,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="134,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161" Name="txtapellido" Height="21"/>
-        <Label Content="Edad" HorizontalAlignment="Left" Margin="59,115,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="134,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161" Height="18" Name="txtedad"/>
-        <Label Content="Direccion" HorizontalAlignment="Left" Margin="316,97,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="380,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Height="75" Name="txtdireccion"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="57,153,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="134,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161" Name="txttelefono"/>
-        <Label Content="Correo" HorizontalAlignment="Left" Margin="59,182,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="134,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161" Name="txtcorreo"/>
-        <CheckBox Content="Estado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="326,191,0,0" Name="chbestado"/>
+                                </StackPanel>
+                            </Button>
+
+                            <StackPanel Margin="50,0,0,0">
+                                <Border Background="AliceBlue" BorderBrush="Black" BorderThickness="2" Padding="2" CornerRadius="4">
+                                    <Button x:Name="btn_report" Background="Transparent" BorderBrush="Transparent" Content="Generar Reporte" Height="32" Click="btn_report_Click">
+
+                                    </Button>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
+
+                <StackPanel DockPanel.Dock="Bottom" Background="Transparent" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,5">
+                    <StackPanel  HorizontalAlignment="Stretch"  Background="LightGray" >
+                        <Border Padding="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <GroupBox Header="Elemento" FontSize="15" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <StackPanel VerticalAlignment="Stretch" Orientation="Vertical">
+
+                                        <ScrollViewer Height="450">
+                                            <StackPanel>
+                                                <Label Content="Nombre" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="240" Height="32" Name="txtnombre"/>
+                                                <Label Content="Rol" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <ComboBox HorizontalAlignment="Left"  VerticalAlignment="Top"  Name="cboxrol" Width="240" Height="32"/>
+                                                <Label Content="Apellido" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Height="32"  Name="txtapellido"/>
+                                                <Label Content="Edad" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Height="32"  Name="txtedad"/>
+                                                <Label Content="Direccion" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Height="32"  Name="txtdireccion"/>
+                                                <Label Content="Telefono" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Height="32" Name="txttelefono"/>
+                                                <Label Content="Correo" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Height="32" Name="txtcorreo"/>
+                                                <CheckBox Content="Estado" Margin="0,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Name="chbestado"/>
+
+                                            </StackPanel>
+                                        </ScrollViewer>
+
+                                        <StackPanel Orientation="Horizontal" Margin="1">
+                                            <Border Background="Green" BorderThickness="4" CornerRadius="8" Padding="4">
+                                                <Button x:Name="btn_saveData" Content="Guardar" Background="Transparent" BorderBrush="Transparent" Foreground="White" MinWidth="120" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="Button_Click">
+
+                                                </Button>
+                                            </Border>
+                                            <Border Background="Orange" BorderThickness="4" CornerRadius="8" Padding="4">
+                                                <Button Content="Actualizar" Background="Transparent" BorderBrush="Transparent" Name="Acl"  MinWidth="110" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False" Click="Acl_Click"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                            </WrapPanel>
+                        </Border>
+                    </StackPanel>
+                    <WrapPanel  Margin="5" Orientation="Horizontal"  Background="Transparent" HorizontalAlignment="Stretch">
+                        <DataGrid  x:Name="dataTable" IsReadOnly="True" Height="505" Width="805" MaxHeight="510"  AutoGenerateColumns="False" Background="#f9f9f9" 
+                              SelectionMode="Extended" 
+                        AlternatingRowBackground="#fff" AlternationCount="2"
+                        SelectionUnit="FullRow"  GridLinesVisibility="None" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                            <DataGrid.RowHeaderStyle>
+                                <Style/>
+                            </DataGrid.RowHeaderStyle>
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style/>
+                            </DataGrid.ColumnHeaderStyle>
+
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Width="90" Header="Seleccionar">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Border BorderBrush="Black" BorderThickness="0.2">
+                                                    <Border Background="#AFD3E2" CornerRadius="4" BorderBrush="#146C94" BorderThickness="1" Padding="2" Margin="6" Width="42">
+                                                        <Button BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" Foreground="White" FontWeight="SemiBold" CommandParameter="{Binding idusuario}" Click="Button_Click_2" VerticalAlignment="Center">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                <Image Source="/views/administrador/vadmin/edit-1.png" HorizontalAlignment="Center" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" />
+                                                            </StackPanel>
+                                                        </Button>
+                                                    </Border>
+                                                </Border>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Nombre" Width="180">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding nombre}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Apellido" Width="180">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding apellido}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Edad" Width="50">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding edad}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Telefono" Width="100">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding telefono}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Correo" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding correo}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Direccion" Width="180">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding direccion}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Rol" Width="100">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding r_name}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Estado" Width="50">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding estado}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Width="90" Header="Eliminar" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.2">
+                                                <Border Background="#D25380" CornerRadius="4" BorderBrush="#D21312" BorderThickness="1" Padding="2" Margin="6" Width="42">
+                                                    <Button BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" Foreground="White" FontWeight="SemiBold" CommandParameter="{Binding idusuario}" Click="Button_Click_1" VerticalAlignment="Center">
+                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <Image Source="/views/administrador/vadmin/delete.png" HorizontalAlignment="Center" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" />
+                                                        </StackPanel>
+                                                    </Button>
+                                                </Border>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                            </DataGrid.Columns>
+
+                        </DataGrid>
+                    </WrapPanel>
+                </StackPanel>
+
+            </DockPanel>
+        </WrapPanel>
 
     </Grid>
 </UserControl>

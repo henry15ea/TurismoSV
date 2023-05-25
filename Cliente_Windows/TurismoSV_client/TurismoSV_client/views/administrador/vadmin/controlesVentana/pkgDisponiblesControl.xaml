@@ -7,54 +7,201 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <WrapPanel>
+            <DockPanel HorizontalAlignment="Stretch">
+                <Border DockPanel.Dock="Top" Padding="2" Margin="1" Background="WhiteSmoke">
+                    <WrapPanel  Orientation="Vertical">
+                        <Label Content="Paquetes Disponibles" HorizontalAlignment="Left" FontSize="24" VerticalAlignment="Top" FontWeight="Bold">
+                        </Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Buscar"></Label>
+                            <TextBox x:Name="txt_itemSearch" Margin="15,0,0,0" HorizontalAlignment="Stretch" MinWidth="520" MaxWidth="720"></TextBox>
+                            <Button x:Name="btn_searchElement" Margin="5,0,0,0" Width="90" Click="btn_searchElement_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/views/administrador/vadmin/search.png" Height="32" Width="32" Stretch="UniformToFill"/>
 
-        <Label Content="Paquetes disponibles" HorizontalAlignment="Left" Margin="32,19,0,0" VerticalAlignment="Top" FontWeight="Bold">
-        </Label>
-        <DataGrid Name="DG" Margin="11,264,60,32" IsReadOnly="True" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding nom}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Precio" Binding="{Binding precio}"></DataGridTextColumn>
-                <DataGridTextColumn Header="cupos disponibles" Binding="{Binding cupos_disp}"></DataGridTextColumn>
-                <DataGridTextColumn Header="cupos llenos" Binding="{Binding cuposllenos}"></DataGridTextColumn>
-                <DataGridTextColumn Header="fecha inicial" Binding="{Binding fechainicial}"></DataGridTextColumn>
-                <DataGridTextColumn Header="fecha final" Binding="{Binding fechafinal}"></DataGridTextColumn>
-                <DataGridTextColumn Header="estado" Binding="{Binding estado}"></DataGridTextColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <Button CommandParameter="{Binding idpaqueted}" Click="Button_Click_1">Eliminar</Button>
+                                </StackPanel>
+                            </Button>
+                            <StackPanel Margin="50,0,0,0">
+                                <Border Background="AliceBlue" BorderBrush="Black" BorderThickness="2" Padding="2" CornerRadius="4">
+                                    <Button x:Name="btn_report" Background="Transparent" BorderBrush="Transparent" Content="Generar Reporte" Height="32" Click="btn_report_Click">
+                                        
+                                    </Button>
+                                </Border>
                             </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <Button CommandParameter="{Binding idpaqueted}" Click="Button_Click_2">Seleccionar</Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
+                        </StackPanel>
+                    </WrapPanel>
+                </Border>
 
-        </DataGrid>
-        <Label Content="Paquets" HorizontalAlignment="Left" Margin="55,50,0,0" VerticalAlignment="Top" Width="61"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="191,224,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Actualizar" Name="Acl" HorizontalAlignment="Left" Margin="271,224,0,0" VerticalAlignment="Top" IsEnabled="False" Click="Acl_Click"/>
-        <ComboBox HorizontalAlignment="Left" Margin="191,54,0,0" VerticalAlignment="Top" Width="185" Name="cboxpaquete"/>
-        <Label Content="precio" HorizontalAlignment="Left" Margin="55,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.744,0.656"/>
-        <TextBox HorizontalAlignment="Left" Margin="191,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148" Name="txtprecio" Height="21"/>
-        <Label Content="cupos disponibles" HorizontalAlignment="Left" Margin="55,123,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="191,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148" Height="18" Name="txtdisponibles"/>
-        <CheckBox Content="Estado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,217,0,0" Name="chbestado"/>
-        <Label Content="cupos llenos" HorizontalAlignment="Left" Margin="55,168,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="191,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148" Name="txtllenos"/>
-        <Label Content="fecha inicial" HorizontalAlignment="Left" Margin="376,110,0,0" VerticalAlignment="Top"/>
-        <Label Content="fecha final" HorizontalAlignment="Left" Margin="376,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.862"/>
-        <DatePicker HorizontalAlignment="Left" Margin="459,112,0,0" VerticalAlignment="Top" Name="dpickinicial"/>
-        <DatePicker HorizontalAlignment="Left" Margin="459,173,0,0" VerticalAlignment="Top" Name="dpickfinal"/>
+                <StackPanel DockPanel.Dock="Bottom" Background="Transparent" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,5">
+                    <StackPanel  HorizontalAlignment="Stretch"  Background="LightGray" >
+                        <Border Padding="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WrapPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <GroupBox Header="Elemento" FontSize="15" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <StackPanel VerticalAlignment="Stretch" Orientation="Vertical">
+
+                                        <ScrollViewer>
+                                            <StackPanel Height="430" Margin="5">
+                                                <Label Content="Paquets" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="61"/>
+
+                                                <ComboBox HorizontalAlignment="Left"  VerticalAlignment="Top" Width="254" Name="cboxpaquete"/>
+                                                <Label Content="precio" HorizontalAlignment="Left" VerticalAlignment="Top" Width="254" Height="32" />
+                                                <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" Height="32" Name="txtprecio"/>
+                                                <Label Content="cupos disponibles" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" Height="32" Name="txtdisponibles"/>
+                                                <CheckBox Content="Estado" HorizontalAlignment="Left" VerticalAlignment="Top"  Name="chbestado" Margin="0,15,0,0"/>
+                                                <Label Content="cupos llenos" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" Height="32" Name="txtllenos"/>
+                                                <Label Content="fecha inicial" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                                                <DatePicker HorizontalAlignment="Left"  VerticalAlignment="Top" Name="dpickinicial" Width="254" Height="32"/>
+                                                <Label Content="fecha final" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.54,0.862"/>
+
+                                                <DatePicker HorizontalAlignment="Left"  VerticalAlignment="Top" Name="dpickfinal" Width="254" Height="32"/>
+                                            </StackPanel>
+                                        </ScrollViewer>
+
+
+                                        <StackPanel Orientation="Horizontal" Margin="1">
+                                            <Border Background="Green" BorderThickness="4" CornerRadius="8" Padding="4">
+                                                <Button x:Name="btn_saveData" Content="Guardar" Background="Transparent" BorderBrush="Transparent" Foreground="White" MinWidth="120" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="Button_Click">
+
+                                                </Button>
+                                            </Border>
+                                            <Border Background="Orange" BorderThickness="4" CornerRadius="8" Padding="4">
+                                                <Button Content="Actualizar" Background="Transparent" BorderBrush="Transparent" Name="Acl"  MinWidth="110" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False" Click="Acl_Click"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </GroupBox>
+                            </WrapPanel>
+                        </Border>
+                    </StackPanel>
+                    <WrapPanel  Margin="5" Orientation="Horizontal"  Background="Transparent" HorizontalAlignment="Stretch">
+                        <DataGrid  x:Name="dataTable" IsReadOnly="True" Height="530" Width="795" MaxHeight="510"  AutoGenerateColumns="False" Background="#f9f9f9" 
+                              SelectionMode="Extended" 
+                        AlternatingRowBackground="#fff" AlternationCount="2"
+                        SelectionUnit="FullRow"  GridLinesVisibility="None" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                            <DataGrid.RowHeaderStyle>
+                                <Style/>
+                            </DataGrid.RowHeaderStyle>
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style/>
+                            </DataGrid.ColumnHeaderStyle>
+
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Width="90" Header="Seleccionar">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Border BorderBrush="Black" BorderThickness="0.2">
+                                                    <Border Background="#AFD3E2" CornerRadius="4" BorderBrush="#146C94" BorderThickness="1" Padding="2" Margin="6" Width="42">
+                                                        <Button BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" Foreground="White" FontWeight="SemiBold" CommandParameter="{Binding idpaqueted}" Click="Button_Click_2" VerticalAlignment="Center">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                <Image Source="/views/administrador/vadmin/edit-1.png" HorizontalAlignment="Center" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" />
+                                                            </StackPanel>
+                                                        </Button>
+                                                    </Border>
+                                                </Border>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Nombre" Width="250">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding nom}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Precio" Width="70">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding precio}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Cupos Disponibles" Width="70">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding cupos_disp}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Cupos Completos" Width="70">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding cuposllenos}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Fecha Inicial" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding fechainicial}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Fecha Finalizacion" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding fechafinal}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn  Header="Estado" Width="50">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.3">
+                                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontWeight="Bold" TextAlignment="Center" Text="{Binding estado}"></TextBlock>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Width="90" Header="Eliminar" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="Black" BorderThickness="0.2">
+                                                <Border Background="#D25380" CornerRadius="4" BorderBrush="#D21312" BorderThickness="1" Padding="2" Margin="6" Width="42">
+                                                    <Button BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" Foreground="White" FontWeight="SemiBold" CommandParameter="{Binding idpaqueted}" Click="Button_Click_1" VerticalAlignment="Center">
+                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                            <Image Source="/views/administrador/vadmin/delete.png" HorizontalAlignment="Center" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" />
+                                                        </StackPanel>
+                                                    </Button>
+                                                </Border>
+                                            </Border>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                            </DataGrid.Columns>
+
+                        </DataGrid>
+                    </WrapPanel>
+                </StackPanel>
+
+            </DockPanel>
+        </WrapPanel>
+
 
     </Grid>
 </UserControl>

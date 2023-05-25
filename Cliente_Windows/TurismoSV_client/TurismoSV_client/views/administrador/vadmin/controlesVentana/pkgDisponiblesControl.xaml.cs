@@ -73,7 +73,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
 
             //MessageBox.Show(cbox.SelectedValue.ToString(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
-            DG.ItemsSource = dt.DefaultView;
+            dataTable.ItemsSource = dt.DefaultView;
             sc1.Close();
             comrpobar();
         }
@@ -137,27 +137,31 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
             // MessageBox.Show(st, "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
             try
             {
-                SqlConnection sc1 = Conexion.sc();
-                sc1.Open();
-                Md5 md5 = new Md5();
+                MessageBoxResult result = MessageBox.Show("¿Desea eliminar elemento seleccionado?", "Eliminar elemento", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-                String consulta = "SP_BorrPaquetesDisponible";
+                if (result == MessageBoxResult.Yes)
+                {
+                    SqlConnection sc1 = Conexion.sc();
+                    sc1.Open();
+                    Md5 md5 = new Md5();
 
-                SqlCommand comando = new SqlCommand(consulta, sc1);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id", st);
+                    String consulta = "SP_BorrPaquetesDisponible";
+
+                    SqlCommand comando = new SqlCommand(consulta, sc1);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@id", st);
 
 
-                SqlDataAdapter da = new SqlDataAdapter(comando);
-                DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
 
-                da.Fill(dt);
-                MessageBox.Show("Dato Eliminado", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                id = "";
-                refresh();
-                limpiar();
-                sc1.Close();
-
+                    da.Fill(dt);
+                    MessageBox.Show("Dato Eliminado", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    id = "";
+                    refresh();
+                    limpiar();
+                    sc1.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -217,34 +221,38 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
         {
             try
             {
-                SqlConnection sc1 = Conexion.sc();
-                sc1.Open();
-                Md5 md5 = new Md5();
+                MessageBoxResult result = MessageBox.Show("¿Desea actualizar la informacion?", "Actualizar Elemento", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-                String consulta = "SP_ActuPaquetesDisponible";
+                if (result == MessageBoxResult.Yes)
+                {
+                    SqlConnection sc1 = Conexion.sc();
+                    sc1.Open();
+                    Md5 md5 = new Md5();
 
-                SqlCommand comando = new SqlCommand(consulta, sc1);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id", id);
-                comando.Parameters.AddWithValue("@idp", cboxpaquete.SelectedValue.ToString());
-                comando.Parameters.AddWithValue("@precio", txtprecio.Text);
-                comando.Parameters.AddWithValue("@cdisp", txtdisponibles.Text);
-                comando.Parameters.AddWithValue("@cllenos", txtllenos.Text);
-                comando.Parameters.AddWithValue("@finicial", dpickinicial.SelectedDate.ToString());
-                comando.Parameters.AddWithValue("@ffinal", dpickfinal.SelectedDate.ToString());
-                comando.Parameters.AddWithValue("@estado", chbestado.IsChecked);
+                    String consulta = "SP_ActuPaquetesDisponible";
+
+                    SqlCommand comando = new SqlCommand(consulta, sc1);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Parameters.AddWithValue("@idp", cboxpaquete.SelectedValue.ToString());
+                    comando.Parameters.AddWithValue("@precio", txtprecio.Text);
+                    comando.Parameters.AddWithValue("@cdisp", txtdisponibles.Text);
+                    comando.Parameters.AddWithValue("@cllenos", txtllenos.Text);
+                    comando.Parameters.AddWithValue("@finicial", dpickinicial.SelectedDate.ToString());
+                    comando.Parameters.AddWithValue("@ffinal", dpickfinal.SelectedDate.ToString());
+                    comando.Parameters.AddWithValue("@estado", chbestado.IsChecked);
 
 
-                SqlDataAdapter da = new SqlDataAdapter(comando);
-                DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
 
-                da.Fill(dt);
-                MessageBox.Show("Datos Actualizados" + dt.Rows[0][0].ToString(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                id = "";
-                refresh();
-                limpiar();
-                sc1.Close();
-
+                    da.Fill(dt);
+                    MessageBox.Show("Datos Actualizados" + dt.Rows[0][0].ToString(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    id = "";
+                    refresh();
+                    limpiar();
+                    sc1.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -257,12 +265,24 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
         {
             if (id.Equals(""))
             {
+                btn_saveData.IsEnabled = true;
                 Acl.IsEnabled = false;
             }
             else
             {
+                btn_saveData.IsEnabled = false;
                 Acl.IsEnabled = true;
             }
+        }
+
+        private void btn_searchElement_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_report_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }//end class
 }//end namespaces
