@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/25/2023 15:56:26" ReportInfo.Modified="05/25/2023 16:29:42" ReportInfo.CreatorVersion="2020.1.17.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="usuarios" DataType="System.Int32" Enabled="true" SelectCommand="select * from vdetalleUsuario v where correo like (@param);&#13;&#10;">
+        <Column Name="id" DataType="System.String"/>
+        <Column Name="nombre" DataType="System.String"/>
+        <Column Name="apellido" DataType="System.String"/>
+        <Column Name="edad" DataType="System.Byte"/>
+        <Column Name="telefono" DataType="System.String"/>
+        <Column Name="direccion" DataType="System.String"/>
+        <Column Name="correo" DataType="System.String"/>
+        <Column Name="rol" DataType="System.String"/>
+        <Column Name="estado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="registro" DataType="System.DateTime"/>
+        <CommandParameter Name="param" DataType="22" Expression="[valor]" DefaultValue="%"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="username" DataType="System.String"/>
+    <Parameter Name="valor" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" RawPaperSize="9" FirstPageSource="15" OtherPagesSource="15" Guides="444.15" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="85.05" Fill="LinearGradient" Fill.StartColor="CornflowerBlue" Fill.EndColor="SteelBlue" Fill.Angle="180" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text2" Left="9.45" Top="9.45" Width="264.6" Height="56.7" Text="TURISMOSV" Font="Brush Script MT, 28pt" TextFill.Color="White"/>
+      <TextObject Name="Text3" Left="9.45" Top="56.7" Width="292.95" Height="18.9" Text="Solicitante : [username]" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text4" Left="614.25" Top="9.45" Width="425.25" Height="18.9" Text="REPORTE LISTADO DE USUARIOS COMPLETO" HorzAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text5" Left="652.05" Top="37.8" Width="387.45" Height="18.9" Text="Generado : [Date]" HorzAlign="Right" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="90.38" Width="1047.06" Height="28.35" Fill="LinearGradient" Fill.StartColor="SteelBlue" Fill.EndColor="DodgerBlue" Fill.Angle="0" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text7" Left="9.45" Width="141.75" Height="28.35" Border.Lines="Right" Text="ID" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text9" Left="160.65" Width="151.2" Height="28.35" Border.Lines="Right" Text="nombre" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text11" Left="321.3" Width="122.85" Height="28.35" Border.Lines="Right" Text="apellido" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text13" Left="453.6" Width="94.5" Height="28.35" Border.Lines="Right" Text="edad" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text15" Left="557.55" Width="113.4" Height="28.35" Border.Lines="Right" Text="telefono" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text17" Left="680.4" Width="113.4" Height="28.35" Border.Lines="Right" Text="direccion" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text19" Left="803.25" Width="141.75" Height="28.35" Border.Lines="Right" Text="correo" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text21" Left="954.45" Width="94.5" Height="28.35" Border.Lines="Right, Bottom" Border.RightLine.Color="White" Border.BottomLine.Color="White" Text="rol" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="124.07" Width="1047.06" Height="85.05" DataSource="Table">
+      <TextObject Name="Text6" Left="9.45" Top="9.45" Width="141.75" Height="56.7" Border.Lines="Right" Text="[usuarios.id]" HorzAlign="Justify" Font="Arial, 10pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text8" Left="160.65" Top="9.45" Width="151.2" Height="56.7" Border.Lines="Right" Text="[usuarios.nombre]" HorzAlign="Justify" VertAlign="Center" Font="Arial, 12pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text10" Left="321.3" Top="9.45" Width="122.85" Height="56.7" Border.Lines="Right" Text="[usuarios.apellido]" HorzAlign="Justify" VertAlign="Center" Font="Arial, 12pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text12" Left="453.6" Top="9.45" Width="94.5" Height="56.7" Border.Lines="Right" Text="[usuarios.edad]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text14" Left="557.55" Top="9.45" Width="113.4" Height="56.7" Border.Lines="Right" Text="[usuarios.telefono]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text16" Left="680.4" Top="9.45" Width="113.4" Height="56.7" Border.Lines="Right" Text="[usuarios.direccion]" HorzAlign="Justify" VertAlign="Center" Font="Arial, 12pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text18" Left="803.25" Top="9.45" Width="141.75" Height="56.7" Border.Lines="Right" Text="[usuarios.correo]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+      <TextObject Name="Text20" Left="954.45" Top="18.9" Width="94.5" Height="47.25" Text="[usuarios.rol]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold">
+        <Highlight>
+          <Condition Expression="[usuarios.rol] == &quot;ADMIN&quot; || [usuarios.rol] == &quot;ADM&quot;" Fill.Color="PowderBlue" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;TEST&quot; || [usuarios.rol] == &quot;TESTER&quot;" Fill.Color="AntiqueWhite" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Honeydew" TextFill.Color="Black" Font="Arial, 10pt" ApplyFill="true"/>
+          <Condition Expression="[usuarios.rol] == &quot;USER&quot; || [usuarios.rol] == &quot;USUARIO&quot; || [usuarios.rol] == &quot;user&quot; || [usuarios.rol] == &quot;usuario&quot; &amp;&amp; [usuarios.estado] == false" Fill.Color="Ivory" Font="Arial, 10pt" ApplyFill="true"/>
+        </Highlight>
+      </TextObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="214.45" Width="1047.06" Height="18.9">
+      <TextObject Name="Text1" Left="774.9" Width="264.6" Height="18.9" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Right" Font="Arial, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
