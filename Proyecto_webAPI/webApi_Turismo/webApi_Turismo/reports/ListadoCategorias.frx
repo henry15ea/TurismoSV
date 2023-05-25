@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/24/2023 13:16:06" ReportInfo.Modified="05/24/2023 13:44:31" ReportInfo.CreatorVersion="2020.1.17.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="categorias" DataType="System.Int32" Enabled="true" SelectCommand="select * from categorias ;">
+        <Column Name="idcategoria" DataType="System.String"/>
+        <Column Name="nombre" DataType="System.String"/>
+        <Column Name="descripcion" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="username" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05" Fill="LinearGradient" Fill.StartColor="CadetBlue" Fill.EndColor="SteelBlue" Fill.Angle="0" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text1" Left="9.45" Top="9.45" Width="217.35" Height="56.7" Text="TURISMOSV" VertAlign="Center" Font="Brush Script MT, 24pt" TextFill.Color="White"/>
+      <TextObject Name="Text2" Left="378" Top="9.45" Width="330.75" Height="18.9" Text="REPORTES CATEGORIAS" HorzAlign="Right" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text3" Left="378" Top="37.8" Width="330.75" Height="18.9" Text="Generado : [Date]" HorzAlign="Right" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+      <TextObject Name="Text4" Left="236.25" Top="66.15" Width="481.95" Height="18.9" Text="Solicitante : [username]" HorzAlign="Right" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="White"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="89.05" Width="718.2" Height="28.35" Fill="LinearGradient" Fill.StartColor="CornflowerBlue" Fill.EndColor="SteelBlue" Fill.Angle="90" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text7" Left="198.45" Top="9.45" Width="283.5" Height="18.9" Border.Lines="Right, Bottom" Text="nombre" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text9" Left="9.45" Top="9.45" Width="179.55" Height="18.9" Border.Lines="Right, Bottom" Text="idcategoria" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text11" Left="491.4" Top="9.45" Width="217.35" Height="18.9" Border.Lines="Right, Bottom" Text="descripcion" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 12pt, style=Bold" TextFill.Color="White"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="121.4" Width="718.2" Height="75.6" DataSource="Table">
+      <TextObject Name="Text6" Left="198.45" Top="9.45" Width="283.5" Height="66.15" Border.Lines="Bottom" Text="[categorias.nombre]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text8" Left="9.45" Top="9.45" Width="179.55" Height="66.15" Border.Lines="Right, Bottom" Text="[categorias.idcategoria]" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text10" Left="491.4" Top="18.9" Width="217.35" Height="56.7" Border.Lines="Right, Bottom" Text="[categorias.descripcion]" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="201" Width="718.2" Height="18.9">
+      <TextObject Name="Text5" Left="9.45" Width="255.15" Height="18.9" Text="Pagina  [Page] de [TotalPages#]" VertAlign="Center" Font="Arial, 12pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/25/2023 10:47:26" ReportInfo.Modified="05/25/2023 11:17:13" ReportInfo.CreatorVersion="2020.1.17.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="adicionalesDisponibles" DataType="System.Int32" Enabled="true" SelectCommand="select * from vadicionalesDetalle vd  where id_paquete= @id_pkg">
+        <Column Name="id_adicional" DataType="System.String"/>
+        <Column Name="id_paquete" DataType="System.String"/>
+        <Column Name="nmb_paquete" DataType="System.String"/>
+        <Column Name="nmb_adicional" DataType="System.String"/>
+        <Column Name="dsc_adicional" DataType="System.String"/>
+        <Column Name="precio_adicional" DataType="System.Decimal"/>
+        <CommandParameter Name="id_pkg" DataType="22" Expression="[id_paquete]" DefaultValue="6C91DE5FA6DF5DAA7D4F9D8E7AFC3496"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="username" DataType="System.String"/>
+    <Parameter Name="id_paquete" DataType="System.String"/>
+    <Total Name="Total_elementos" Expression="[adicionalesDisponibles.precio_adicional]" Evaluator="Data1" PrintOn="PageFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95" Fill="LinearGradient" Fill.StartColor="SteelBlue" Fill.EndColor="WhiteSmoke" Fill.Angle="0" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text1" Left="18.9" Top="18.9" Width="302.4" Height="47.25" Text="TURISMOSV" Font="Brush Script MT, 28pt" TextFill.Color="WhiteSmoke"/>
+      <TextObject Name="Text2" Left="340.2" Top="47.25" Width="359.1" Height="18.9" Text="[Date]" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="217.35" Top="9.45" Width="491.4" Height="18.9" Text="REPORTE ADICIONALES DISPONIBLES" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text5" Left="18.9" Top="75.6" Width="302.4" Height="18.9" Text="Solititado por : [username]" VertAlign="Center" Font="Arial, 11pt" TextFill.Color="White"/>
+      <TextObject Name="Text6" Left="340.2" Top="75.6" Width="368.55" Height="18.9" Text="Paquete : [adicionalesDisponibles.nmb_paquete]" HorzAlign="Right" VertAlign="Center" Font="Arial, 11pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="107.15" Width="718.2" Height="28.35" Fill="LinearGradient" Fill.StartColor="SteelBlue" Fill.EndColor="White" Fill.Angle="315" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text8" Left="217.35" Top="9.45" Width="141.75" Height="18.9" Text="Nombre" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text10" Left="359.1" Top="9.45" Width="245.7" Height="18.9" Text="Descripcion" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text12" Left="614.25" Top="9.45" Width="94.5" Height="18.9" Text="Precio" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text14" Top="9.45" Width="207.9" Height="18.9" Text="ID" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="138.7" Width="718.2" Height="75.6" DataSource="Table">
+      <TextObject Name="Text7" Left="217.35" Top="9.45" Width="141.75" Height="56.7" Border.Lines="Right, Bottom" Text="[adicionalesDisponibles.nmb_adicional]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text9" Left="359.1" Top="9.45" Width="245.7" Height="56.7" Border.Lines="Right, Bottom" Text="[adicionalesDisponibles.dsc_adicional]" HorzAlign="Justify" VertAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text11" Left="614.25" Top="9.45" Width="94.5" Height="56.7" Border.Lines="Right, Bottom" Text="[adicionalesDisponibles.precio_adicional]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="Arial, 11pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text13" Left="9.45" Top="9.45" Width="198.45" Height="56.7" Border.Lines="Right, Bottom" Text="[adicionalesDisponibles.id_adicional]" VertAlign="Center" Font="Arial, 11pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="217.5" Width="718.2" Height="18.9">
+      <TextObject Name="Text4" Left="9.45" Width="302.4" Height="18.9" Text="Pagina [Page] de [TotalPages#]" VertAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text15" Left="415.8" Width="292.95" Height="18.9" Text="Total costo adicionales : [Total_elementos]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

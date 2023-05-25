@@ -29,6 +29,7 @@ namespace TurismoSV_client.UitlsClass.RoutesApi;
 
             //obtener reporte factura 
             Routes.Add("facturaReporte", HostApi + "/reporte/user/Factura");
+            Routes.Add("reporteUsuarios", HostApi + "/reporte/admin/listadoUsuarios");
 
             //verificacion de targeta de credito para cuando se compran paquetes
             Routes.Add("payment", HostApi + "/payment/payment");

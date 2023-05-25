@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TurismoSV_client.controllers.adm;
+using TurismoSV_client.models.AppModel.admin;
+using TurismoSV_client.UitlsClass.AppConfig;
 
 namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 {
@@ -262,6 +265,19 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
         private void btn_searchElement_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void btn_crearReporte_Click(object sender, RoutedEventArgs e)
+        {
+
+            r_ListadoUsuariosController reporte = new r_ListadoUsuariosController();
+
+            userModel modelo = new userModel();
+            modelo.username = AppConfig.GetUserSetting("UserApp");
+
+            reporte.fn_GetListadoUsuariosReport(modelo);
+
 
         }
     }//end class

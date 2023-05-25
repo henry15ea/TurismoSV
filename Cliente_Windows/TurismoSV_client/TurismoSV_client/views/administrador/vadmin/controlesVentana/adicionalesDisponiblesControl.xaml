@@ -22,6 +22,10 @@
 
                                 </StackPanel>
                             </Button>
+
+                            <Button x:Name="btn_crearReporte" Click="btn_crearReporte_Click" Content="Crear Reporte" Background="Blue" Foreground="White">
+                                
+                            </Button>
                         </StackPanel>
                     </WrapPanel>
                 </Border>

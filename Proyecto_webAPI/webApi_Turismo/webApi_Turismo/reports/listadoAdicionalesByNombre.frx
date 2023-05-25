@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/24/2023 11:12:49" ReportInfo.Modified="05/24/2023 11:25:04" ReportInfo.CreatorVersion="2020.1.17.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
+      <TableDataSource Name="Table" Alias="adicionalesDisponibles" DataType="System.Int32" Enabled="true" SelectCommand="select * from vadicionales v where nombre like '%'+nombre+'%' ;">
+        <Column Name="idadicional" DataType="System.String"/>
+        <Column Name="nombre" DataType="System.String"/>
+        <Column Name="descripcion" DataType="System.String"/>
+        <Column Name="precio" DataType="System.Decimal"/>
+        <CommandParameter Name="nombre" DataType="22" Expression="[nmb]" DefaultValue="a"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="nmb" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Guides="330.75" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5" Fill="LinearGradient" Fill.StartColor="PaleTurquoise" Fill.EndColor="DodgerBlue" Fill.Angle="90" Fill.Focus="1" Fill.Contrast="1">
+      <TextObject Name="Text1" Left="9.45" Top="9.45" Width="207.9" Height="47.25" Text="TURISMOSV" Font="Brush Script MT, 24pt" TextFill.Color="White"/>
+      <TextObject Name="Text2" Left="9.45" Top="66.15" Width="283.5" Height="18.9" Text="Reporte emitido : [Date]" Font="Arial, 11pt"/>
+      <TextObject Name="Text3" Left="302.4" Top="9.45" Width="415.8" Height="18.9" Text="Reporte Listado de adicionales" HorzAlign="Right" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text13" Left="406.35" Top="37.8" Width="311.85" Height="18.9" Text="Filtrado por : [nmb]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="98.5" Width="718.2" Height="47.25">
+      <TextObject Name="Text6" Width="170.1" Height="47.25" Text="idadicional" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text8" Left="179.55" Width="160.65" Height="37.8" Text="nombre" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text10" Left="349.65" Width="226.8" Height="37.8" Text="descripcion" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text12" Left="585.9" Width="122.85" Height="37.8" Text="precio" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="149.75" Width="718.2" Height="75.6" DataSource="Table">
+      <TextObject Name="Text5" Width="170.1" Height="56.7" Border.Lines="Bottom" Border.Style="Dot" Text="[adicionalesDisponibles.idadicional]" HorzAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text7" Left="179.55" Width="160.65" Height="56.7" Border.Lines="Bottom" Border.Style="Dot" Text="[adicionalesDisponibles.nombre]" HorzAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text9" Left="349.65" Width="226.8" Height="56.7" Border.Lines="Bottom" Border.Style="Dot" Text="[adicionalesDisponibles.descripcion]" HorzAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text11" Left="585.9" Width="122.85" Height="56.7" Border.Lines="Bottom" Border.Style="Dot" Text="[adicionalesDisponibles.precio]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="Arial, 11pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="229.35" Width="718.2" Height="18.9">
+      <TextObject Name="Text4" Left="9.45" Width="283.5" Height="18.9" Text="Pagina [Page] de [TotalPages#]" HorzAlign="Center" Font="Arial, 11pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
