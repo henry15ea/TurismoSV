@@ -168,7 +168,41 @@ namespace TurismoSV_client.views.administrador.vadmin
         }
 
 
-        //acciones de botones del menu lateral
+        // fin acciones de botones del menu lateral
+
+        //acciones de barra superior
+
+        private void popupButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            //MenuToggleButton.IsChecked = true;
+
+
+        }
+
+        private void btn_account_Click(object sender, RoutedEventArgs e)
+        {
+            //acciones para configuracion de cuenta
+        }
+
+        private void btn_closeSesion_Click(object sender, RoutedEventArgs e)
+        {
+            //acciones para cerrar sesion
+            MessageBoxResult result = MessageBox.Show("¿Desea cerrar la sesion actual?", "Cerrar sesion", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Close();
+                AppConfig.SetUserSetting("TokenApp", "");
+                AppConfig.SetUserSetting("UserApp", "");
+                AppConfig.SetUserSetting("RoleApp", "");
+                AppConfig.SetUserSetting("MailApp", "");
+
+                MainWindow frm_login = new MainWindow();
+                frm_login.Show();
+
+            }
+        }
 
     }//fin class
 }//fin namespaces

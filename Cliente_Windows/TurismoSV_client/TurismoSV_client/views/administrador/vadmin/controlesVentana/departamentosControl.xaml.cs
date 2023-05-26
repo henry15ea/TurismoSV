@@ -22,6 +22,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
     /// </summary>
     public partial class departamentosControl : UserControl
     {
+        protected DataTable dtfx;
         public departamentosControl()
         {
             InitializeComponent();
@@ -29,6 +30,40 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
         }
 
         string id = "";
+
+        protected void fn_searchElement(String ElementSearch)
+        {
+            string searchText = ElementSearch.Trim();
+
+            try
+            {
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    // Filter the data based on the search text
+                    DataTable filteredDT = dtfx.Select($"nombre LIKE '%{searchText}%'").CopyToDataTable();
+
+                    // Clear the data bindings for the DataGridView
+                    dataTable.ItemsSource = null;
+                    // Update the data bindings for the DataGridView
+                    dataTable.AutoGenerateColumns = false;
+                    dataTable.ItemsSource = filteredDT.DefaultView;
+                }
+                else
+                {
+                    // Clear the data bindings for the DataGridView
+                    dataTable.ItemsSource = null;
+                    // Update the data bindings for the DataGridView
+                    dataTable.AutoGenerateColumns = false;
+                    dataTable.ItemsSource = dtfx.DefaultView;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un problema al buscar elemento en los datos obtenidos");
+                this.refresh();
+            }
+
+        }
         private void refresh()
         {
             ///
@@ -42,6 +77,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
             comando.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(comando);
             DataTable dt = new DataTable();
+            dtfx = dt;
             da.Fill(dt);
             //MessageBox.Show(dt.Rows[0][0].ToString(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
             sc1.Close();
@@ -218,28 +254,17 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
         private void btn_searchElement_Click(object sender, RoutedEventArgs e)
         {
-            //btn se encarga de buscar el elemento dentro de la tabla 
-            int id = 0;
-            String itemData = txt_itemSearch.Text.Trim();
-            try
+            String dataSearch = txt_itemSearch.Text.Trim();
+            if (dataSearch.Trim() == "ALL" || dataSearch.Trim() == "*" || dataSearch.Trim() == "")
             {
-
-                for (int i = 0; i < dataTable.Items.Count; i++)
-                {
-                    var row = dataTable.Items[i];
-
-                    if (row != null)
-                    {
-                        System.Diagnostics.Debug.WriteLine(row.ToString());
-                    }
-                }
-
-
-                // No se encontró un valor coincidente
-                //MessageBox.Show("No se encontró ningún resultado.");
+                txt_itemSearch.Text = "";
+                this.refresh();
             }
-            catch { }
-
+            else
+            {
+                txt_itemSearch.Text = "";
+                this.fn_searchElement(dataSearch.Trim());
+            }
         }
     }//end class
 }//end namespaces
