@@ -1,0 +1,42 @@
+﻿@page
+@model ClienteWeb.Pages.Facturas.IndexModel
+@{
+}
+
+<h2>Facturas</h2>
+
+@if (Model.facturaEncabezadoModel != null)
+{
+    <div class="container d-flex flex-wrap justify-content-around">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.facturaEncabezadoModel.Count(); i++)
+                {
+
+
+                    <tr>
+                        <th scope="row">@Model.facturaEncabezadoModel[i].Id_factura</th>
+                        <td>@Model.facturaEncabezadoModel[i].Nombre</td>
+                        <td>@Model.facturaEncabezadoModel[i].Apellido</td>
+                        <td>
+                            <form method="post">
+                                <input asp-for="idf" type="text" hidden value="@Model.facturaEncabezadoModel[i].Id_factura">
+                                <button type="submit" class="btn btn-primary mb-3">Generar</button>
+                            </form>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        
+    </div>
+}

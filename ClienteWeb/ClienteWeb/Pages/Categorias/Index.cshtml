@@ -1,0 +1,56 @@
+﻿@page
+@model ClienteWeb.Pages.Categorias.IndexModel
+@{
+    ViewData["Title"] = "Categorias";
+    
+}
+
+<h2>Categorias</h2>
+
+@if (Model.pruebaList != null)
+{
+    @for (int i = 0; i < Model.pruebaList.Count(); i++)
+    {
+
+        <!--<button>@i</button>-->
+    }
+}
+
+@if (Model.categorias != null)
+{
+    <div class="container d-flex flex-wrap justify-content-around">
+
+        @for (int i = 0; i < Model.categorias.Count(); i++)
+        {
+
+            <!--<button>@i</button>-->
+            <div class="card m-1" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.categorias[i].nombre</h5>
+                    <p class="card-text">@Model.categorias[i].descripcion</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+
+        }
+    </div>
+}
+
+
+
+
+<p>@Model.texto</p>
+
+@{
+    // Convertir el MemoryStream en un array de bytes
+    byte[] data = Model.ms.ToArray();
+
+    // Convertir el array de bytes a una cadena Base64
+    string base64String = Convert.ToBase64String(data);
+
+    // Generar el enlace con el contenido del MemoryStream
+    string dataUri = "data:application/pdf;base64," + base64String;
+}
+
+<embed src="@dataUri" width="100%" height="600" type="application/pdf">
