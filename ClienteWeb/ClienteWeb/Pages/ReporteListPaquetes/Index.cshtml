@@ -1,0 +1,47 @@
+﻿@page
+@model ClienteWeb.Pages.ReporteListPaquetes.IndexModel
+@{
+}
+<h2>Reporte Lista de Paquetes</h2>
+<form >
+    <div class="mb-3">
+        <label for="" class="form-label">Categorias</label>
+        @if (Model.categorias.Count > 0)
+        {
+            <select asp-for="opcion">
+                @for(int i = 0; i < Model.categorias.Count; i++)
+                {
+                    <option value="@Model.categorias[i].nombre">@Model.categorias[i].nombre</option>
+                }
+                
+  
+            </select>
+        }
+  
+    </div>
+    <div class="mb-3">
+        <label asp-for="cantidad" class="form-label">Canttidad</label>
+        <input asp-for="cantidad" formnovalidate type="number" class="form-control" id="exampleInputPassword1" value="100">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (Model.ms != null)
+{
+
+    // Convertir el MemoryStream en un array de bytes
+    byte[] data = Model.ms.ToArray();
+
+    // Convertir el array de bytes a una cadena Base64
+    string base64String = Convert.ToBase64String(data);
+
+    // Generar el enlace con el contenido del MemoryStream
+    string dataUri = "data:application/pdf;base64," + base64String;
+
+    <embed src="@dataUri" width="100%" height="600" type="application/pdf">
+
+}
+else
+{
+    <h2>No se encontro reporte</h2>
+}
