@@ -62,7 +62,7 @@
 
                             <DataGrid.Columns>
 
-                                <DataGridTemplateColumn  Header="Elemento" Width="450">
+                                <DataGridTemplateColumn  Header="Nombre" Width="450">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Border BorderBrush="Black" BorderThickness="0.3">

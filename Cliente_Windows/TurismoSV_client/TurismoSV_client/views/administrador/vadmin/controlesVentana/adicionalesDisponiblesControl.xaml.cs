@@ -25,12 +25,46 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
     /// </summary>
     public partial class adicionalesDisponiblesControl : UserControl
     {
+        protected DataTable dtfx;
         public adicionalesDisponiblesControl()
         {
             InitializeComponent();
             refresh();
         }
 
+        protected void fn_searchElement(String ElementSearch)
+        {
+            string searchText = ElementSearch.Trim();
+
+            try
+            {
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    // Filter the data based on the search text
+                    DataTable filteredDT = dtfx.Select($"paquete LIKE '%{searchText}%'").CopyToDataTable();
+
+                    // Clear the data bindings for the DataGridView
+                    dataTable.ItemsSource = null;
+                    // Update the data bindings for the DataGridView
+                    dataTable.AutoGenerateColumns = false;
+                    dataTable.ItemsSource = filteredDT.DefaultView;
+                }
+                else
+                {
+                    // Clear the data bindings for the DataGridView
+                    dataTable.ItemsSource = null;
+                    // Update the data bindings for the DataGridView
+                    dataTable.AutoGenerateColumns = false;
+                    dataTable.ItemsSource = dtfx.DefaultView;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un problema al buscar elemento en los datos obtenidos");
+                this.refresh();
+            }
+
+        }
 
         string id = "";
         private void refresh()
@@ -46,6 +80,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
             comando.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(comando);
             DataTable dt = new DataTable();
+            dtfx = dt;
             da.Fill(dt);
             //MessageBox.Show(dt.Rows[0][0].ToString(), "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
 
@@ -265,7 +300,17 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
         private void btn_searchElement_Click(object sender, RoutedEventArgs e)
         {
-
+            String dataSearch = txt_itemSearch.Text.Trim();
+            if (dataSearch.Trim() == "ALL" || dataSearch.Trim() == "*" || dataSearch.Trim() == "")
+            {
+                txt_itemSearch.Text = "";
+                this.refresh();
+            }
+            else
+            {
+                txt_itemSearch.Text = "";
+                this.fn_searchElement(dataSearch.Trim());
+            }
         }
 
         private void btn_crearReporte_Click(object sender, RoutedEventArgs e)

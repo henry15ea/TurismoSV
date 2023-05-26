@@ -122,14 +122,44 @@
             <DockPanel MaxHeight="900" MinWidth="1052" Width="1126" Background="#ADCDC1">
                 <Border DockPanel.Dock="Top" Padding="0" CornerRadius="1" BorderThickness="5">
                     <StackPanel  Orientation="Horizontal" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0.5">
-                        <StackPanel HorizontalAlignment="Left" Margin="0,0,850,0">
+                        <StackPanel HorizontalAlignment="Left" Margin="0,0,780,0">
                             <Label Content="ADMIN PANEL" Foreground="#0E1629" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
                         </StackPanel>
-                        <Border Background="#F0EEF3" BorderThickness="2" BorderBrush="#1E2218" Padding="0" CornerRadius="15"  >
+                        <Border Background="#F0EEF3" BorderThickness="2" BorderBrush="#1E2218" Padding="0" CornerRadius="15" Width="180" >
+
+                            <StackPanel Orientation="Horizontal" Width="250">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                 <Label x:Name="txt_user" FontWeight="SemiBold" FontSize="15" Content="Example User" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
-                                <Image Source="/views/administrador/vadmin/default_profile.png" Height="32" Margin="0,0,15,0" Stretch="Uniform"></Image>
                             </StackPanel>
+                            <Button x:Name="btn_profileMenu" Height="30"  Content="Menú" Click="popupButton_Click" Background="Transparent" BorderBrush="Transparent">
+                                <Button.ContentTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Popup Name="MenuPopup" PlacementTarget="{Binding ElementName=MyButton}" 
+                        IsOpen="{Binding IsChecked, ElementName=MenuToggleButton, Mode=TwoWay}" VerticalOffset="25" Width="300">
+                                                <Border BorderThickness="5" CornerRadius="5" BorderBrush="#023047" Background="AliceBlue">
+                                                    <Border Padding="5" CornerRadius="15" Background="AliceBlue">
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Button x:Name="btn_account" Content="Cuenta" Click="btn_account_Click"/>
+
+                                                            <Button x:Name="btn_closeSesion" Content="Cerrar sesion" Margin="0,5,0,0" Click="btn_closeSesion_Click"/>
+
+                                                        </StackPanel>
+                                                    </Border>
+                                                </Border>
+                                            </Popup>
+
+                                            <ToggleButton Name="MenuToggleButton" HorizontalAlignment="Left"  Style="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}" Width="76" Height="50">
+                                                <Image Source="/views/default_profile.png" Stretch="Uniform" Height="28"/>
+
+                                            </ToggleButton>
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </Button.ContentTemplate>
+                            </Button>
+                            </StackPanel>
+                            
                         </Border>
                     </StackPanel>
                 </Border>
