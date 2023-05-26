@@ -2,7 +2,7 @@
 <Report ScriptLanguage="CSharp" ReportInfo.Created="05/25/2023 15:56:26" ReportInfo.Modified="05/25/2023 16:29:42" ReportInfo.CreatorVersion="2020.1.17.0">
   <Dictionary>
     <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+CmmhQasFNxMyFxGxV2n0Iu/UQ0qmub27P8y49Dzb/hdbTfIqSlBjL66GMQKmP6KsDeKWVtFPsM4bI0g73iODPjvX+NF/TS1xHpOEIWz93WasVqIiK/pBNPnHtdyDUASl0lt5hl6sgKKQxva5Eg478dbYHx9OFsE+zjZz1X4rpEZksJz1KkmCrxhqbkpGMa1Bxrh4nS2ZMLk3JZ6gRUhtqsFAI=">
-      <TableDataSource Name="Table" Alias="usuarios" DataType="System.Int32" Enabled="true" SelectCommand="select * from vdetalleUsuario v where correo like (@param);&#13;&#10;">
+      <TableDataSource Name="Table" Alias="usuarios" DataType="System.Int32" Enabled="true" SelectCommand="select * from vdetalleUsuario v where nombre like (@param);&#13;&#10;">
         <Column Name="id" DataType="System.String"/>
         <Column Name="nombre" DataType="System.String"/>
         <Column Name="apellido" DataType="System.String"/>

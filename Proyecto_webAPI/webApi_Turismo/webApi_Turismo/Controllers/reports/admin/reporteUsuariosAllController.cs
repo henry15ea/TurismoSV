@@ -58,8 +58,10 @@ namespace webApi_Turismo.Controllers.reports.admin
 
                     if (modelo.filtro.Equals("ALL")) {
                         report.SetParameterValue("valor", "%");
+                        System.Diagnostics.Debug.WriteLine("=Buscando reporte ");
                     } else {
-                        report.SetParameterValue("valor", modelo.filtro.Trim());
+                        report.SetParameterValue("valor", string.Format("{0}%", modelo.filtro.Trim()));
+                        System.Diagnostics.Debug.WriteLine("filtro reporet : "+string.Format("'%{0}%'", modelo.filtro.Trim()));
                     }
                     
 
