@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Security.Cryptography;
+using TurismoSV_client.models.AppModel.admin;
+using TurismoSV_client.UitlsClass.AppConfig;
+using TurismoSV_client.controllers.adm;
 
 namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 {
@@ -268,6 +271,21 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
             {
                 txt_itemSearch.Text = "";
                 this.fn_searchElement(dataSearch.Trim());
+            }
+        }
+
+        private void btn_report_Click(object sender, RoutedEventArgs e)
+        {
+            try {
+                usernameModel model = new usernameModel();
+                r_categoriaListController reporte = new r_categoriaListController();
+                model.Username = AppConfig.GetUserSetting("UserApp");
+
+                reporte.fn_GetCategoriaListReport(model);
+
+            }
+            catch {
+                MessageBox.Show("Hubo un problema al tratar de generar el reporte");
             }
         }
     }//end control

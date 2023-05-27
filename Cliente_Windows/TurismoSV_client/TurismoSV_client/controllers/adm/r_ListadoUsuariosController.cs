@@ -13,7 +13,7 @@ namespace TurismoSV_client.controllers.adm
     internal class r_ListadoUsuariosController
     {
         //funcion que retorna un true/false si el suario se ha logueado en el sistema de la api 
-        public async Task fn_GetListadoUsuariosReport(userModel dataModel)
+        public async Task fn_GetListadoUsuariosReport(adicionalesByNombreModel dataModel)
         {
             bool resp = false;
 

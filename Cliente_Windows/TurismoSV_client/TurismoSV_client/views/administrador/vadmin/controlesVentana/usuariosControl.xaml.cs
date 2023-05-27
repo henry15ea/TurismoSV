@@ -14,6 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TurismoSV_client.controllers.adm;
+using TurismoSV_client.models.AppModel.admin;
+using TurismoSV_client.UitlsClass.AppConfig;
+using TurismoSV_client.views.administrador.dialogsReports;
 
 namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 {
@@ -314,7 +318,24 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
         private void btn_report_Click(object sender, RoutedEventArgs e)
         {
+            try {
+                r_ListadoUsuariosController reporte = new r_ListadoUsuariosController();
 
+                adicionalesByNombreModel modelo = new adicionalesByNombreModel();
+                modelo.username = AppConfig.GetUserSetting("UserApp");
+
+                reporte.fn_GetListadoUsuariosReport(modelo);
+
+            }
+            catch {
+                MessageBox.Show("Fallo al generar Reporte");
+            }
+        }
+
+        private void btn_reportList_Click(object sender, RoutedEventArgs e)
+        {
+            wlistadoUsuarios modal = new wlistadoUsuarios();
+            modal.ShowDialog();
         }
     }//end class
 }//end namespaces
