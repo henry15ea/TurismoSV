@@ -318,7 +318,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
             r_ListadoUsuariosController reporte = new r_ListadoUsuariosController();
 
-            userModel modelo = new userModel();
+            adicionalesByNombreModel modelo = new adicionalesByNombreModel();
             modelo.username = AppConfig.GetUserSetting("UserApp");
 
             reporte.fn_GetListadoUsuariosReport(modelo);

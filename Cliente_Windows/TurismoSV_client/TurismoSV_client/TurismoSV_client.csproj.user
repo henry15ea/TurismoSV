@@ -7,6 +7,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="views\administrador\dialogsReports\wcategorias.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\dialogsReports\wlistadoUsuarios.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="views\administrador\dialogsReports\wradicionalesbynombre.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\administrador\vadmin\AdminOptionsTemplate.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +85,15 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\dialogsReports\wcategorias.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\dialogsReports\wlistadoUsuarios.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\administrador\dialogsReports\wradicionalesbynombre.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\administrador\vadmin\AdminOptionsTemplate.xaml">

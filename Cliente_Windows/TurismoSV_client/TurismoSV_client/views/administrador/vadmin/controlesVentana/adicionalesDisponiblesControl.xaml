@@ -11,7 +11,7 @@
             <DockPanel HorizontalAlignment="Stretch" Height="610" Width="1105">
                 <Border DockPanel.Dock="Top" Padding="5" Margin="1">
                     <WrapPanel  Orientation="Vertical">
-                        <Label Content="Departamentos" HorizontalAlignment="Left" FontSize="24" VerticalAlignment="Top" FontWeight="Bold">
+                        <Label Content="Adicionales Disponibles" HorizontalAlignment="Left" FontSize="24" VerticalAlignment="Top" FontWeight="Bold">
                         </Label>
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Buscar"></Label>
@@ -23,7 +23,7 @@
                                 </StackPanel>
                             </Button>
 
-                            <Button x:Name="btn_crearReporte" Click="btn_crearReporte_Click" Content="Crear Reporte" Background="Blue" Foreground="White">
+                            <Button x:Name="btn_crearReporte" Click="btn_crearReporte_Click" Visibility="Hidden" Content="Crear Reporte" Background="Blue" Foreground="White">
                                 
                             </Button>
                         </StackPanel>

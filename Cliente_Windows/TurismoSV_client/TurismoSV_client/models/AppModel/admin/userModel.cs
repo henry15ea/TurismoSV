@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TurismoSV_client.models.AppModel.admin
 {
-    internal class userModel
+    internal class adicionalesByNombreModel
     {
        
         public string username { get; set; }

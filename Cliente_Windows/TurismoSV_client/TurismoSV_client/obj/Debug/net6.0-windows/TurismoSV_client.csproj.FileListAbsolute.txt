@@ -199,3 +199,9 @@ C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\bin\Debug\ne
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\bin\Debug\net6.0-windows\de\PdfSharp.Charting.resources.dll
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\bin\Debug\net6.0-windows\de\PdfSharp.resources.dll
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wradicionalesbynombre.g.cs
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wradicionalesbynombre.baml
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wcategorias.g.cs
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wcategorias.baml
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wlistadoUsuarios.g.cs
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wlistadoUsuarios.baml

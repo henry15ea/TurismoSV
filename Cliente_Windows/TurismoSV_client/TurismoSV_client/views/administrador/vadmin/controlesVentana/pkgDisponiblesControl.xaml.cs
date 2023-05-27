@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TurismoSV_client.controllers.adm;
+using TurismoSV_client.models.reportModels;
+using TurismoSV_client.UitlsClass.AppConfig;
 
 namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 {
@@ -23,6 +26,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
     public partial class pkgDisponiblesControl : UserControl
     {
         protected DataTable dtfx;
+        protected String id_selected = null;
         public pkgDisponiblesControl()
         {
             InitializeComponent();
@@ -224,10 +228,10 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                 SqlCommand comando = new SqlCommand(consulta, sc1);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", st);
+                id_selected = st.Trim();
 
 
-
-                SqlDataAdapter da = new SqlDataAdapter(comando);
+               SqlDataAdapter da = new SqlDataAdapter(comando);
                 DataTable dt = new DataTable();
 
                 da.Fill(dt);
@@ -241,9 +245,10 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                 fecha = DateTime.Parse(dt.Rows[0]["fechafinal"].ToString(), System.Globalization.CultureInfo.InvariantCulture);
                 dpickfinal.SelectedDate = fecha;
                 cboxpaquete.SelectedValue = dt.Rows[0]["idpaquete"].ToString();
+
                 chbestado.IsChecked = (bool)dt.Rows[0]["estado"];
 
-
+                btn_report.IsEnabled = true;
                 sc1.Close();
                 comrpobar();
             }
@@ -329,7 +334,24 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
         private void btn_report_Click(object sender, RoutedEventArgs e)
         {
+            try {
+                adicionalesDispByPkgId modelo = new adicionalesDispByPkgId();
 
+                if (!String.IsNullOrEmpty(id_selected)) {
+
+                    r_adicionalesByPkgIdController report = new r_adicionalesByPkgIdController();
+                    modelo.Id = id_selected;
+                    modelo.Username = AppConfig.GetUserSetting("UserApp");
+
+                    report.fn_GetAdicionalesByPkgReport(modelo);
+                    btn_report.IsEnabled = false;
+                } else {
+                    MessageBox.Show("Seleccione un elemento de la tabla");
+                }
+            }
+            catch {
+                MessageBox.Show("No se ha podido construir el reporte");
+            }
         }
     }//end class
 }//end namespaces

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TurismoSV_client.views.administrador.dialogsReports;
 
 namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 {
@@ -274,6 +275,13 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                 txt_itemSearch.Text = "";
                 this.fn_searchElement(dataSearch.Trim());
             }
+        }
+
+        private void btn_report_Click(object sender, RoutedEventArgs e)
+        {
+            //muestra la ventana para generar el reporte
+            wradicionalesbynombre dlg = new wradicionalesbynombre();
+            dlg.ShowDialog();
         }
     }//end class
 }//end namespaces
