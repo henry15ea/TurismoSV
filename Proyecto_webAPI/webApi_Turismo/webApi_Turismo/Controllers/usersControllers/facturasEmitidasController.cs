@@ -8,13 +8,13 @@ namespace webApi_Turismo.Controllers.usersControllers
 {
     [ApiController]
     [Route("api/user/[controller]")]
-    public class facturasController : Controller
+    public class facturasEmitidasController : Controller
     {
 
         private readonly IConfiguration _configuration;
 
 
-        public facturasController(IConfiguration configuration)
+        public facturasEmitidasController(IConfiguration configuration)
         {
             _configuration = configuration;
 

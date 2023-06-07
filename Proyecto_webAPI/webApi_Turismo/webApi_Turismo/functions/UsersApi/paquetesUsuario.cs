@@ -16,7 +16,7 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
     public class paquetesUsuario
     {
         private String id_paqueteGenerado;
-        protected usuarioData.usuarioData udata;
+        protected usuarioData.usuarioDataInfo udata;
         public string Id_paqueteGenerado { get => id_paqueteGenerado; set => id_paqueteGenerado = value; }
 
         public Boolean NuevoEncabezado(encabezadoModel encabezadoData)
@@ -41,7 +41,7 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
                     SqlCommand command = new SqlCommand(SQlCommand, conection);
 
                     cuentaDetalle ct = new cuentaDetalle();
-                    udata = new usuarioData.usuarioData();
+                    udata = new usuarioData.usuarioDataInfo();
                     ct = udata.GetUserAccountDetailsByUserName(encabezadoData.Username.Trim());
                     //abro conexion
                     conection.Open();
@@ -144,7 +144,7 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
                     
 
                     cuentaDetalle ct = new cuentaDetalle();
-                    udata = new usuarioData.usuarioData();
+                    udata = new usuarioData.usuarioDataInfo();
                     ct = udata.GetUserAccountDetailsByUserName(detalleData.Username.Trim());
 
 
@@ -196,7 +196,7 @@ namespace webApi_Turismo.functions.UsersApi.paquetesUsuario
                     //primero busco al usuario 
 
                     cuentaDetalle ct = new cuentaDetalle();
-                    udata = new usuarioData.usuarioData();
+                    udata = new usuarioData.usuarioDataInfo();
                     ct = udata.GetUserAccountDetailsByUserName(detalleData.Username.Trim());
                     
                     //retornamos el dato

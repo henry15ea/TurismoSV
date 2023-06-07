@@ -218,7 +218,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                     SqlCommand comando = new SqlCommand(consulta, sc1);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@id", id);
-                    comando.Parameters.AddWithValue("@nom", txtnombre.Text);
+                    comando.Parameters.AddWithValue("@nom", txtnombre.Text.ToUpper());
 
                     SqlDataAdapter da = new SqlDataAdapter(comando);
                     DataTable dt = new DataTable();

@@ -25,7 +25,9 @@ namespace TurismoSV_client.UitlsClass.RoutesApi;
             Routes.Add("InCompra",HostApi+ "/user/asignarPaquete");
             Routes.Add("InDetalle",HostApi+ "/user/detalleFactura");
             Routes.Add("InPersonsExtras",HostApi+ "/user/integrantesExtras");
-            Routes.Add("historialCompras",HostApi+ "/user/facturas");
+            Routes.Add("historialCompras",HostApi+ "/user/facturasEmitidas");
+            Routes.Add("historialReservas",HostApi+ "/user/facturasReservadas");
+            Routes.Add("CompletaReserva",HostApi+ "/user/facturaCompletedShop");
 
             //obtener reporte factura 
             Routes.Add("facturaReporte", HostApi + "/reporte/user/Factura");

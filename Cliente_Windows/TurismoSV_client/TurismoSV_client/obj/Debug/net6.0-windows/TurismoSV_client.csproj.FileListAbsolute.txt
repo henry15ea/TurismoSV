@@ -205,3 +205,5 @@ C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\ne
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wcategorias.baml
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wlistadoUsuarios.g.cs
 C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\administrador\dialogsReports\wlistadoUsuarios.baml
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\usuarios\frm_PopUpPay.g.cs
+C:\Users\henryGuzman\source\repos\TurismoSV_client\TurismoSV_client\obj\Debug\net6.0-windows\views\usuarios\frm_PopUpPay.baml

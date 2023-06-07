@@ -1,0 +1,114 @@
+﻿<Window x:Class="TurismoSV_client.views.usuarios.frm_PopUpPay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TurismoSV_client.views.usuarios"
+        mc:Ignorable="d"
+        Title="Completar Reserva" Height="446" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Border Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="13*"/>
+                    <RowDefinition Height="24*"/>
+                    <RowDefinition Height="299*"/>
+                    <RowDefinition Height="47*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Margin="0,0,0,1">
+                    <StackPanel  Background="#FFC976" Orientation="Horizontal" Margin="1">
+                        <TextBlock Text="Realizar compra" FontSize="20" TextAlignment="Center" FontWeight="Black"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <StackPanel Background="Transparent" Margin="0,1,0,0" Grid.Row="1" Grid.RowSpan="3">
+                    <Border Background="Transparent" MinHeight="340">
+                        <ScrollViewer MinHeight="380" Height="100" Background="Transparent">
+                            <Border Margin="5" MaxWidth="750" Background="#F5F5F5">
+                                <Border Padding="5">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="23*"/>
+                                            <RowDefinition Height="96*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel Grid.Row="1" Orientation="Horizontal" MaxHeight="32" HorizontalAlignment="Left" VerticalAlignment="Center" Height="60" MinWidth="495" Width="743">
+                                            <WrapPanel MinHeight="32" MinWidth="760" Orientation="Horizontal">
+                                                <Label Content="Forma de pago : " Margin="22,0,200,0"  FontSize="14" FontWeight="Bold"></Label>
+
+                                                <ComboBox x:Name="cmbx_listaPago" MinWidth="300" Background="Transparent" BorderBrush="Transparent"  ItemsSource="{Binding}" SelectionChanged="cmbx_listaPago_SelectionChanged">
+                                                    <ComboBox.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock Text="{Binding Metodopago}" />
+                                                        </DataTemplate>
+                                                    </ComboBox.ItemTemplate>
+
+                                                </ComboBox>
+
+                                            </WrapPanel>
+
+
+                                        </StackPanel>
+                                        <Border Grid.Row="2">
+                                            <Border  Margin="40,10,40,0" BorderBrush="#141A4A" BorderThickness="3" CornerRadius="15">
+                                                <Border Padding="15" x:Name="pnlTargeta" Background="#006170" CornerRadius="15">
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Border Background="#EBE5B5" BorderBrush="#002025" BorderThickness="2" CornerRadius="8" Padding="4">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <WrapPanel Orientation="Vertical" MinWidth="360" HorizontalAlignment="Stretch">
+                                                                    <Label Foreground="Black" FontWeight="Bold" FontSize="14">Código de seguridad:</Label>
+                                                                    <TextBox x:Name="txt_codeSec" FontSize="18" Height="32" MinWidth="245" PreviewTextInput="txtNumero_PreviewTextInput"  MaxLines="1" MaxLength="3" />
+                                                                </WrapPanel>
+
+                                                                <WrapPanel Orientation="Vertical" MinWidth="220">
+                                                                    <Label Foreground="Black" FontWeight="Bold" FontSize="14">Fecha de vencimiento</Label>
+                                                                    <DatePicker x:Name="dtpck_vencimientoCard" Text="{Binding ExpirationDate}" MinWidth="200"/>
+                                                                </WrapPanel>
+                                                            </StackPanel>
+                                                        </Border>
+
+                                                        <Border Margin="0,8,0,0" >
+                                                            <WrapPanel MinHeight="32" MinWidth="420" Orientation="Vertical">
+                                                                <Label Foreground="White" FontWeight="Bold" FontSize="14">Número de la tarjeta de crédito:</Label>
+                                                                <TextBox x:Name="txt_numcard" FontSize="20" Width="610" Height="42" PreviewTextInput="txtNumero_PreviewTextInput" MinWidth="200" MaxLines="1" MaxLength="19" TextChanged="txt_numcard_TextChanged">
+
+                                                                </TextBox>
+                                                            </WrapPanel>
+                                                        </Border>
+
+
+                                                    </StackPanel>
+                                                </Border>
+
+                                            </Border>
+                                        </Border>
+                                    </Grid>
+
+                                </Border>
+
+                            </Border>
+                        </ScrollViewer>
+                    </Border>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Background="#FFCFE8CF" Orientation="Horizontal" Margin="0,4,0,0" >
+                    <Border Padding="5" Height="45">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel VerticalAlignment="Center" Margin="0,0,10,0" HorizontalAlignment="Stretch" MinWidth="120">
+                                <Border Background="#0F8375" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF166744">
+                                    <Button x:Name="btn_asignPackage" Content="Comprar" FontSize="14" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="btn_asignPackage_Click" Width="120"></Button>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Margin="340,0,0,5" VerticalAlignment="Center" HorizontalAlignment="Stretch" MinWidth="300">
+                                <Border Background="#640208" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF61153F">
+                                    <Button x:Name="btn_closed" FontSize="14" Content="Cancelar" Background="#7A1242" BorderBrush="Transparent" Foreground="White" Click="btn_closed_Click"></Button>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

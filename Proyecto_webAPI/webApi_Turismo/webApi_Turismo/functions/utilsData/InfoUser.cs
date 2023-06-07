@@ -8,7 +8,7 @@ namespace webApi_Turismo.functions.utilsData
 {
     public class InfoUser
     {
-        protected usuarioData udata;
+        protected usuarioDataInfo udata;
         private cuentaDetalle dataUsuario;
         public Boolean fn_GetDataUser(cUserModel dataModel)
         {
@@ -27,7 +27,7 @@ namespace webApi_Turismo.functions.utilsData
 
                     //busco al usuario y si este es valido
                     cuentaDetalle ct = new cuentaDetalle();
-                    udata = new usuarioData();
+                    udata = new usuarioDataInfo();
                     ct = udata.GetUserAccountDetailsByUserName(dataModel.Username.Trim());
 
                     //verificamos si el encabezadoData existe en la db

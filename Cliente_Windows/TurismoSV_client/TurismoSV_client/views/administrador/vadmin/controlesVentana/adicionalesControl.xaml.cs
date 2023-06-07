@@ -103,7 +103,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                 SqlCommand comando = new SqlCommand(consulta, sc1);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", md5.fn_GenerateMd5Hash());
-                comando.Parameters.AddWithValue("@nom", txtnombre.Text);
+                comando.Parameters.AddWithValue("@nom", txtnombre.Text.ToUpper());
                 comando.Parameters.AddWithValue("@desc", txtdescripcion.Text);
                 comando.Parameters.AddWithValue("@precio", txtprecio.Text);
 
@@ -226,7 +226,7 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                     SqlCommand comando = new SqlCommand(consulta, sc1);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@id", id);
-                    comando.Parameters.AddWithValue("@nom", txtnombre.Text);
+                    comando.Parameters.AddWithValue("@nom", txtnombre.Text.ToUpper());
                     comando.Parameters.AddWithValue("@desc", txtdescripcion.Text);
                     comando.Parameters.AddWithValue("@precio", txtprecio.Text);
 

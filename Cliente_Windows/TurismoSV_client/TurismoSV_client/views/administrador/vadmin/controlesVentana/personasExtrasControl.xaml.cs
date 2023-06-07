@@ -135,8 +135,8 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                 SqlCommand comando = new SqlCommand(consulta, sc1);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id", md5.fn_GenerateMd5Hash());
-                comando.Parameters.AddWithValue("@nombre", txtnombre.Text);
-                comando.Parameters.AddWithValue("@apellido", txtapellido.Text);
+                comando.Parameters.AddWithValue("@nombre", txtnombre.Text.ToUpper().Trim());
+                comando.Parameters.AddWithValue("@apellido", txtapellido.Text.ToUpper().Trim());
                 comando.Parameters.AddWithValue("@ndoc", txtdui.Text);
                 comando.Parameters.AddWithValue("@edad", txtedad.Text);
                 comando.Parameters.AddWithValue("@iddet", cboxdetalle.SelectedValue.ToString());
@@ -269,8 +269,8 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
                     SqlCommand comando = new SqlCommand(consulta, sc1);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@id", id);
-                    comando.Parameters.AddWithValue("@nombre", txtnombre.Text);
-                    comando.Parameters.AddWithValue("@apellido", txtapellido.Text);
+                    comando.Parameters.AddWithValue("@nombre", txtnombre.Text.ToUpper().Trim());
+                    comando.Parameters.AddWithValue("@apellido", txtapellido.Text.ToUpper().Trim());
                     comando.Parameters.AddWithValue("@ndoc", txtdui.Text);
                     comando.Parameters.AddWithValue("@edad", txtedad.Text);
                     comando.Parameters.AddWithValue("@iddet", cboxdetalle.SelectedValue.ToString());

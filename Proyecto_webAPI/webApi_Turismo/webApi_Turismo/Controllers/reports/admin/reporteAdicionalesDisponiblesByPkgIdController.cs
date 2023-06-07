@@ -32,7 +32,7 @@ namespace webApi_Turismo.Controllers.reports.admin
             };
             try
             {
-                usuarioData udata = new usuarioData();
+                usuarioDataInfo udata = new usuarioDataInfo();
                 cuentaDetalle ct = new cuentaDetalle();
                 ct = udata.GetUserAccountDetailsByUserName(modelo.Username.Trim());
 

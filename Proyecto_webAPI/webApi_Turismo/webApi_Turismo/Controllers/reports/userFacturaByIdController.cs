@@ -32,7 +32,7 @@ namespace webApi_Turismo.Controllers.reports
             };
             try {
                 reportVerifiedUser rpv = new reportVerifiedUser();
-                usuarioData udata = new usuarioData();
+                usuarioDataInfo udata = new usuarioDataInfo();
                 cuentaDetalle ct = new cuentaDetalle();
                 ct = udata.GetUserAccountDetailsByUserName(modelo.Username.Trim());
 

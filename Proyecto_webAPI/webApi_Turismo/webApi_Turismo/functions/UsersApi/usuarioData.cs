@@ -11,7 +11,7 @@ namespace webApi_Turismo.functions.UsersApi.usuarioData
 {
     //retorna informacion acerca de un usuario , tanto especifica como tambien el listado de todos los usuarios en la tabla usuarios
 
-    public class usuarioData
+    public class usuarioDataInfo
     {
         //obtiene el listado de los usuarios que estan en tabla usuarios
         public List<UsuarioModel> GetUsuariosList()

@@ -76,6 +76,9 @@
     <Compile Update="views\usuarios\frm_historialCompras.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="views\usuarios\frm_PopUpPay.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\usuarios\frm_shopProduct.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,6 +157,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\usuarios\frm_historialCompras.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="views\usuarios\frm_PopUpPay.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\usuarios\frm_shopProduct.xaml">

@@ -146,7 +146,21 @@ namespace TurismoSV_client.views
         private void btn_closeSesion_Click(object sender, RoutedEventArgs e)
         {
             //acciones para cerrar sesion
-            this.Close();
+            //acciones para cerrar sesion
+            MessageBoxResult result = MessageBox.Show("¿Desea cerrar la sesion actual?", "Cerrar sesion", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Close();
+                AppConfig.SetUserSetting("TokenApp", "");
+                AppConfig.SetUserSetting("UserApp", "");
+                AppConfig.SetUserSetting("RoleApp", "");
+                AppConfig.SetUserSetting("MailApp", "");
+
+                MainWindow frm_login = new MainWindow();
+                frm_login.Show();
+
+            }
         }
 
         private void btn_inicio_click(object sender, RoutedEventArgs e)

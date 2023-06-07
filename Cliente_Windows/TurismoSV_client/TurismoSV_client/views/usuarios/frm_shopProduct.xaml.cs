@@ -38,6 +38,7 @@ namespace TurismoSV_client.views.usuarios
         protected String TerminateShopMessage = "";
         protected String id_detalle = null;
         protected String id_encabezado = null;
+        protected bool stateEmited = false;
         //funciones para llamada de api
         private async Task geetInfoPaqueteAsync()
         {
@@ -165,7 +166,7 @@ namespace TurismoSV_client.views.usuarios
             hd.Idformapago = id_pagoSelected.ToString().Trim();
             hd.Descuento = decimal.Parse("15");
             hd.Monto = decimal.Parse("" + Total);
-            hd.State_emited = true;
+            hd.State_emited = stateEmited;
             hd.Username = AppConfig.GetUserSetting("UserApp").ToString();
 
             
@@ -207,7 +208,7 @@ namespace TurismoSV_client.views.usuarios
                                 bool respuestaInvitados = await fn_RegistrarInvitadosAsync();
                                 if (respuestaInvitados == true)
                                 {
-                                    MessageBox.Show("Compra realizada");
+                                    MessageBox.Show("La tarea se ha completado con exito");
                                     this.Close();
 
                                 }
@@ -222,7 +223,7 @@ namespace TurismoSV_client.views.usuarios
                             //--------------------------------------------------------------------
                         } else {
                             //se asume que se adquirio el paquete para una persona
-                            MessageBox.Show("Compra realizada");
+                            MessageBox.Show("La tarea se ha completado con exito");
                         }
                         
                         //fin registro invitados
@@ -271,8 +272,42 @@ namespace TurismoSV_client.views.usuarios
         private void cmbx_listaPago_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             fpagoModel selectedValue = (fpagoModel)cmbx_listaPago.SelectedValue;
-            id_pagoSelected = selectedValue.Idformapago;
             
+            id_pagoSelected = selectedValue.Idformapago;
+
+            if (selectedValue.Idformapago == "76650EA21121DF42C017DAB332F447EE" || selectedValue.Metodopago == "RESERVAR") {
+                btn_asignPackage.IsEnabled = false;
+                pnlTargeta.IsEnabled = false;
+                btn_reservPackage.IsEnabled = true;
+                stateEmited = false;
+
+
+            } else {
+                btn_asignPackage.IsEnabled = true;
+                pnlTargeta.IsEnabled = true;
+                btn_reservPackage.IsEnabled = false;
+                stateEmited = true;
+            }
+        }
+
+        private void btn_reservPackage_Click(object sender, RoutedEventArgs e)
+        {
+            //esta accion es la que crea todo los detalle de la factura , con la diferencia que el estado de cobro queda en pendiente
+            //esta accion ya realiza la compra del paquete
+            MessageBoxResult result = MessageBox.Show("¿Desea reservar el paquete turistivo?", "Reservar compra", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                    fn_GenerateHeadingFact();
+                    this.Close();
+                    //***********************************************************
+        
+            }
+            else
+            {
+                // La compra se canceló. Realiza la lógica de cancelación aquí
+
+            }
         }
 
         private void btn_asignPackage_Click(object sender, RoutedEventArgs e)
@@ -377,5 +412,7 @@ namespace TurismoSV_client.views.usuarios
         {
 
         }
+
+       
     }//end class
 }//end namespaces
