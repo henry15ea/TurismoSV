@@ -107,75 +107,199 @@
             </StackPanel>
             <Border Grid.Row="1" Padding="5" Background="Transparent" Margin="1" CornerRadius="5">
                 <StackPanel Background="Transparent" Margin="1,1,1,1" Grid.Row="1" MinWidth="2">
-
+                    <Border>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <Label FontSize="24" FontWeight="Bold" Content="Estado de facturas"/>
+                            <Border Margin="150,0,0,0" Padding="5" Background="#3E87D4" BorderThickness="1" BorderBrush="Black" CornerRadius="8">
+                                <Button x:Name="btn_refreshData" Width="220" FontSize="14" Content="Acturalizar listado" Foreground="White" BorderBrush="Transparent" Background="Transparent" Click="btn_refreshData_Click"></Button>
+                            </Border>
+                        </StackPanel>
+                    </Border>
                     <Border Padding="8" Background="#F0F0F0" Margin="0,0,0,5" CornerRadius="15">
-                        <StackPanel Height="220" Background="#edede9"  Margin="0,0,0,2">
-                            <ListBox x:Name="listadoFacturas" HorizontalContentAlignment="Center" Height="210"  VerticalContentAlignment="Center" MinWidth="60"  Background="Transparent" BorderBrush="Transparent">
-                                <ListBox.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Vertical" />
-                                    </ItemsPanelTemplate>
-                                </ListBox.ItemsPanel>
-                                <ListBox.ItemContainerStyle>
-                                    <Style TargetType="{x:Type ListBoxItem}">
-                                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
-                                    </Style>
+                        <StackPanel>
 
-                                </ListBox.ItemContainerStyle>
+                            <Grid>
+                                <TabControl>
+                                    <TabItem FontSize="18" Header="Comprados">
+                                        <!-- aquí va el contenido del TabItem 1 -->
+                                        <StackPanel x:Name="stk_compras" Height="510" Background="#edede9"  Margin="5">
+                                            <ListBox x:Name="listadoFacturas" HorizontalContentAlignment="Center" Height="210"  VerticalContentAlignment="Center" MinWidth="60"  Background="Transparent" BorderBrush="Transparent">
+                                                <ListBox.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel Orientation="Vertical" />
+                                                    </ItemsPanelTemplate>
+                                                </ListBox.ItemsPanel>
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                                                    </Style>
 
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Border BorderThickness="2" Margin="10,0,0,0" Padding="4" CornerRadius="8">
-                                            <Border.Background>
-                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                                    <GradientStop Color="#edede9" Offset="0.226"/>
-                                                    <GradientStop Color="#D0F5F5" Offset="0.979"/>
-                                                </LinearGradientBrush>
-                                            </Border.Background>
-                                            <Border.BorderBrush>
-                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                                    <GradientStop Color="#1d3557"/>
-                                                    <GradientStop Color="#FF4DA72D" Offset="1"/>
-                                                </LinearGradientBrush>
-                                            </Border.BorderBrush>
+                                                </ListBox.ItemContainerStyle>
 
-                                            <Border>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Border BorderThickness="2" Margin="10,0,0,0" Padding="4" CornerRadius="8">
+                                                            <Border.Background>
+                                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                    <GradientStop Color="#edede9" Offset="0.226"/>
+                                                                    <GradientStop Color="#D0F5F5" Offset="0.979"/>
+                                                                </LinearGradientBrush>
+                                                            </Border.Background>
+                                                            <Border.BorderBrush>
+                                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                    <GradientStop Color="#1d3557"/>
+                                                                    <GradientStop Color="#FF4DA72D" Offset="1"/>
+                                                                </LinearGradientBrush>
+                                                            </Border.BorderBrush>
 
-                                                <Grid Width="800">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition/>
-                                                        <ColumnDefinition Width="120"/>
-                                                    </Grid.ColumnDefinitions>
+                                                            <Border>
 
-                                                    <StackPanel Grid.Column="0">
-                                                        <TextBlock Text="{Binding Id_factura}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="{x:Null}" Height="0"/>
-                                                        <TextBlock Text="{Binding Paquete}" FontSize="20" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="30"/>
-                                                        <Border Padding="5" Background="WhiteSmoke" CornerRadius="15">
-                                                            <StackPanel>
-                                                                <TextBlock Text="{Binding Total}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="15"/>
-                                                                <TextBlock Text="{Binding Descuento}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="15"/>
-                                                                <TextBlock Text="{Binding Cupos}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="15"/>
+                                                                <Grid Width="950" Height="150">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition />
+                                                                        <ColumnDefinition Width="280"/>
+                                                                    </Grid.ColumnDefinitions>
 
-                                                                <TextBlock Text="{Binding Pasarela}" FontWeight="Bold" Margin="0, 1, 0, 0" HorizontalAlignment="Left" Height="50" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" TextWrapping="WrapWithOverflow" ></TextBlock>
+                                                                    <StackPanel Grid.Column="0">
+                                                                        <TextBlock Text="{Binding Id_factura}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="{x:Null}" Height="0"/>
+                                                                        <TextBlock Text="{Binding Paquete}" FontSize="20" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="30"/>
+                                                                        <Border Padding="5" Background="WhiteSmoke" CornerRadius="15">
+                                                                            <StackPanel >
+                                                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" >
+                                                                                    <TextBlock FontSize="15" FontWeight="Bold" Text="Total Pago : "></TextBlock>
+                                                                                    <TextBlock Text="{Binding Total}" FontSize="15" FontWeight="Bold" Margin="0, 1, 0, 0" TextAlignment="Center" Foreground="Green"/>
+                                                                                </StackPanel>
+                                                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" >
+                                                                                    <TextBlock FontSize="15" FontWeight="Bold" Text="Descuento : " TextAlignment="Center"></TextBlock>
+                                                                                    <TextBlock Text="{Binding Descuento}" FontWeight="Bold" Margin="0, 1, 0, 0" TextAlignment="Center" FontSize="15" Foreground="Black"/>
+                                                                                </StackPanel>
+                                                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" >
+                                                                                    <TextBlock FontSize="15" FontWeight="Bold" Text="Cupos : " TextAlignment="Center"></TextBlock>
+                                                                                    <TextBlock Text="{Binding Cupos}" FontWeight="Bold" TextAlignment="Center" FontSize="15" Margin="0, 1, 0, 0" Foreground="Black"/>
+                                                                                </StackPanel>
 
-                                                            </StackPanel>
-                                                        </Border>
-                                                        
-                                                    </StackPanel>
-                                                    <Border Grid.Column="1" Padding="5" VerticalAlignment="Center">
-                                                        <StackPanel>
-                                                            <Border Background="#17515B" CornerRadius="8" Margin="0,2,0,0" MaxHeight="40" Padding="10" VerticalAlignment="Center">
-                                                                <Button Content="Generar Factura" Click="btn_selectedItem_Click" Tag="{Binding Id_factura}" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
+                                                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" >
+                                                                                    <TextBlock FontSize="15" FontWeight="Bold" Text="Pasarela de pago : " TextAlignment="Center"></TextBlock>
+                                                                                    <TextBlock Text="{Binding Pasarela}" FontWeight="Bold" Margin="0, 1, 0, 0" HorizontalAlignment="Left" Height="50" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" TextWrapping="WrapWithOverflow" ></TextBlock>
+                                                                                </StackPanel>
+                                                                            </StackPanel>
+                                                                        </Border>
+
+                                                                    </StackPanel>
+                                                                    <Border Grid.Column="1" Padding="1" VerticalAlignment="Center" Width="320">
+
+
+                                                                        <StackPanel Width="222">
+
+                                                                            <Border Background="#17515B" CornerRadius="8" Margin="0" MaxHeight="40" Padding="1" VerticalAlignment="Center">
+                                                                                <Button Width="140" Content="Generar Factura" Click="btn_selectedItem_Click" Tag="{Binding Id_factura}" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
+                                                                            </Border>
+                                                                        </StackPanel>
+                                                                    </Border>
+                                                                </Grid>
                                                             </Border>
-                                                        </StackPanel>
-                                                    </Border>
-                                                </Grid>
-                                            </Border>
-                                        </Border>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
+                                                        </Border>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
 
-                            </ListBox>
+                                            </ListBox>
+                                        </StackPanel>
+                                    </TabItem>
+                                    <TabItem FontSize="18" Header="Reservados">
+                                        <!-- aquí va el contenido del TabItem 2 -->
+                                        <ScrollViewer VerticalScrollBarVisibility="Visible" Height="510">
+                                            <Border Padding="5">
+                                                <StackPanel x:Name="stk_reservas" Height="500" Background="#edede9"  Margin="0,0,0,2">
+                                                    <ListBox x:Name="listadoReservas" HorizontalContentAlignment="Center" Height="210"  VerticalContentAlignment="Center" MinWidth="60"  Background="Transparent" BorderBrush="Transparent">
+                                                        <ListBox.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <StackPanel Orientation="Vertical" />
+                                                            </ItemsPanelTemplate>
+                                                        </ListBox.ItemsPanel>
+                                                        <ListBox.ItemContainerStyle>
+                                                            <Style TargetType="{x:Type ListBoxItem}">
+                                                                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                                                            </Style>
+
+                                                        </ListBox.ItemContainerStyle>
+
+                                                        <ListBox.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Border BorderThickness="2" Margin="10,0,0,0" Padding="4" CornerRadius="8" Height="200">
+                                                                    <Border.Background>
+                                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                            <GradientStop Color="#edede9" Offset="0.226"/>
+                                                                            <GradientStop Color="#D0F5F5" Offset="0.979"/>
+                                                                        </LinearGradientBrush>
+                                                                    </Border.Background>
+                                                                    <Border.BorderBrush>
+                                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                            <GradientStop Color="#1d3557"/>
+                                                                            <GradientStop Color="#FF4DA72D" Offset="1"/>
+                                                                        </LinearGradientBrush>
+                                                                    </Border.BorderBrush>
+
+                                                                    <Border>
+
+                                                                        <Grid Width="900" >
+                                                                            <Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition/>
+                                                                                <ColumnDefinition Width="220"/>
+                                                                            </Grid.ColumnDefinitions>
+
+                                                                            <StackPanel Grid.Column="0">
+                                                                                <TextBlock Text="{Binding Id_factura}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="{x:Null}" Height="0"/>
+                                                                                <TextBlock Text="{Binding Paquete}" FontSize="20" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black" Height="30"/>
+                                                                                <Border Padding="5" Background="WhiteSmoke" CornerRadius="15" Height="150">
+                                                                                    <StackPanel Height="160">
+                                                                                        <StackPanel Orientation="Horizontal" Height="32">
+                                                                                            <TextBlock Text="Total Pagar : " FontWeight="Bold"></TextBlock>
+                                                                                            <TextBlock Text="{Binding Total}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Green"/>
+                                                                                        </StackPanel>
+                                                                                        <StackPanel Orientation="Horizontal" Height="32">
+                                                                                            <TextBlock Text="Descuento Aplicado : " FontWeight="Bold"></TextBlock>
+
+                                                                                            <TextBlock Text="{Binding Descuento}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black"/>
+                                                                                        </StackPanel>
+
+                                                                                        <StackPanel Orientation="Horizontal" Height="32">
+                                                                                            <TextBlock Text="personas : " FontWeight="Bold"></TextBlock>
+                                                                                            <TextBlock Text="{Binding Cupos}" FontWeight="Bold" Margin="0, 1, 0, 0" Foreground="Black"/>
+                                                                                        </StackPanel>
+
+                                                                                        <StackPanel Orientation="Horizontal" Height="32">
+                                                                                            <TextBlock Text="Estado : " FontWeight="Bold"></TextBlock>
+                                                                                            <TextBlock Text="{Binding Pasarela}" Foreground="DarkRed" FontWeight="Bold" Margin="0, 1, 0, 0"  TextAlignment="Center" FontSize="15" TextWrapping="WrapWithOverflow" ></TextBlock>
+                                                                                        </StackPanel>
+
+                                                                                    </StackPanel>
+                                                                                </Border>
+
+                                                                            </StackPanel>
+                                                                            <Border Grid.Column="1" Padding="5" VerticalAlignment="Center">
+                                                                                <StackPanel Height="50">
+
+                                                                                    <Border Background="#17515B" CornerRadius="8" Margin="0,2,0,0" MaxHeight="40" Padding="1" VerticalAlignment="Center">
+                                                                                        <Button Width="205" Content="Terminar compra" Click="btn_selectedItemReservas_Click" Tag="{Binding Id_factura}" Background="Transparent" BorderBrush="Transparent" Foreground="White"/>
+                                                                                    </Border>
+                                                                                </StackPanel>
+                                                                            </Border>
+                                                                        </Grid>
+                                                                    </Border>
+                                                                </Border>
+                                                            </DataTemplate>
+                                                        </ListBox.ItemTemplate>
+
+                                                    </ListBox>
+                                                </StackPanel>
+                                            </Border>
+
+                                        </ScrollViewer>
+                                    </TabItem>
+                                    <!-- agregar más TabItems si es necesario -->
+                                </TabControl>
+                            </Grid>
+
                         </StackPanel>
                     </Border>
                 </StackPanel>

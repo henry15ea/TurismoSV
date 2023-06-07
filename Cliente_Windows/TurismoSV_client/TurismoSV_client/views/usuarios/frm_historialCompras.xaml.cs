@@ -24,8 +24,9 @@ namespace TurismoSV_client.views.usuarios
     public partial class frm_historialCompras : Window
     {
         private string textvalue;
+        protected String nameButton= "Generar Factura";
         //funciones que obtienen valores o datos de la api 
-        private async Task getDataCategoriesAsync()
+        private async Task getDatagHistorialCompraAsync()
         {
             bool resp = false;
 
@@ -36,9 +37,36 @@ namespace TurismoSV_client.views.usuarios
             if (resp == true)
             {
                 //var cadata = ct.GetDataAPI();
+                //listadoFacturas.Items.Clear();
                 listadoFacturas.ItemsSource = ct.DataResponse;
+                
 
-                System.Diagnostics.Debug.WriteLine("Respondio la api ");
+                System.Diagnostics.Debug.WriteLine("Respondio la api Comprados");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("fallo en responder de la api ");
+            }
+
+        }
+
+
+
+        private async Task getDatagReservasCompraAsync()
+        {
+            bool resp = false;
+
+            historialReservasController ct = new historialReservasController();
+            String username = AppConfig.GetUserSetting("UserApp");
+            resp = await ct.fn_GetReservasList(username);
+
+            if (resp == true)
+            {
+                //var cadata = ct.GetDataAPI();
+                //listadoFacturas.Items.Clear();
+                listadoReservas.ItemsSource = ct.DataResponse;
+
+                System.Diagnostics.Debug.WriteLine("Respondio la api Reservados");
             }
             else
             {
@@ -48,6 +76,14 @@ namespace TurismoSV_client.views.usuarios
         }
         //fin funciones que obtienen valores o datos de la api 
 
+        public void fn_updateListHistorial() 
+        {
+            //listado de facturas de compras realizadas
+            getDatagHistorialCompraAsync();
+            //listado de facturas pendientes
+            getDatagReservasCompraAsync();
+
+        }
 
         public frm_historialCompras()
         {
@@ -56,7 +92,14 @@ namespace TurismoSV_client.views.usuarios
             {
                 btn_username.Content = AppConfig.GetUserSetting("UserApp");
                 btn_profileMenu.Content = AppConfig.GetUserSetting("UserApp");
-                getDataCategoriesAsync();
+
+                //llamamos a los controladores de la api para obtener el listado de cada uno
+                //listado de facturas de compras realizadas
+                getDatagHistorialCompraAsync();
+                //listado de facturas pendientes
+                getDatagReservasCompraAsync();
+               
+                
             }
 
             catch (Exception)
@@ -86,7 +129,20 @@ namespace TurismoSV_client.views.usuarios
         private void btn_closeSesion_Click(object sender, RoutedEventArgs e)
         {
             //acciones para cerrar sesion
-            this.Close();
+            MessageBoxResult result = MessageBox.Show("¿Desea cerrar la sesion actual?", "Cerrar sesion", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Close();
+                AppConfig.SetUserSetting("TokenApp", "");
+                AppConfig.SetUserSetting("UserApp", "");
+                AppConfig.SetUserSetting("RoleApp", "");
+                AppConfig.SetUserSetting("MailApp", "");
+
+                MainWindow frm_login = new MainWindow();
+                frm_login.Show();
+
+            }
         }
 
         private void btn_inicio_click(object sender, RoutedEventArgs e)
@@ -115,17 +171,40 @@ namespace TurismoSV_client.views.usuarios
         //acciones de contenido body
         private void btn_selectedItem_Click(object sender, RoutedEventArgs e)
         {
+   
+                //acciones de boton de lista seleccionado
+                Button button = sender as Button;
+                textvalue = button.Tag as string;
+                // MessageBox.Show(textvalue);
+
+                getFacturaController fc = new getFacturaController();
+                cInFacturaModel dtm = new cInFacturaModel();
+                dtm.Id_factura = textvalue.Trim();
+                dtm.Username = AppConfig.GetUserSetting("UserApp");
+                fc.fn_GetFacturaReport(dtm);
+        }
+
+        private void btn_selectedItemReservas_Click(object sender, RoutedEventArgs e)
+        {
+            String id_factura = "";
             //acciones de boton de lista seleccionado
             Button button = sender as Button;
             textvalue = button.Tag as string;
-           // MessageBox.Show(textvalue);
 
-            getFacturaController fc = new getFacturaController();
-            cInFacturaModel dtm = new cInFacturaModel();
-            dtm.Id_factura = textvalue.Trim();
-            dtm.Username = AppConfig.GetUserSetting("UserApp");
-            fc.fn_GetFacturaReport(dtm);
+            id_factura = textvalue.Trim();
+            //asignando elementos
+            AppConfig.SetUserSetting("ID_facturaSelect", id_factura);
 
+            frm_PopUpPay mpay = new frm_PopUpPay();
+            mpay.ShowDialog();
+
+
+
+        }
+
+        private void btn_refreshData_Click(object sender, RoutedEventArgs e)
+        {
+            this.fn_updateListHistorial();
         }
     }//end class
 }//end namespaces

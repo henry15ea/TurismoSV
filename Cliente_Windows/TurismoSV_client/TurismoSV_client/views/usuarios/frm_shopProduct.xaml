@@ -107,7 +107,7 @@
                                         </StackPanel>
                                         <Border Grid.Row="2">
                                             <Border  Margin="40,10,40,0" BorderBrush="#141A4A" BorderThickness="3" CornerRadius="15">
-                                                <Border Padding="15" Background="#006170" CornerRadius="15">
+                                                <Border Padding="15" x:Name="pnlTargeta" Background="#006170" CornerRadius="15">
                                                     <StackPanel Orientation="Vertical">
                                                         <Border Background="#EBE5B5" BorderBrush="#002025" BorderThickness="2" CornerRadius="8" Padding="4">
                                                             <StackPanel Orientation="Horizontal">
@@ -149,11 +149,18 @@
                 <StackPanel Grid.Row="2" Background="#FFCFE8CF" Orientation="Horizontal" Margin="0,4,0,0" >
                     <Border Padding="5" Height="45">
                         <StackPanel Orientation="Horizontal">
-                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" MinWidth="300">
+                            <StackPanel VerticalAlignment="Center" Margin="0,0,10,0" HorizontalAlignment="Stretch" MinWidth="120">
                                 <Border Background="#0F8375" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF166744">
-                                    <Button x:Name="btn_asignPackage" Content="Comprar Paquete Turistico" FontSize="14" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="btn_asignPackage_Click"></Button>
+                                    <Button x:Name="btn_asignPackage" Content="Comprar" FontSize="14" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="btn_asignPackage_Click" Width="120"></Button>
                                 </Border>
                             </StackPanel>
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" MinWidth="10" Width="120">
+                                <Border Background="#FFB36025" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF987E07">
+                                    <Button x:Name="btn_reservPackage" Content="Reservar" FontSize="14" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="btn_reservPackage_Click" Width="120"></Button>
+                                </Border>
+                            </StackPanel>
+
                             <StackPanel Margin="150,0,0,5" VerticalAlignment="Center" HorizontalAlignment="Stretch" MinWidth="300">
                                 <Border Background="#640208" MinHeight="32" CornerRadius="4" BorderThickness="2" BorderBrush="#FF61153F">
                                     <Button x:Name="btn_closed" FontSize="14" Content="Cancelar" Background="#7A1242" BorderBrush="Transparent" Foreground="White" Click="btn_closed_Click"></Button>
