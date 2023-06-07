@@ -19,7 +19,7 @@ namespace webApi_Turismo.functions.Reports.UserReports
 
             try {
                 reportVerifiedUser rpv = new reportVerifiedUser();
-                usuarioData udata = new usuarioData();
+                usuarioDataInfo udata = new usuarioDataInfo();
                 userFacturaModel modeloFacVerif = new userFacturaModel();
                 cuentaDetalle ct = new cuentaDetalle();
                 ct = udata.GetUserAccountDetailsByUserName(modelo.Username.Trim());

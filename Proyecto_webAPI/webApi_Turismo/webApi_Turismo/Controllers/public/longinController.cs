@@ -66,7 +66,7 @@ namespace webApi_Turismo.Controllers
                 {
                     cuentaDetalle user = new cuentaDetalle();
                     cls_tokenGenerator tkn = new cls_tokenGenerator();
-                    usuarioData vd = new usuarioData();
+                    usuarioDataInfo vd = new usuarioDataInfo();
 
                     user = vd.GetUserAccountDetailsByUserName(username);
 

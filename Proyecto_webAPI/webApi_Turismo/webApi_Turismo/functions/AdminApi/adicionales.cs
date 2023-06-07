@@ -15,7 +15,7 @@ namespace webApi_Turismo.functions.AdminApi.adicionalesFuncs
     public class adicionalesFuncs
     {
         private String id_Generado;
-        protected usuarioData udata;
+        protected usuarioDataInfo udata;
         public string Id_Generado { get => id_Generado; set => id_Generado = value; }
 
         public Boolean fn_nuevoADicional(cAdicionalesModel dataModel)
@@ -35,7 +35,7 @@ namespace webApi_Turismo.functions.AdminApi.adicionalesFuncs
                  
                     //busco al usuario y si este es valido
                     cuentaDetalle ct = new cuentaDetalle();
-                    udata = new usuarioData();
+                    udata = new usuarioDataInfo();
                     ct = udata.GetUserAccountDetailsByUserName(dataModel.Username.Trim());
                     
                     //verificamos si el encabezadoData existe en la db
@@ -123,7 +123,7 @@ namespace webApi_Turismo.functions.AdminApi.adicionalesFuncs
 
                     //busco al usuario y si este es valido
                     cuentaDetalle ct = new cuentaDetalle();
-                    udata = new usuarioData();
+                    udata = new usuarioDataInfo();
                     ct = udata.GetUserAccountDetailsByUserName(dataModel.Username.Trim());
 
                     //verificamos si el encabezadoData existe en la db
@@ -208,7 +208,7 @@ namespace webApi_Turismo.functions.AdminApi.adicionalesFuncs
 
                     //busco al usuario y si este es valido
                     cuentaDetalle ct = new cuentaDetalle();
-                    udata = new usuarioData();
+                    udata = new usuarioDataInfo();
                     ct = udata.GetUserAccountDetailsByUserName(dataModel.Username.Trim());
 
                     //verificamos si el encabezadoData existe en la db
