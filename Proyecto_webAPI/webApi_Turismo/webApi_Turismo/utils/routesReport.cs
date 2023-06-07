@@ -19,6 +19,11 @@ namespace webApi_Turismo.utils
             Routes.Add("\\reports\\ListadoAdicionalesDispByPaquete.frx");
             Routes.Add("\\reports\\PaquetesDisponibles.frx");
             Routes.Add("\\reports\\ListadoUsuariosAll.frx");
+            Routes.Add("\\reports\\reporteVentasAdicionales.frx");
+            Routes.Add("\\reports\\reporteVentasAdicionalesPorPaquete.frx");
+            Routes.Add("\\reports\\reporteVentasPorFechas.frx");
+            Routes.Add("\\reports\\reporteVentasPorMetodoDePago.frx");
+            Routes.Add("\\reports\\reporteVentasPorUsuario.frx");
 
         }
 
