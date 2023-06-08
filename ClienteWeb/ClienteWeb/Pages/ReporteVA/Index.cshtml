@@ -1,0 +1,23 @@
+﻿@page
+@model ClienteWeb.Pages.ReporteVA.IndexModel
+@{
+}
+<h2>Reporte de Ventas Adicionales </h2>
+@if (Model.ms != null)
+{
+
+    // Convertir el MemoryStream en un array de bytes
+    byte[] data = Model.ms.ToArray();
+
+    // Convertir el array de bytes a una cadena Base64
+    string base64String = Convert.ToBase64String(data);
+
+    // Generar el enlace con el contenido del MemoryStream
+    string dataUri = "data:application/pdf;base64," + base64String;
+
+    <embed src="@dataUri" width="100%" height="600" type="application/pdf">
+}
+else
+{
+    <h2>No se encontro reporte</h2>
+}
