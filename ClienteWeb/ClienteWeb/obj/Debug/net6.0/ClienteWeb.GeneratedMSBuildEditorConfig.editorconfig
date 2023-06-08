@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZUZhY3R1cmFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ronald/source/repos/Turismo/TurismoSV/ClienteWeb/ClienteWeb/Pages/ReporteFPago/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZUZQYWdvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ronald/source/repos/Turismo/TurismoSV/ClienteWeb/ClienteWeb/Pages/ReporteListPaquetes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZUxpc3RQYXF1ZXRlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -70,6 +74,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Ronald/source/repos/Turismo/TurismoSV/ClienteWeb/ClienteWeb/Pages/ReporteUsuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZVVzdWFyaW9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ronald/source/repos/Turismo/TurismoSV/ClienteWeb/ClienteWeb/Pages/ReporteVA/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZVZBXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ronald/source/repos/Turismo/TurismoSV/ClienteWeb/ClienteWeb/Pages/ReporteVBF/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZVZCRlxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ronald/source/repos/Turismo/TurismoSV/ClienteWeb/ClienteWeb/Pages/ReporteVBNA/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZVZCTkFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ronald/source/repos/Turismo/TurismoSV/ClienteWeb/ClienteWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {}
+    "C:\\Users\\Ronald\\source\\repos\\Turismo\\TurismoSV\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {
+    "C:\\Users\\Ronald\\source\\repos\\Turismo\\TurismoSV\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
+        "projectUniqueName": "C:\\Users\\Ronald\\source\\repos\\Turismo\\TurismoSV\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
         "projectName": "webApi_Turismo",
-        "projectPath": "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
-        "packagesPath": "C:\\Users\\henryGuzman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henryGuzman\\source\\repos\\webApi_Turismo\\webApi_Turismo\\obj\\",
+        "projectPath": "C:\\Users\\Ronald\\source\\repos\\Turismo\\TurismoSV\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\webApi_Turismo.csproj",
+        "packagesPath": "C:\\Users\\Ronald\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ronald\\source\\repos\\Turismo\\TurismoSV\\Proyecto_webAPI\\webApi_Turismo\\webApi_Turismo\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\henryGuzman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ronald\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,7 +95,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -111,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
