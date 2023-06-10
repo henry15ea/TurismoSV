@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using TurismoSV_client.controllers.adm;
 using TurismoSV_client.models.reportModels;
 using TurismoSV_client.UitlsClass.AppConfig;
+using TurismoSV_client.views.administrador.dialogsReports;
 
 namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 {
@@ -334,24 +335,54 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 
         private void btn_report_Click(object sender, RoutedEventArgs e)
         {
-            try {
-                adicionalesDispByPkgId modelo = new adicionalesDispByPkgId();
+            // el siguinete codigo pertenece al boton
 
-                if (!String.IsNullOrEmpty(id_selected)) {
+            /* try {
+                 adicionalesDispByPkgId modelo = new adicionalesDispByPkgId();
 
-                    r_adicionalesByPkgIdController report = new r_adicionalesByPkgIdController();
-                    modelo.Id = id_selected;
-                    modelo.Username = AppConfig.GetUserSetting("UserApp");
+                 if (!String.IsNullOrEmpty(id_selected)) {
 
-                    report.fn_GetAdicionalesByPkgReport(modelo);
-                    btn_report.IsEnabled = false;
-                } else {
-                    MessageBox.Show("Seleccione un elemento de la tabla");
-                }
-            }
-            catch {
-                MessageBox.Show("No se ha podido construir el reporte");
-            }
+                     r_adicionalesByPkgIdController report = new r_adicionalesByPkgIdController();
+                     modelo.Id = id_selected;
+                     modelo.Username = AppConfig.GetUserSetting("UserApp");
+
+                     report.fn_GetAdicionalesByPkgReport(modelo);
+                     btn_report.IsEnabled = false;
+                 } else {
+                     MessageBox.Show("Seleccione un elemento de la tabla");
+                 }
+             }
+             catch {
+                 MessageBox.Show("No se ha podido construir el reporte");
+             }*/
+
+            //prueba para nuevo reporte
+            wVentaByName_Apellido modal = new wVentaByName_Apellido();
+            modal.ShowDialog();
+
+        }
+
+        private void btn_report_Click2(object sender, RoutedEventArgs e)
+        {
+            /* wventasByFecha modal = new wventasByFecha();
+             modal.ShowDialog();*/
+           
+
+        }
+        private void btn_report_Click3(object sender, RoutedEventArgs e)
+        {
+
+           /* ventasByFpagoModel modal = new ventasByFpagoModel();
+            modal.ShowDialog();*/
+           
+
+        }
+        private void btn_report_Click4(object sender, RoutedEventArgs e)
+        {
+
+            /* wVentaByName_Apellido modal = new wVentaByName_Apellido();
+             modal.ShowDialog();*/
+
         }
     }//end class
 }//end namespaces

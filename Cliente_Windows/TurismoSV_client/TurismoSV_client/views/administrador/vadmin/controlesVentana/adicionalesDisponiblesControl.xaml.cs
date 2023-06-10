@@ -16,7 +16,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TurismoSV_client.controllers.adm;
 using TurismoSV_client.models.AppModel.admin;
+using TurismoSV_client.models.reportModels;
 using TurismoSV_client.UitlsClass.AppConfig;
+using TurismoSV_client.views.administrador.dialogsReports;
 
 namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
 {
@@ -313,17 +315,33 @@ namespace TurismoSV_client.views.administrador.vadmin.controlesVentana
             }
         }
 
-        private void btn_crearReporte_Click(object sender, RoutedEventArgs e)
+        private void btn_report_Click1(object sender, RoutedEventArgs e)
         {
 
-            r_ListadoUsuariosController reporte = new r_ListadoUsuariosController();
+          /*  r_ListadoUsuariosController reporte = new r_ListadoUsuariosController();
 
             adicionalesByNombreModel modelo = new adicionalesByNombreModel();
             modelo.username = AppConfig.GetUserSetting("UserApp");
 
-            reporte.fn_GetListadoUsuariosReport(modelo);
+            reporte.fn_GetListadoUsuariosReport(modelo);*/
 
 
         }
+
+        private void btn_crearReporte_Click(object sender, RoutedEventArgs e)
+        {
+            r_ventasAdicionalesController reporte = new r_ventasAdicionalesController();
+
+            ventasAdicionalesModels modelo = new ventasAdicionalesModels();
+            modelo.username = AppConfig.GetUserSetting("UserApp");
+
+            reporte.fn_GetVentasAdicionalesReport(modelo);
+        }
+        private void btn_crearReporte_Click1(object sender, RoutedEventArgs e)
+        {
+            wVentaAdicionalByPkg modal = new wVentaAdicionalByPkg();
+            modal.ShowDialog();
+        }
+
     }//end class
 }//end namespaces
