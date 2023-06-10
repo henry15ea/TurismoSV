@@ -39,6 +39,11 @@ namespace TurismoSV_client.UitlsClass.RoutesApi;
             Routes.Add("RpaquetesDispByFecha", HostApi + "/reporte/admin/paquetesDispByFechas");
             Routes.Add("RlistUsuaarios", HostApi + "/reporte/admin/listadoUsuarios");
             Routes.Add("RlistadoUsuariosAll", HostApi + "/reporte/admin/listadoUsuariosAll");
+           Routes.Add("RventasAdicionales", HostApi + "/reporte/admin/ventasAdicionales");
+            Routes.Add("RventasAdicionalesByPkg", HostApi + "/reporte/admin/ventasAdicionalesByPaquete");
+            Routes.Add("RventasByFechas", HostApi + "/reporte/admin/ventasByFechas");
+            Routes.Add("RventasByFpago", HostApi + "/reporte/admin/ventasAdicionalesByFpago");
+            Routes.Add("RventasByNombre", HostApi + "/reporte/admin/ventasAdicionalesByNombreApellido");
 
 
             //verificacion de targeta de credito para cuando se compran paquetes
