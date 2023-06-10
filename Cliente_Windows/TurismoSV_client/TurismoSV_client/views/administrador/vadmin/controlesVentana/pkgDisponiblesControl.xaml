@@ -15,7 +15,7 @@
                         </Label>
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Buscar"></Label>
-                            <TextBox x:Name="txt_itemSearch" Margin="15,0,0,0" HorizontalAlignment="Stretch" MinWidth="520" MaxWidth="300" Width="250"></TextBox>
+                            <TextBox x:Name="txt_itemSearch" Margin="15,0,0,0" HorizontalAlignment="Stretch" MinWidth="520" MaxWidth="720"></TextBox>
                             <Button x:Name="btn_searchElement" Margin="5,0,0,0" Width="90" Click="btn_searchElement_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/views/administrador/vadmin/search.png" Height="32" Width="32" Stretch="UniformToFill"/>
@@ -26,27 +26,6 @@
                                 <Border Background="AliceBlue" BorderBrush="Black" BorderThickness="2" Padding="2" CornerRadius="4">
                                     <Button x:Name="btn_report" IsEnabled="False" Background="Transparent" BorderBrush="Transparent" Content="Generar Reporte" Height="32" Click="btn_report_Click">
                                         
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                            <StackPanel Margin="50,0,0,0">
-                                <Border Background="AliceBlue" BorderBrush="Black" BorderThickness="2" Padding="2" CornerRadius="4">
-                                    <Button x:Name="btn_report2" IsEnabled="False" Background="Transparent" BorderBrush="Transparent" Content="Generar Reporte ventas" Height="32" Click="btn_report_Click2">
-
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                            <StackPanel Margin="50,0,0,0">
-                                <Border Background="AliceBlue" BorderBrush="Black" BorderThickness="2" Padding="2" CornerRadius="4">
-                                    <Button x:Name="btn_report3" IsEnabled="False" Background="Transparent" BorderBrush="Transparent" Content="Generar Reporte ventas fPago" Height="32" Click="btn_report_Click3">
-
-                                    </Button>
-                                </Border>
-                            </StackPanel>
-                            <StackPanel Margin="50,0,0,0">
-                                <Border Background="AliceBlue" BorderBrush="Black" BorderThickness="2" Padding="2" CornerRadius="4">
-                                    <Button x:Name="btn_report4" IsEnabled="False" Background="Transparent" BorderBrush="Transparent" Content="Generar Reporte ventas Nombre" Height="32" Click="btn_report_Click4">
-
                                     </Button>
                                 </Border>
                             </StackPanel>
